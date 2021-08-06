@@ -1,38 +1,24 @@
 ---
 layout: default
 ---
+<section>
+    <div class="container">
+        <header class="major">
+            <h2>{{ page.title }}</h2>
+                <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+        </header>
 
-<div id="post" class="container">
+        <section class="post-content">
+            {{ content }}
+        </section>
+        
+        <footer>
+            {% if page.previous %}
+            <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
+            {% if page.next %}
+            <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+        </footer>
 
-	<div class="postthumb"><img src="/thumbnails/{{ page.thumbnail }}" /></div>
+    </div>
 
-	<h1>{{ page.title }}</h1>
-
-	<div class="meta clearfix">
-		<strong>Author:</strong> {{ page.author }}
-
-		{% if page.license %}
-			<br /><strong>License:</strong> {{ page.license }}
-		{% endif %}
-
-		<br /><br />
-		{% if page.homepage %}
-			<a class="btn" href="{{ page.homepage }}"><i class="icon-home"></i> Homepage</a>
-		{% endif %}
-		{% if page.download %}
-			<a class="btn" href="{{ page.download }}"><i class="icon-download-alt"></i> Download</a>
-		{% endif %}
-		{% if page.demo %}
-			<a class="btn" href="{{ page.demo }}"><i class="icon-road"></i> Demo</a>
-		{% endif %}
-		{% if page.license_link %}
-			<a class="btn" href="{{ page.license_link }}"><i class="icon-file"></i> License</a>
-		{% endif %}
-	</div>
-
-
-	<div class="post-content">
-	{{ content }}
-	</div>
-
-</div>
+</section>

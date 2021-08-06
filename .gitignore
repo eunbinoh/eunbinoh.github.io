@@ -1,8 +1,10 @@
+
 # jekyll
 .jekyll-metadata
 _site
 .sass-cache
 .jekyll-cache
+vendor
 
 
 # bundler
@@ -21,7 +23,7 @@ package-lock.json
 
 # _sass
 _sass/@primer/css/**/*.md
-
+.sass-cache
 
 # lighthouse
 *.report.html
