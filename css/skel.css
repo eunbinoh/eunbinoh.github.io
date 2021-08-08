@@ -13,7 +13,7 @@
 /* Container */
 
 	.container {
-		margin-left: 50em;
+		margin-left: 100px auto;
 		margin-right: auto;
 
 		/* width: (containers) */
