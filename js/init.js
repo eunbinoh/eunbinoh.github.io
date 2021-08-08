@@ -81,6 +81,9 @@
 						var $this = $(this),
 							href = $this.attr('href');
 
+						// Set active class on this link.
+							$this.addClass('active');
+
 						// Not an internal link? Bail.
 							if (href.charAt(0) != '#')
 								return;
@@ -93,8 +96,7 @@
 								.removeClass('active')
 								.addClass('scrollzer-locked');
 
-						// Set active class on this link.
-							$this.addClass('active');
+						
 
 					})
 					.each(function() {

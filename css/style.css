@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
+@import url("/css/font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
@@ -15,7 +15,7 @@
 	}
 
 	body, input, select, textarea {
-		color: #888;
+		color: rgb(105, 74, 8);
 		font-family: "Lato", sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -39,7 +39,7 @@
 		}
 
 	strong, b {
-		color: #777;
+		color: rgb(78, 55, 4);
 		font-weight: 700;
 	}
 
@@ -52,7 +52,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #777;
+		color: rgb(105, 74, 8);;
 		font-weight: 700;
 		line-height: 1em;
 		margin: 0 0 0.5625em 0;
@@ -169,7 +169,7 @@
 	}
 
 	header p {
-		color: #aaa;
+		color: rgb(105, 74, 8);
 		position: relative;
 		margin: 0 0 1.6875em 0;
 	}
@@ -200,7 +200,7 @@
 	}
 
 		header.major h2 + p {
-			color: #777;
+			color: rgb(105, 74, 8);
 			font-size: 1.75em;
 			font-weight: 700;
 			margin-top: -0.75em;
@@ -496,7 +496,8 @@
 		}
 
 			.image.avatar img {
-				border-radius: 100%;
+				border-radius: 45%;
+				background-color: white;
 				display: block;
 				width: 100%;
 			}
@@ -749,8 +750,8 @@
 		-o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #989898;
-		border-radius: 5px;
+		background-color: rgba(126, 83, 3, 0.5);
+		border-radius: 7px;
 		border: 0;
 		color: #ffffff !important;
 		cursor: pointer;
@@ -776,7 +777,7 @@
 		input[type="reset"]:active,
 		input[type="button"]:active,
 		.button:active {
-			background-color: #8b8b8b;
+			background-color: rgba(70, 51, 16, 0.5);
 		}
 
 		input[type="submit"].icon,
@@ -987,7 +988,7 @@
 			bottom: 0;
 			left: 0;
 			padding: 2em;
-			position: absolute;
+			position: relative;
 			width: 100%;
 		}
 
@@ -1024,7 +1025,7 @@
 					text-decoration: none;
 				}
 
-					#header > nav ul li a.active, #header > nav ul li .cc-active {
+					#header > nav ul li a.active{
 						background: #fff;
 						color: #4acaa8 !important;
 					}
@@ -1036,9 +1037,13 @@
 /* Wrapper */
 
 	#wrapper {
-		background: #fff;
-		padding-right: 23em;
+		background-image: url("../images/rednmac.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: top;
+		padding: 10em 10em 10em 20em;
 	}
+	
 
 /* Main */
 
@@ -1057,10 +1062,6 @@
 /* One */
 
 	#one:before {
-		background-image: url("../images/banner.jpg");
-		background-position: top right;
-		background-repeat: no-repeat;
-		background-size: cover;
 		content: '';
 		display: block;
 		height: 15em;
@@ -1070,9 +1071,9 @@
 /* Footer */
 
 	#footer {
-		background: #fafafa;
+		background: #fafafa1c;
 		border-top: 0;
-		color: #c0c0c0;
+		color: #aaa;
 		overflow: hidden;
 		padding: 4em 0 2em 0;
 	}
