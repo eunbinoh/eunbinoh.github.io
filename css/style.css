@@ -265,7 +265,7 @@
 	.select-wrapper {
 		text-decoration: none;
 		display: block;
-		position: relative;
+		position: left;
 	}
 
 		.select-wrapper:before {
@@ -1041,7 +1041,7 @@
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: top;
-		padding: 10em 10em 10em 20em;
+		padding: 5em 10em 5em 15em;
 	}
 	
 
@@ -1052,21 +1052,14 @@
 	}
 
 		#main > section > .container {
-			padding: 6em 0 4em 0;
+			padding: 5em 0 4em 0;
+			margin-right: 50em;
 		}
 
 		#main > section:first-child {
 			border-top: 0;
 		}
 
-/* One */
-
-	#one:before {
-		content: '';
-		display: block;
-		height: 15em;
-		width: 100%;
-	}
 
 /* Footer */
 

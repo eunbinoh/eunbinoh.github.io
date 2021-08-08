@@ -1,4 +1,7 @@
-@import url("fontawesome-all.min.css");
+@import url("/css/fontawesome-all.min.css");
+@import url("/fonts/fontawesome-webfont.eot");
+@import url("/fonts/fontawesome-webfont.svg");
+@import url("/fonts/fontawesome-webfont.ttf");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
@@ -1708,7 +1711,7 @@ input, select, textarea {
 /* Container */
 
 	.container {
-		margin: 0 auto;
+		margin: 0 auto auto 0;
 		max-width: calc(100% - 4.5em);
 		width: 45em;
 	}

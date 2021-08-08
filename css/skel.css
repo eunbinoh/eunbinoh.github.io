@@ -13,7 +13,7 @@
 /* Container */
 
 	.container {
-		margin-left: 100px auto;
+		margin-left: auto;
 		margin-right: auto;
 
 		/* width: (containers) */
@@ -88,7 +88,7 @@
 
 			.row > * {
 				/* padding: (gutters.horizontal) 0 0 (gutters.vertical) */
-				padding: 0 0 0 2em;
+				padding: 0 0 0 1em;
 			}
 
 			.row {
@@ -110,7 +110,7 @@
 
 			.row.\32 00\25 > * {
 				/* padding: (gutters.horizontal) 0 0 (gutters.vertical) */
-				padding: 0 0 0 4em;
+				padding: 0 0 0 2em;
 			}
 
 			.row.\32 00\25 {
@@ -120,7 +120,7 @@
 
 			.row.uniform.\32 00\25 > * {
 				/* padding: (gutters.vertical) 0 0 (gutters.vertical) */
-				padding: 4em 0 0 4em;
+				padding: 4em 0 0 2em;
 			}
 
 			.row.uniform.\32 00\25 {
@@ -234,8 +234,8 @@
 			clear: left;
 		}
 
-		.\-11u { margin-left: 91.6666666667% }
-		.\-10u { margin-left: 83.3333333333% }
+		.\-11u { margin-left: 81.6666666667% }
+		.\-10u { margin-left: 877.3333333333% }
 		.\-9u { margin-left: 75% }
 		.\-8u { margin-left: 66.6666666667% }
 		.\-7u { margin-left: 58.3333333333% }
