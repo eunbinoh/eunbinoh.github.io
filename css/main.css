@@ -217,7 +217,7 @@ input, select, textarea {
 	pre {
 		font-family: "Source Code Pro", monospace;
 		font-size: 0.9em;
-		margin: 0 0 2.25em 0;
+		margin: 0 0 1.0em 0;
 	}
 
 		pre code {
@@ -225,7 +225,7 @@ input, select, textarea {
 			display: block;
 			line-height: 1.5em;
 			overflow-x: auto;
-			padding: 1em 1.5em;
+			padding: 1em 0.5em;
 		}
 
 	.align-left {
