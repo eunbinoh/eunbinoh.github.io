@@ -1,13 +1,16 @@
 ---
 layout: post
-title:  "Ruby-Jekyll"
-date:   2021-08-08 03:20:56 +0900
+title:  "Controller 데이터 처리"
+date:   2021-8-06 14:37:44
 categories: update
 ---
 
+<img src="{{ site.baseurl }}/images/winkA.png">
 
+# JAVA - controller
+
+## Parameter 전송 받기   
 JAVA servlet source:
-
 {% highlight ruby %}
 @RequestMapping(value="/login.me", method=RequestMethod.POST) 
 //** servlet 주소 매핑, method=get방식이 기본값이지만 post방식도 생략 가능
@@ -57,11 +60,66 @@ public String login(@ModelAttribute Member m, HttpSession session) {
 public void login(Member m) {
 	System.out.println("member:"+m);
 }
+
+
+
+## Parameter 출력 (내보내기) 
+
+1. model객체 : 맵형식 (key,value),request scope
+public String login(@ModelAttribute Member m, HttpSession session, **Model model**) {
+
+	Member loginUser =	service.login(m);
+	System.out.println("member:"+loginUser);
+
+	if(loginUser !=null) {
+		session.setAttribute("loginUser", loginUser);
+		return "redirect:home.do";
+
+	}else {
+		model.addAttribute("message","로그인 실패");
+		return "../common/errorPage";
+	}
+
+ 2. ModelAndView 객체 : Model(맵형식) + View(뷰페이지 경로)
+@RequestMapping(value="/login.me", method=RequestMethod.POST)
+public ModelAndView login(@ModelAttribute Member m, HttpSession session, **ModelAndView mv**) {
+
+	Member loginUser =	service.login(m);
+	System.out.println("member:"+loginUser);
+
+	if(loginUser !=null) {
+		session.setAttribute("loginUser", loginUser);
+		 mv.setViewName("redirect:home.do");
+
+	}else {
+		//Model
+		mv.addObject("message","로그인 실패");
+
+		//View
+		mv.setViewName("../common/errorPage");
+	}
+
+	return mv;
+
+}
+
+**@SessionAttribute** 사용 : model에 attribute가 추가될떄 자동으로 키를 찾아 세션에 등록
+-> 맨위에 @SessionAttributes("loginUser") 추가 --> 로그인유저 추가되면 세션에 자동 등록 명령
+@RequestMapping(value="/login.me", method=RequestMethod.POST)
+public String login(Member m, Model model) {
+
+			Member loginUser =	service.login(m);
+
+			if(loginUser !=null) {
+				model.addAttribute("loginUser", loginUser);
+				return "redirect:home.do";
+
+			}else {
+				model.addAttribute("message","로그인 실패");
+				return "../common/errorPage";
+			}
+}
+
 {% endhighlight %}
 
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+```

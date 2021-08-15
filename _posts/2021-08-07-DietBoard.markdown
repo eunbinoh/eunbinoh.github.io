@@ -1,10 +1,11 @@
 ---
 layout: post
 ---
-<img src="{{ site.baseurl }}/images/dietBoard.jpg">
+<img src="{{ site.baseurl }}/images/wowA.png">
 
-Sed lobortis urna ut mi volutpat, sit amet euismod sapien tincidunt. Nulla facilisi. Pellentesque quis tempus neque. Mauris dictum ac sapien nec congue. In hac habitasse platea dictumst. Duis id pellentesque nisl. Morbi eget massa magna.
-
+- 식단 일기
+	+ 게시판 타입
+	+ javascript, jQuery
 
 {% highlight Java %}
 <script>

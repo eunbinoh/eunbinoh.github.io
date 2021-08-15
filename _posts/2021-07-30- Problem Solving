@@ -1,0 +1,30 @@
+---
+layout: post
+
+<img src="{{ site.baseurl }}/images/punchA.png">
+
+# Error :  java.lang.IllegalArgumentException: Mapped Statements collection does not contain value
+1. mapper id Check
+    - mapper 파일 - DAO, VO 비교
+
+2. Parameter와 bean의 필드명이 다른 경우
+
+3. mapper 파일 namespace 가 다를 경우
+
+4. mapper에 정의된 namespace 중복될 경우
+
+5. MyBatis config 파일에 정의가 되어 있지 않거나 Spelling이 틀린 경우
+
+
+# Error : @Requestbody 415 에러
+
+1. $.ajax 블록{ dataType:'json', } 추가
+
+2. consumes = MediaType.APPLICATION_JSON_UTF8_VALUE
+
+3. Request Header 
+
+4. mapper에 정의된 namespace 중복될 경우
+
+5. MyBatis config 파일에 정의가 되어 있지 않거나 Spelling이 틀린 경우
+
