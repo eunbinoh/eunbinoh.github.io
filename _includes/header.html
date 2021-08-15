@@ -4,19 +4,13 @@
             <span class="image avatar"><img src="{{ site.baseurl }}/images/mainA.png" alt="{{ site.baseurl }}/images/avatar.jpg" /></span>
             <h1 id="logo"><a href="https://eunbinoh.github.io/">Eunbi's Portfolio</a></h1>
             <p>
-                I am a new developer starter! <br/>
-                #JAVA, #Spring, #jQuery, #Oracle, #Git, ..
+               I am a new developer starter! <br/>
             </p>
         </header>
         <nav id="nav" class="site-category">
             <ul>
                 <li><a href="https://eunbinoh.github.io" class="scrolly active">Home</a></li>
                 <li><a href="{{ site.url }}/Content/content.html">Content</a></li>
-                <li><a href="{{ site.url }}/errorNote/error.html">ErrorNote</a></li>
-                <li><a href="{{ site.url }}/contact/contactMe.html">contactME</a></li>
-            </ul>
-            <ul>
-    
                 {% assign pages_list = site.pages %}
                 {% for node in pages_list %}
                   {% if node.title != null %}
@@ -25,15 +19,14 @@
                       href="{{ site.url }}{{ node.url }}">{{ node.title }}</a></li>
                     {% endif %}
                   {% endif %}
-                {% endfor %}
-                
+                {% endfor %}               
             </ul>
         </nav>
-        <footer>
+        <footer class="toTop">
             <ul class="icons">
                 <li><a href="https://www.instagram.com/nohonbi/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="https://github.com/eunbinoh" class="icon fa-github"><span class="label">Github</span></a></li>
-                <li><a href="{{ site.url }}/contact/contactMe.html" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                <li><a href="" class="icon fa-envelope"><span class="label">Email</span></a></li>
             </ul>
         </footer>
     </section>

@@ -10,7 +10,7 @@ tags: [FullCallendar, main.js, events.]
 # Google FullCalendar 분석하고 설계 새로해서 변형해보기 !
    
 -  Calendar.jsp  
-{% highlight Java %}
+```
 <div class="col-md-12 col-xl-12">
      <div class="card">                                   
           <div class="container">
@@ -99,7 +99,7 @@ tags: [FullCallendar, main.js, events.]
      </div>
 </div>
 
-{% endhighlight %}
+```
 
 - - -
 
