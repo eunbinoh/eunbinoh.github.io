@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: Epost
 ---
 
 <section id="one" >
@@ -7,7 +7,7 @@ layout: default
         {% for post in site.posts2 limit:1 %}
             <article>
                 <header>
-                    <h2><a href="{{ site.url }}{{ Epost.url }}">{{ post.title }}</a></h2>
+                    <h2><a href="{{ site.url }}{{ Epost.url }}">{{ Epost.title }}</a></h2>
                 </header>
                 <section class="post-content">
                     {{ post.excerpt | truncatewords: 35 }}
