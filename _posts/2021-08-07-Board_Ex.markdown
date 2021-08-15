@@ -2,7 +2,7 @@
 layout: post
 title: "Board"
 date: 2021-08-07 00:00:00
-categories: [java]
+categories: [Spring & JAVA]
 tags: [Spring, BoardController, Pagination]
 ---
 

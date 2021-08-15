@@ -2,7 +2,7 @@
 layout: post
 title: "Spring_Controller"
 date: 2021-08-06 00:00:00
-categories: [java]
+categories: [Spring & JAVA]
 tags: [Spring, Servlet, Parameter, Annotation]
 
 ---

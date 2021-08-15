@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: project
+title: Project
 
 ---

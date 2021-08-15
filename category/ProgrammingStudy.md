@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: study
+title: Memo
 
 ---

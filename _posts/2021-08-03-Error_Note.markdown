@@ -3,7 +3,7 @@ layout: post
 title: "Error_Note"
 category: 
 date: 2021-08-03 00:00:00
-categories: [error]
+categories: [ErrorNote]
 tags: [Errornote, Spring-Error, Tomcat-Error, Mapping-Error, Sql-Error]
 ---
 111

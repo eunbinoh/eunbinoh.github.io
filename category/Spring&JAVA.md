@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: oracle
+title: Spring & JAVA
 
 ---

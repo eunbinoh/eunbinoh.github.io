@@ -2,7 +2,7 @@
 layout: post
 title: "Spring_setting"
 date: 2021-08-08 00:00:00
-categories: [java]
+categories: [Spring & JAVA]
 tags: [스프링 세팅, Spring Legacy Project, pom.xml ]
 ---
 

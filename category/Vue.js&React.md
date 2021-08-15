@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: vue
+title: Vue.js & React
 
 ---

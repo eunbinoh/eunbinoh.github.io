@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring_@Annotaion"
 date:   2021-08-13 00:00:00
-categories: [java]
+categories: [Spring & JAVA]
 tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
 ---
 

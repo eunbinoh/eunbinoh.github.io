@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: error
+title: ErrorNote
 
 ---
