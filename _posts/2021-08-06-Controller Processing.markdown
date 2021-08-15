@@ -1,11 +1,14 @@
 ---
 layout: post
+title: "Spring_Controller"
+date: 2021-08-06 00:00:00
+categories: update
 
 ---
 
 
-# Parameter 전송 받기   
-## JAVA - controller
+## Parameter 전송 받기     
+# JAVA - controller   
 
 JAVA servlet source:
 {% highlight ruby %}

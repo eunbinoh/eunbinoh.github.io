@@ -1,5 +1,8 @@
 ---
 layout: post
+title: "Error_Note"
+date: 2021-08-03 00:00:00
+categories: update
 ---
 
 # Error : 

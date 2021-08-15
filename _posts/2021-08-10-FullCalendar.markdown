@@ -1,17 +1,18 @@
 ---
 layout: post
+title: "Calendar"
+date: 2021-08-10 00:00:00
+categories: update
 ---
    
 
 # Google FullCalendar 분석하고 설계 새로해서 변형해보기 !
    
-## Calendar.jsp  
+-  Calendar.jsp  
 ```
 <div class="col-md-12 col-xl-12">
      <div class="card">                                   
           <div class="container">
-          
-               <!-- 일자 클릭시 메뉴오픈 -->
                <div id="contextMenu" class="dropdown clearfix">
                     <ul class="dropdown-menu dropNewEvent" role="menu" aria-labelledby="dropdownMenu" id="sccode"
                          style="display:block;position:static;margin-bottom:5px;">
@@ -103,8 +104,8 @@ layout: post
 
 
 
-## main.js      
-### 구글 풀캘린더 오픈소스 윗부분 생략, custom하여 용도에 맞게 변형함.
+- main.js      
+# 구글 풀캘린더 오픈소스 윗부분 생략, custom하여 용도에 맞게 변형함.
 ```
 eventRender: function (event, element, view) {
 	  

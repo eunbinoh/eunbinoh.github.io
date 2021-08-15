@@ -1,5 +1,8 @@
 ---
 layout: post
+title:  "Spring_@Annotaion"
+date:   2021-08-13 00:00:00
+categories: update
 ---
 
 # @RequestParam
@@ -14,6 +17,10 @@ layout: post
     - multipart/form-data 형태의 Body, Param을 Setter를 통해 1:1로 객체에 바인딩
     - 바인딩은 Setter 필요, setter없으면 변수가 저장되지 않음   
    
+      
+         
+ ---           
+ - - -           
 # @
    
 
@@ -94,10 +101,10 @@ public class BoardController {
 {% highlight Java %}
 Request URL: http://localhost:8080/board/modelAttribute?contents=Contents
 Request Body:
-  - type: multipart/form-data
-  - data: {
-      "index": 1,
-      "writer": "MangKyu"
+    -type: multipart/form-data
+    -data: {
+            "index"  : 1,
+            "writer" : "MangKyu"
     }
 {% endhighlight %}
  

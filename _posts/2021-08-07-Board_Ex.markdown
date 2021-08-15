@@ -1,11 +1,15 @@
 ---
 layout: post
+title: "Board"
+date: 2021-08-07 00:00:00
+categories: update
 ---
 
 
-# Board_Controller.java
-## #Spring
-## #controller-service-serviceImpl-dao-mapper-dao
+## Board_Controller.java   
+
+# #Spring
+# controller-service-serviceImpl-dao-mapper
 
 {% highlight Java %}
 
