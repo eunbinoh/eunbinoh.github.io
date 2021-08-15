@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: Memo
+title: Vue.js & React
 
 ---
