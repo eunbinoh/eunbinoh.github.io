@@ -1,8 +1,5 @@
 ---
 layout: post
-title:  "Spring Setting study"
-date:   2021-08-08 03:20:56 +0900
-categories: update
 ---
 
 <img src="{{ site.baseurl }}/images/banner.jpg">

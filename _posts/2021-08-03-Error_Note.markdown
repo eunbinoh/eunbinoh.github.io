@@ -2,14 +2,15 @@
 layout: post
 ---
 
-
 # Error : 
     # javax.servlet.ServletException: 
       java.lang.NoClassDefFoundError: 
-      javax/servlet/ServletInputStream
+      javax/servlet/ServletInputStream   
+
+      
 # → Problem Solving !
-    - 원인  : library에 servlet-api.jar 존재하지 않음.
-    + 해결  : 톰캣에서 lib 폴더에 있는 servlet-api.jar를 프로젝트 library dependency에 추가
+ - 원인  : library에 servlet-api.jar 존재하지 않음.
+ + 해결  : 톰캣에서 lib 폴더에 있는 servlet-api.jar를 프로젝트 library dependency에 추가
 
 - - -      
 
@@ -32,15 +33,17 @@ layout: post
     # Scope 'session' is not active for the current thread; 
       consider defining a scoped proxy for this bean 
       if you intend to refer to it from a singleton; 
-      nested exception is java.lang.IllegalStateException
+      nested exception is java.lang.IllegalStateException   
+
 # → Problem Solving !
-    - 원인  : DAO에서는 request scope가 불필요할 수 있음. 
-    + 해결  : 불필요한 요소 삭제 또는 필요시 web.xmllistener 등록
+ - 원인  : DAO에서는 request scope가 불필요할 수 있음. 
+ + 해결  : 불필요한 요소 삭제 또는 필요시 web.xmllistener 등록
             <listener>
                 <listener-class>
                 org.springframework.web.context.request.RequestContextListener
                 </listener-class>
-            </listener>
+            </listener>   
+
 - - -      
 
 # Error :  
@@ -81,8 +84,8 @@ layout: post
     # 
 
 # → Problem Solving !
-    - 원인  : 
-    + 해결  :
+ - 원인  : 
+ + 해결  :
 
 - - -      
 
@@ -90,8 +93,8 @@ layout: post
     # 
 
 # → Problem Solving !
-    - 원인  : 
-    + 해결  :
+ - 원인  : 
+ + 해결  :
 
 - - -      
 
@@ -99,8 +102,8 @@ layout: post
     # 
 
 # → Problem Solving !
-    - 원인  : 
-    + 해결  :
+ - 원인  : 
+ + 해결  :
 
 - - -      
 
@@ -108,8 +111,8 @@ layout: post
     # 
 
 # → Problem Solving !
-    - 원인  : 
-    + 해결  :
+ - 원인  : 
+ + 해결  :
 
 - - -      
 
@@ -117,7 +120,7 @@ layout: post
     # 
 
 # → Problem Solving !
-    - 원인  : 
-    + 해결  :
+ - 원인  : 
+ + 해결  :
 
 - - -

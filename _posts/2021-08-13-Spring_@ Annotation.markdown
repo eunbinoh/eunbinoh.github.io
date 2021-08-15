@@ -4,28 +4,34 @@ layout: post
 
 # @RequestParam
     - 1개의 HTTP 파라미터를 얻기 위해 사용됨
-    - required=false 설정 필요 (default true)
+    - required=false 설정 필요 (default true)   
+   
 # @RequestBody
     - Json으로 받은 HTTP Body 데이터를 MessageConverter를 통해 변환
-    - 변환시켜주기 때문에(Reflection), Setter 없이 변수 그대로 저장 
+    - 변환시켜주기 때문에(Reflection), Setter 없이 변수 그대로 저장    
+   
 # @ModelAttribute
     - multipart/form-data 형태의 Body, Param을 Setter를 통해 1:1로 객체에 바인딩
-    - 바인딩은 Setter 필요, setter없으면 변수가 저장되지 않음
-
-# @ModelAndView
-
-# @Model
+    - 바인딩은 Setter 필요, setter없으면 변수가 저장되지 않음   
+   
+# @
+   
 
 # @
- 
+   
+
 # @
+    
+
+# @
+   
 
 # @
 
 - - -
 - - -
 
-## RequestBody, ModelAttribute, RequestParam 활용 예시
+## Example
 
  - Model 객체 
 {% highlight Java %}
