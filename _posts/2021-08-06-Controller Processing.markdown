@@ -1,15 +1,14 @@
 ---
 layout: post
 title:  "Controller 데이터 처리"
-date:   2021-8-06 14:37:44
+date:   2021-08-06 14:37:44
 categories: update
 ---
 
-<img src="{{ site.baseurl }}/images/winkA.png">
 
-# JAVA - controller
+# Parameter 전송 받기   
+## JAVA - controller
 
-## Parameter 전송 받기   
 JAVA servlet source:
 {% highlight ruby %}
 @RequestMapping(value="/login.me", method=RequestMethod.POST) 
@@ -21,8 +20,8 @@ public void login(HttpServletRequest request) {
 	String pwd = request.getParameter("pwd");
 }
 
-2. 매개변수 : @RequestParam(value="name") -> 변수 자동 파싱이 가능함(String국한x)
-		-> param 여러개일때 @param(value="name") / param 한개일때는 @param("name")
+2. 매개변수 : @RequestParam(value="name") → 변수 자동 파싱이 가능함(String국한x)
+		→ param 여러개일때 @param(value="name") / param 한개일때는 @param("name")
 																															 - value 생략.
 public void login(@RequestParam(value="id") String idee,
 		@RequestParam(value="pwd" ,defaultValue="what", required=false) String pwddd) {
@@ -49,8 +48,8 @@ public String login(@ModelAttribute Member m, HttpSession session) {
 		return "../home";
 			 views/member/home 으로 member-context에서 경로 설정 되어있기 때문에,
 			 그 상위 경로 이전으로 타야할때 : " ../ "
-			 -> views/home.jsp
-			 -> url 그대로 ( login.me )
+			 → views/home.jsp
+			 → url 그대로 ( login.me )
 
 	return "redirect:home.do"; 
 			// 데이터 유지하지않은채로(session은 유지) 홈으로(home.do) url변경.
