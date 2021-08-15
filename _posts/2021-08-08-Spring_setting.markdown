@@ -2,7 +2,8 @@
 layout: post
 title: "Spring_setting"
 date: 2021-08-08 00:00:00
-categories: update
+categories: [java]
+tags: [스프링 세팅, Spring Legacy Project, pom.xml ]
 ---
 
 1. spring 설치 - STS / eclipse-marketplace   

@@ -10,7 +10,7 @@ layout: default
                     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
                 </header>
                 <section class="post-content">
-                    {{ post.excerpt }}
+                    {{ post.excerpt | truncatewords: 28 }}
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -31,11 +31,11 @@ layout: default
                     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
                 </header>
                 
-                    {{ post.content | truncatewords: 30 }}
+                    {{ post.excerpt | strip_html | truncatewords: 30 }}
                 </section>
                 <footer>
                     <ul class="actions">
-                        <li><a href="{{ site.baseurl }}{{ post.url }}" class="button">Read More</a></li>
+                        <li><a href="{{ site.baseurl }}{{ post.url }}" class="button special">Read More</a></li>
                     </ul>
                 </footer>
                 <div class="clear"></div>

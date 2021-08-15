@@ -2,7 +2,8 @@
 layout: post
 title: "Calendar"
 date: 2021-08-10 00:00:00
-categories: update
+categories: [project]
+tags: [FullCallendar, main.js, events.]
 ---
    
 

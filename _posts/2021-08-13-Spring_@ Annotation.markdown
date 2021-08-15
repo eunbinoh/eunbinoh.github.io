@@ -2,7 +2,8 @@
 layout: post
 title:  "Spring_@Annotaion"
 date:   2021-08-13 00:00:00
-categories: update
+categories: [java]
+tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
 ---
 
 # @RequestParam
