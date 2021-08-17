@@ -2825,6 +2825,7 @@ input, select, textarea {
 	#wrapper {
 		background: #22053f2d;
 		/* padding-right: 23em; */
+		background-repeat: repeat;
 	}
 
 /* Main */
@@ -2852,9 +2853,8 @@ input, select, textarea {
 	}
 
 		#footer .copyright {
-			line-height: 1em;
-			list-style: none;
-			padding: 0;
+				color: rgba(170, 170, 170, 0.096);
+				display: none;
 		}
 
 			#footer .copyright li {
