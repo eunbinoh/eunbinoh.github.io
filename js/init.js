@@ -75,7 +75,7 @@
 
 			// Set up nav items.
 				$nav_a
-					.scrolly()
+					// .scrolly()
 					.on('click', function(event) {
 
 						var $this = $(this),
@@ -93,8 +93,8 @@
 
 						// Remove active class from all links and mark them as locked (so scrollzer leaves them alone).
 							$nav_a
-								.removeClass('active')
-								.addClass('scrollzer-locked');
+								.removeClass('active');
+								// .addClass('scrollzer-locked');
 
 						
 
