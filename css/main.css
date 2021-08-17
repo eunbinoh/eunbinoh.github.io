@@ -3319,3 +3319,7 @@ input, select, textarea {
 			}
 
 	}
+
+.rss-subscribe{
+	display:none;
+}
