@@ -2711,7 +2711,7 @@ input, select, textarea {
 		position: fixed;
 		text-align: center;
 		top: 0;
-		width:150px;
+		width: 20%;
 		right: 0;
 	}
 
@@ -2741,6 +2741,7 @@ input, select, textarea {
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
 			padding: 3em;
+			height: 40%;
 		}
 
 			#header > header .avatar {
@@ -2823,7 +2824,7 @@ input, select, textarea {
 
 	#wrapper {
 		background: #fff;
-		padding-right: 23em;
+		/* padding-right: 23em; */
 	}
 
 /* Main */

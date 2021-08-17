@@ -1038,10 +1038,8 @@
 
 	#wrapper {
 		background-color: #22053f2d;
-		background-repeat: no-repeat;
-		background-size: 100%;
-		background-position: top;
-		padding: 5em 10em 5em 15em;
+		padding: 5em 10em 5em 10em;
+		width:80%;
 	}
 	
 
