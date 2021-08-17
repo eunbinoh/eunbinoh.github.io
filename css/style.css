@@ -1038,9 +1038,9 @@
 
 	#wrapper {
 		background-color: #22053f2d;
-		padding: 5em 10em 5em 10em;
-		width:80%;
-		height: 1200px;
+		padding: 10em 10em 5em 10em;
+		width:82%;
+		height: 1300px;
 	}
 	
 
@@ -1063,11 +1063,8 @@
 /* Footer */
 
 	#footer {
-		background: #fafafa1c;
-		border-top: 0;
-		color: #aaa;
-		overflow: hidden;
-		padding: 4em 0 2em 0;
+		color: rgba(170, 170, 170, 0.096);
+		display: none;
 	}
 
 		#footer .copyright {
