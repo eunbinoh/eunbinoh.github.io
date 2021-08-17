@@ -1,0 +1,69 @@
+---
+layout: post
+title: "SQL_Error"
+category: 
+date: 2021-08-02 00:00:00
+categories: [ErrorNote]
+tags: [Errornote, Sql-Error, Oracle-Error]
+---
+   
+# https://www.techonthenet.com/oracle/errors/index.php   
+
+
+   
+# Error : 
+    # ORA-04091: table name is mutating, trigger/function may not see it
+
+# → Problem Solving !
+ - 원인  : 테이블에 대한 트리거를 생성하면 트리거/함수가 완료될 때까지 해당 테이블을 수정/쿼리할 수 없음
+ - 해결  :    
+    + 테이블에 대한 트리거를 생성한 다음 생성 및 수정 완료된 테이블 에 대해 트리거를 수행하도록 함.
+    + 트리거 유형에 따라 트리거 내에서 :NEW 및 :OLD 값을 적합하게 사용
+
+- - -      
+
+
+# Error :
+    # 
+
+# → Problem Solving !
+ - 원인  : 
+ + 해결  :
+
+- - -      
+
+# Error :
+    # 
+
+# → Problem Solving !
+ - 원인  : 
+ + 해결  :
+
+- - -      
+
+# Error :
+    # 
+
+# → Problem Solving !
+ - 원인  : 
+ + 해결  :
+
+- - -      
+
+# Error :
+    # 
+
+# → Problem Solving !
+ - 원인  : 
+ + 해결  :
+
+- - -      
+
+# Error :
+    # 
+
+# → Problem Solving !
+ - 원인  : 
+ + 해결  :
+
+- - -
