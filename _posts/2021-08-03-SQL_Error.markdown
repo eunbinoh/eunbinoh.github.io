@@ -24,11 +24,13 @@ tags: [Errornote, Sql-Error, Oracle-Error]
 
 
 # Error :
-    # 
-
+    # ORA-01758: table must be empty to add mandatory (NOT NULL) column   
 # → Problem Solving !
- - 원인  : 
+ - 원인  : 테이블에 데이터를 추가해 놓은 상태에서, 컬럼을 NOT NULL로 추가시 기존 데이터와 충돌.
  + 해결  :
+    1. 테이블의 기존 데이터를 모두 삭제 후 컬럼 추가
+    2. null값이 발생하지 않도록 default 지정 후 컬럼 추가
+    3. nullable 조건으로 컬럼 추가
 
 - - -      
 
