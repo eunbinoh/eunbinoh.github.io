@@ -87,11 +87,11 @@ tags: [Errornote, Spring-Error, Tomcat-Error, Mapping-Error]
 - - -      
 
 # Error :
-    # 
+    # Ajax 일정 삭제 성공하는데도 error data 출력됨 (success 메세지 출력 실패)
 
 # → Problem Solving !
- - 원인  : 
- + 해결  :
+ - 원인  : In Controller, @RequestMapping(value="deleteCal.do", produces="application/json; charset=UTF-8")
+ + 해결  : 출력 데이터에 대한 부적절한 인코딩 : produces="application/json" 삭제
 
 - - -      
 
