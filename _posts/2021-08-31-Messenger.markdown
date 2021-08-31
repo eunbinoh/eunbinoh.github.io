@@ -11,7 +11,7 @@ tags: [SocketJS, websocket, Spring, messenger, chatting]
   * Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
   * SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
     -> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.   
-    -> 웹브라우저가 아닌 Android,Ios의 경우 STOMP-websocket 메세지 프로토콜 호환 방식 혼용가능.
+    -> 웹브라우저가 아닌 Android,Ios의 경우 STOMP-websocket 메세지 프로토콜 호환 방식 가능.
       
          
 
@@ -91,7 +91,8 @@ public class HandlerChat extends TextWebSocketHandler{
 	}
 }
 ```    
-  2. Controller   
+  2. Controller     
+
 ```   
 public class MsController {
 	@Autowired
@@ -136,6 +137,7 @@ public class MsController {
 	}
 
 ```
+--- 
 
 #### 대화목록 History(채팅방 형식), 소속부서원만 보이는 그룹톡방 1번으로 정렬
 ##### 그룹방은 삭제버튼 보이지 않음, 새로운 알람시 new label 생성
@@ -177,7 +179,8 @@ public class MsController {
 
 ```   
    
-  2. Mapper (쿼리문/Oracle)   
+  2. Mapper (쿼리문/Oracle)      
+
 ```   
 
 	<select id="RoomList" resultMap="RoomResultMap">
@@ -195,11 +198,13 @@ public class MsController {
 	</select>   
 
 ```
+--- 
+#### 부서별,직급별로 사원목록 조회해와서 선택한 사람과 대화하기   
+##### 기존 대화기록 중에 방이 있는지 체크 후, 없으면 생성, 있으면 연결해서 들어가기   
+  ![Image name](https://eunbinoh.github.io//images/Final8.png)    
 
-#### 부서별,직급별로 사원목록 조회해와서 선택한 사람과 대화하기
-##### 기존 대화기록 중에 방이 있는지 체크 후, 없으면 생성, 있으면 연결해서 들어가기
-  ![Image name](https://eunbinoh.github.io//images/Final8.png)   
-  2. Controller   
+  2. Controller      
+  
 ```   
 
 @ResponseBody

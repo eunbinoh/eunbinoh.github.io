@@ -2,7 +2,7 @@
 layout: post
 title: "MARKDOWN"
 date: 2021-08-01 00:00:00
-categories: [Project]
+categories: [Study & more]
 tags: [Github, markup, markdown, 마크다운 문법]
 ---
 

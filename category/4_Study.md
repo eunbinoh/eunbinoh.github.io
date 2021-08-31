@@ -1,6 +1,6 @@
 ---
 
 layout: category
-title: Vue.js & React
+title: Study more
 
 ---
