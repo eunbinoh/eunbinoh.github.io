@@ -11,7 +11,7 @@ tags: [SocketJS, websocket, Spring, messenger, chatting]
   * Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
   * SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
     -> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.   
-    -> 웹브라우저가 아닌 Android,Ios의 경우 STOMP-websocket 메세지 프로토콜 호환 방식 가능.
+    -> 웹브라우저가 아닌 Android, ios : STOMP-websocket 메세지 프로토콜 호환 가능.
       
          
 
@@ -204,7 +204,7 @@ public class MsController {
   ![Image name](https://eunbinoh.github.io//images/Final8.png)    
 
   2. Controller      
-  
+
 ```   
 
 @ResponseBody
