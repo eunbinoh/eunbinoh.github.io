@@ -7,11 +7,11 @@ tags: [FullCallendar, main.js, events.]
 ---
    
 
-## Google FullCalendar 활용한 그룹웨어 일정관리   
-  
-### 개발 디자인 (구상하기) 
-![Image name](https://eunbinoh.github.io//images/hummS.png)
- - 부서별 일정 공유하기 (DB JOIN)
+## Google FullCalendar - 그룹웨어 일정관리   
+
+
+### #개발 디자인 (구상하기) 
+ - 같은 부서끼리만 부서일정 공유하기 (DB JOIN)
  - 개인일정은 로그인유저 개인것만 보여지기 (DB 서브쿼리 또는 UNION)
  - 장기간 프로젝트(1달 이상) 일정은 보여지는 범위 조건 설정 (기존 제한 체크)
  - 부서 일정 수정,삭제는 등록자만 또는 부장 직급만 권한 부여(ID 보여지게 하기)
@@ -20,14 +20,15 @@ tags: [FullCallendar, main.js, events.]
 
 # Final Project에서 만든 그룹웨어 일정관리 - 캘린더     
 - Google FullCalendar
- + css : bootstrap-datetimepicker.min.css, fullcalendar.min.css, main.css
- + js : fullcalendar.min.js, addEvent.js, editEvent.js,..
+    + css : bootstrap-datetimepicker.min.css, fullcalendar.min.css, main.css
+    + js : fullcalendar.min.js, addEvent.js, editEvent.js,..
    
--> etc file들이 더 있지만, 선택적으로 사용하고 주로 모달과 폼만 가져옴
--> 디자인 구도, 색깔, 크기, 효과 변경(내취향대로 커스터마이징)
--> ajax, back단은 처음부터 끝까지 직접 구상해서 작성함.
+-> etc file들이 더 있지만, 선택적으로 사용하고 주로 모달과 폼만 가져옴   
+-> 디자인 구도, 색깔, 크기, 효과 변경(내취향대로 커스터마이징)   
+-> ajax, back단은 처음부터 끝까지 직접 구상해서 작성함.   
         
-
+   
+      
 ### 부서일정과 개인일정 전체 조회 
   ![Image name](https://eunbinoh.github.io//images/Final2.png)   
 
@@ -80,8 +81,10 @@ public class CalendarController {
 	}
 ```
    
-- Mapper
-```
+- Mapper   
+
+```   
+
 <mapper namespace="calendarMapper">
 	<resultMap type="calendar" id="CalResultMap">
 		<id column="SC_CODE" property="code"/>
@@ -119,13 +122,16 @@ public class CalendarController {
 	   UPDATE SCHEDULE
 		  SET SC_CODE=#{code}, SC_TITLE=#{title}, SC_SDATE=TO_DATE(#{sDate}), SC_EDATE=TO_DATE(#{eDate})
 		WHERE DSC_NO=#{no} AND M_CODE= #{mCode} 
-	</update>
+	</update>   
+       
 ```
    
    
 
- + 일정 등록.js
-  ```
+ + 일정 등록.js   
+
+```   
+
  var newEvent = function (start, end, eventType) {
     if(eventType=='부서일정'){
     	eventType = '1';
@@ -216,11 +222,13 @@ public class CalendarController {
 				console.log("add error");
 			}
         });
-    }); 
+    });    
+
 ```    
    
 
- + 일정 조회.js
+ + 일정 조회.js   
+
 ```
 events: function (start, end, timezone, callback) {
 	var eventId = $('#e-id');
@@ -261,7 +269,8 @@ events: function (start, end, timezone, callback) {
     	  console.log("select list error");
       }
     });
-}
+}   
+
 ``` 
    
        
@@ -327,26 +336,29 @@ var editEvent = function (event, element, view) {
             }
         });
     });
-};
-``` 
+};   
 
-# CSS, min.js, bootstrap 이 너무 힘들었던 나는
-![Image name](https://eunbinoh.github.io//images/sadS.png)
-.   
-.
-. col-sm,.. col-md,.. col-lg, ..   
-.   
-.   
-.   
-. modal,....   
+``` 
+   
+# CSS, min.js, bootstrap 이 너무 힘들었던 나는   
+![Image name](https://eunbinoh.github.io//images/sadS.png)   
+
 .      
 .   
+. col-sm,.. col-md,.. col-lg, ..   
+.      
+.      
+.      
+. modal,....   
+.         
+.      
 . event
-.   
+.      
 .    
 . beautifier min.js...
 .   
-.   
+.      
 
-# 이번 풀캘린더 정면돌파를 통해 재야의 고수가 되었다고 한다
-![Image name](https://eunbinoh.github.io//images/punchS.png)
+# 이번 풀캘린더 정면돌파를 통해 재야의 고수가 되었다고 한다   
+![Image name](https://eunbinoh.github.io//images/punchS.png)   
+

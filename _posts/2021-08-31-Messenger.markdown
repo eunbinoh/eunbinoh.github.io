@@ -6,12 +6,12 @@ tags: [SocketJS, websocket, Spring, messenger, chatting]
 ---
 
 # Final Project에서 만든 그룹웨어 메신저  
-- 웹소켓은 양방향 소통을 위한 프로토콜 - 적은 데이터를 매우 빠르게 통신할 수 있음 ex. 코인, 주식 현황 업데이트
- + 하지만 호환, 표준규격 등의 접근성 측면의 단점이 있고, 이에 대한 솔루션으로 나온것이 Socket.io & SockJS
-  * Socket.io : node.js기반으로 자체 서버를 만들어 실시간 통신이 브라우저에 구애받지 않음. javascript기반 개발.
+- 웹소켓은 양방향 소통을 위한 프로토콜로, 적은 데이터를 빠르게 통신. ex. 코인, 주식 홈페이지
+ + 하지만 호환,표준규격 등의 접근성 단점, 이에 대한 솔루션 : Socket.io & SockJS
+  * Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
   * SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
-    -> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.
-    -> 웹브라우저가 아닌 Android,Ios의 경우 STOMP-websocket 메세지 프로토콜 호환 추천.
+    -> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.   
+    -> 웹브라우저가 아닌 Android,Ios의 경우 STOMP-websocket 메세지 프로토콜 호환 방식 혼용가능.
       
          
 
@@ -19,7 +19,7 @@ tags: [SocketJS, websocket, Spring, messenger, chatting]
   ![Image name](https://eunbinoh.github.io//images/Final9.png)
      
   1. Handler   
-```
+```   
 @Component
 public class HandlerChat extends TextWebSocketHandler{
 	@Autowired
@@ -90,9 +90,9 @@ public class HandlerChat extends TextWebSocketHandler{
 		 } 
 	}
 }
-``` 
-  2. Controller
-```
+```    
+  2. Controller   
+```   
 public class MsController {
 	@Autowired
 	private MsService msService;
@@ -139,9 +139,9 @@ public class MsController {
 
 #### 대화목록 History(채팅방 형식), 소속부서원만 보이는 그룹톡방 1번으로 정렬
 ##### 그룹방은 삭제버튼 보이지 않음, 새로운 알람시 new label 생성
-  ![Image name](https://eunbinoh.github.io//images/Final5.png)
-  1. Controller
-```
+  ![Image name](https://eunbinoh.github.io//images/Final5.png)   
+  1. Controller   
+```   
 @ResponseBody
 	@RequestMapping(value="chatRoomList" , produces="application/json; charset=UTF-8")
 	public List<ChatVo> RoomList(Room r, String userName,HttpSession session,HttpServletResponse response)throws IOException {
@@ -173,10 +173,13 @@ public class MsController {
 		chatList.add(chatVo);
 		}
 		return chatList;
-	}
-```
-  2. Mapper (쿼리문/Oracle)
-```
+	}   
+
+```   
+   
+  2. Mapper (쿼리문/Oracle)   
+```   
+
 	<select id="RoomList" resultMap="RoomResultMap">
 		SELECT *
 		  FROM ROOM
@@ -189,14 +192,16 @@ public class MsController {
 	  SELECT *
 		  FROM MS
 	   WHERE RNO=#{roomId}
-	</select>
+	</select>   
+
 ```
 
 #### 부서별,직급별로 사원목록 조회해와서 선택한 사람과 대화하기
 ##### 기존 대화기록 중에 방이 있는지 체크 후, 없으면 생성, 있으면 연결해서 들어가기
-  ![Image name](https://eunbinoh.github.io//images/Final8.png)
-  2. Controller
-```
+  ![Image name](https://eunbinoh.github.io//images/Final8.png)   
+  2. Controller   
+```   
+
 @ResponseBody
 	@RequestMapping("createChat")
 	public Room createChat(Room r, String userName, String toId) {
@@ -225,10 +230,14 @@ public class MsController {
 			  exist.setFid(userName);
 			  return exist;
 		}
-	}
-```
-  2. Mapper (쿼리문/Oracle)
-```
+	}   
+
+```   
+
+  2. Mapper (쿼리문/Oracle)   
+
+```   
+
 	<select id="toList" resultMap="MemberResultMap">
 	   SELECT M_CODE, M_NAME, M_ID, DEPT_NO, DEPT_NAME, J_NAME, J_NO
 	     FROM MEMBER
@@ -249,13 +258,18 @@ public class MsController {
 	<insert id="insertRoom">
 		INSERT INTO ROOM
 		VALUES (SEQ_RNO.NEXTVAL, #{fid}, #{tid}, DEFAULT)
-	</insert>
-```
+	</insert>   
+
+```   
+
 
 #### 채팅방(이전 메세지기록 DB + 소켓 실시간 채팅)
-  ![Image name](https://eunbinoh.github.io//images/Final6.png)
-  1. Controller
-```
+  ![Image name](https://eunbinoh.github.io//images/Final6.png)   
+
+  1. Controller   
+
+```   
+
 @ResponseBody
 	@RequestMapping(value = "rno_{roomId}", produces="application/json; charset=UTF-8")
 	public List<Messenger> messageList(@PathVariable int roomId, Model model, HttpServletResponse response) throws IOException {
@@ -269,10 +283,14 @@ public class MsController {
 			}
 		}
 		return mList;
-	}
-```
-  2.  Mapper (쿼리문/Oracle)
-```
+	}   
+
+```   
+   
+  2.  Mapper (쿼리문/Oracle)   
+
+```   
+
 <select id="selectList" resultMap="MsResultMap">
 	   SELECT *
 		 FROM MS
@@ -296,13 +314,16 @@ public class MsController {
 		UPDATE MS 
 		   SET READCOUNT = 0
 		 WHERE RNO=#{roomId}
-	</update>
-```
+	</update>   
 
+```
+   
 #### MS.jsp (socket connect, ajax,.. 중략)
   ![Image name](https://eunbinoh.github.io//images/Final4.png)
-  1. sockJS
-```
+  1. sockJS   
+
+```   
+
 $(document).ready(function() {
 	var sock; //웹소켓 전역변수 설정
 	
@@ -355,10 +376,14 @@ $(document).ready(function() {
 	}
 	function onClose() {
 		console.log("sock close");
-	}
-```
-  2. 채팅방 대화 FORM & AJAX
-```
+	}   
+
+```   
+   
+  2. 채팅방 대화 FORM & AJAX   
+     
+```   
+
 	var roomId;
 	var toId;
 	//방번호 찾아서 들어간뒤 웹소켓 연결
@@ -443,18 +468,20 @@ $(document).ready(function() {
       // 웹소켓 연결 (소켓 서버 연결 시작)
       connect();
 	}
-   
-```
+      
+```   
 
 # 후기
-- 처음에 웹소켓-서버 연결이 너무 어렵고, 계속 접속 끊어지고 해서 2일 정도 벽에 부딪혔다.
-- 솔루션으로 라이브러리 형식만 가져와서 사용하면 되는 SockJS를 채택하고 난 뒤로도, 난관은 계속됐다.
+- 처음에 웹소켓-서버 연결이 너무 어렵고, 계속 접속 끊어지고해서 오기로 이틀 밤을 샜다..
+- 솔루션으로 찾아낸 SockJS를 채택하고 나서도, 적용하는데에 난관은 계속됐다.
 - 구글링하면 나오는 소스들은 웹소켓, socket-io, STOMP, 부분적으로만 있어서 긁어모으다 보면 오히려 혼란이 더 심해졌고..
 - SockJS 서버 통신을 성공시키고 난 뒤에도, 단순 익명채팅방이 아니라 그룹웨어에서 쓰는 메신저로 쓸 목적이였기 때문에,
    사원 선택해서 1:1 메세지도 호환되게 만드려고 하니 필요한 요소들이 뒤늦게 발견되고 수정하고 반복...
 - 마침내, 소통이 되고, 조건 지정해서 둘의 대화 폼이 완성 될 때. 셋 이상의 대화가 이루여 졌을 때.
 #### 그 기쁨이란 !! 
 ### 정말 재밌었고 뿌듯했다.
-## 개발자의 길, 선택하길 잘했다 !
-# ^^..
-  ![Image name](https://eunbinoh.github.io//images/winkS.png)
+## _개발자의 길, 선택하길 잘했다 ! _
+# ^^..   
+
+![Image name](https://eunbinoh.github.io//images/winkS.png)
+     
