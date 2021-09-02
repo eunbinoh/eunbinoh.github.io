@@ -29,15 +29,15 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
     - @Controller + @ResponseBody
 
 # @Component
-    - 개발자가 직접 작성한 Class를 Bean으로 등록하기 위한 어노테이션.
-    - name이 아닌 value로 Bean의 이름을 지정함.
+    - 개발자가 직접 작성한 Class를 Bean으로 등록하기 위한 어노테이션
+    - name이 아닌 value로 Bean의 이름을 지정함
     
 # @Bean
-    - 개발자가 직접 제어 불가능한 외부 라이브러리를 Bean으로 만들기 위한 어노테이션.
-    - name으로 Bean 이름을 지정함.
+    - 개발자가 직접 제어 불가능한 외부 라이브러리를 Bean으로 만들기 위한 어노테이션
+    - name으로 Bean 이름을 지정함
    
 # @SessionAttributes
-    - Model에 key값이 "name"으로 있는 값을 자동 세션에 저장.
+    - Model에 key값이 "name"으로 있는 값을 자동 세션에 저장
     - ex. @SessionAttributes("loginUser")
    
 # @Autowired // @Inject
@@ -48,7 +48,10 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
     - 요청 URL을 어떤 method가 처리할지 mapping 해주는 역할
     - default : GET  
 
-# @
+# @PathVariable
+    - Http요청에 대해 매핑되는 Param값이 자동으로 Binding
+    - Uri 에서 각 구분자에 들어오는 값을 처리해야 할 때/ REST API 값 호출시 사용
+    - @GetMapping(value="/path/{id}") {}을 URL에 변수로 받을수 있음
        
           
 # @        
