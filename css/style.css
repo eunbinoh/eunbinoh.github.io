@@ -124,7 +124,7 @@
 	}
 
 	code {
-		background: rgba(74, 43, 104, 0.637);
+		background: rgba(147, 71, 223, 0.486);
 		border-radius: 5px;
 		color: #fff;
 		font-family: "Source Code Pro", monospace;
@@ -135,6 +135,7 @@
 
 	pre {
 		font-family: "Source Code Pro", monospace;
+		border-radius: 5px;
 		font-size: 0.9em;
 		width: 55em;
 	}
@@ -145,6 +146,7 @@
 			line-height: 1.5em;
 			overflow-x: auto;
 			padding: 2em 1.5em;
+			border-radius: 5px;
 		}
 
 	.align-left {
