@@ -1931,7 +1931,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: 'RIDIBatang';
 				font-weight: 900;
 			}
 
@@ -2035,7 +2035,7 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
+			font-family: 'RIDIBatang';
 			font-weight: 400;
 		}
 
@@ -2052,7 +2052,7 @@ input, select, textarea {
 		}
 
 		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: 'RIDIBatang';
 		}
 
 /* Image */
@@ -2406,12 +2406,12 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: 'RIDIBatang';
 				font-weight: 400;
 			}
 
 			ul.feature-icons li:before {
-				background: #4acaa8;
+				background: #330346;
 				border-radius: 100%;
 				color: #ffffff;
 				display: block;
@@ -3086,7 +3086,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #4acaa8;
+						background: #370042;
 						color: #ffffff;
 						content: '\f0c9';
 						display: block;

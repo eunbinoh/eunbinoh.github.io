@@ -33,9 +33,15 @@
 		}
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
-		font-family: FontAwesome;
+		font-family: RIDIBatang;
 		font-style: normal;
 		font-weight: normal;
 		text-transform: none !important;
 	}
+}
+@font-face {
+	$font-family:				'RIDIBatang', sans-serif;
+	$src		: 				url('/fonts/RIDIBatang.otf');
+	$font-weight:				normal;
+	$font-weight-bold:			700;
 }

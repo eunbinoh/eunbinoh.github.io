@@ -21,7 +21,7 @@
 
 	body, input, select, textarea {
 		color: #39196d;
-		font-family: "Lato", sans-serif;
+		font-family: "RIDIBatang", sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
 		line-height: 1.75em;
@@ -277,7 +277,7 @@
 			content: '\f078';
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: RIDIBatang;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -343,7 +343,7 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: RIDIBatang;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -448,7 +448,7 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: RIDIBatang;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -561,7 +561,7 @@
 				ul.feature-icons li:before {
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
+					font-family: RIDIBatang;
 					font-style: normal;
 					font-weight: normal;
 					text-transform: none !important;
