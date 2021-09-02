@@ -5,7 +5,7 @@ categories: [Project]
 tags: [SocketJS, websocket, Spring, messenger, chatting]
 ---
 
-# Final Project에서 만든 그룹웨어 메신저  
+# Project - 그룹웨어 메신저  
 - 웹소켓은 양방향 소통을 위한 프로토콜로, 적은 데이터를 빠르게 통신. ex. 코인, 주식 홈페이지
  + 하지만 호환,표준규격 등의 접근성 단점, 이에 대한 솔루션 : Socket.io & SockJS
   * Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.

@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Calendar"
+title: "Full_Calendar"
 date: 2021-08-30 00:00:00
 categories: [Project]
 tags: [FullCallendar, main.js, events.]
 ---
    
 
-## Google FullCalendar - 그룹웨어 일정관리   
+# Project - 그룹웨어 일정관리   
 
 
 ### #개발 디자인 (구상하기) 

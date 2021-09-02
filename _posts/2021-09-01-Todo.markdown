@@ -1,0 +1,221 @@
+---
+layout: post
+title:  "Todo List"
+categories: [Project]
+tags: [Todo List, checkbox, ajax, Spring]
+---
+
+# Project - 그룹웨어 업무목록(Todo)
+- 체크된 할일은 밑으로 내리고, 진행중인 할일이 올라오도록 정렬(DB 컬럼체크)
+- mouseenter하면 목록별 삭제(휴지통 아이콘) 보이고, 클릭시 라인 클릭 이벤트 off
+- 맨 밑칸은 input box, 라인 오른쪽에 저장버튼 생성
+- 체크시 가운데줄 그어지고 수정사항 바로 저장(update)
+      
+  ![Image name](https://eunbinoh.github.io//images/Final12.png)
+     
+  1. Controller   
+```    
+
+@SessionAttributes("loginUser")
+@Controller
+public class CalendarController {
+	@Autowired
+	private CalendarService cService;
+
+	@ResponseBody
+	@RequestMapping("listTodo")
+	public ArrayList<Todo> listTodo(HttpSession session) {
+		Member loginUser = (Member)session.getAttribute("loginUser");
+		String mcode = loginUser.getmCode();
+		ArrayList<Todo> todoList = cService.selectList(mcode);
+		if(todoList!=null) {
+			return todoList;
+		}else {
+			throw new MainException("To do list 조회 실패");
+		}
+	}
+		
+	@ResponseBody
+	@RequestMapping("addTodo")
+	public String addTodo(Todo todo, @RequestParam("chName") String chName, HttpSession session) {
+		Member loginUser = (Member)session.getAttribute("loginUser");
+		String mCode = loginUser.getmCode();
+		todo.setChName(chName);
+		todo.setmCode(mCode);
+		int result = cService.insertTodo(todo);
+		if(result>0) {
+			return "success";
+		}else {
+			return "fail";
+		}
+	}
+	
+	@ResponseBody
+	@RequestMapping("updateTodo")
+	public String updateTodo(@RequestParam("dchNo") int dchNo) {
+		int result = cService.updateTodo(dchNo);
+		if(result>0) {
+			return "success";
+		}else {
+			return "fail";
+		}
+	}
+	
+	@ResponseBody
+	@RequestMapping("deleteTodo")
+	public String deleteTodo(@RequestParam("dchNo") int dchNo) {
+		int result = cService.deleteTodo(dchNo);
+		if(result>0) {
+			return "success";
+		}else {
+			return "fail";
+		}
+	}
+```      
+
+  2. Mapper (쿼리문)    
+
+```      
+	<resultMap type="Todo" id="TodoResultMap">
+		<id column="CH_NO" property="chNo"/>
+		<result column="DCH_NO" property="dchNo"/>
+		<result column="CH_NAME" property="chName"/>
+		<result column="C_STATUS" property="chStatus"/>
+		<result column="M_CODE" property="mCode"/>
+	</resultMap>
+
+	<select id="listTodo" resultMap="TodoResultMap">
+		SELECT *
+		  FROM CHECKLIST
+		 WHERE M_CODE=#{mcode} AND C_STATUS='N'
+	  ORDER BY CH_NO DESC, DCH_NO DESC
+	</select>
+	
+	<insert id="insertTodo">
+		INSERT INTO CHECKLIST
+		VALUES (DEFAULT, SEQ_DCH.NEXTVAL, #{chName}, DEFAULT, #{mCode})
+	</insert>
+	
+	<update id="updateTodo">
+		UPDATE CHECKLIST
+		   SET CH_NO = 1
+		 WHERE DCH_NO=#{dchNo}  
+	</update>
+	
+	<update id="deleteTodo">
+		UPDATE CHECKLIST
+		   SET C_STATUS='Y'
+		 WHERE DCH_NO=#{dchNo}
+	</update>
+
+```
+
+  3. jsp (ajax,function)   
+
+```   
+<script>
+$( document ).ready(function() {	
+	listTodo();
+	function listTodo(){
+		$.ajax({
+			url: 'listTo',
+			success: function(data){
+				$todiv = $('.to-do-list');
+				$todiv.html('');
+				
+				if(data.length>0){
+					for(var i in data){
+						$li= $([
+							'<li class="checkbox-fade fade-in-primary d-block">'
+							,'   <label class="check-task d-block">'
+							,'      <input type="checkbox" id="checkbox">'
+							,'       <span class="cr">'
+							,'			 <i class="cr-icon icofont icofont-ui-check txt-default"></i>'		
+							,'		 </span>'	
+							,'		 <div><h6 class="todoName"></h6>'
+							,'			 <span class="f-right" style="margin-top:-10px;">'
+							,'	 			<a class="delete_todolist">'
+							,'					<i class="icofont icofont-ui-delete" style="cursor:pointer"></i>'
+							,'	 			</a>'
+							,'   		 </span>'
+							,'		 </div>'
+							,' 	 </label>'
+							,' 	 <hr>'
+							,'</li>'
+						].join(''));
+						
+						if(data[i].chNo=='2'){
+							$li.find('#checkbox').attr("checked",false);
+						}else{
+							$li.find('#checkbox').attr("checked",true);
+							$li.find('.todoName').css("text-decoration", "line-through");
+						}
+						$li.find('.todoName').text(data[i].chName);
+						$li.find('.delete_todolist').attr("onclick","delete_todo('"+data[i].dchNo+"')");
+						$li.find('#checkbox').attr("onchange","update_todo('"+data[i].dchNo+"')");
+						
+						$todiv.append($li);
+					}
+				}	
+			}
+		});
+	}
+});//document ready end    
+
+$('#saveBtn').on('click',function(){
+	var chName;
+		chName = $('#addTodo').val();
+	if(chName.trim()!=""){
+		$.ajax({
+			url: 'addTodo',
+			data: { 'chName': chName},
+			success: function(data){
+				location.reload();
+			}
+		});
+	}else{
+		$('#addTodo').val('').focus();
+	}
+})
+
+function update_todo(dchNo){
+	$.ajax({
+		url: 'updateTo',
+		data: { 'dchNo': dchNo },
+		success: function(data){
+			if(data=="success"){
+				location.reload();
+			}else{
+				console.log(data);
+			}
+		}
+	});
+}
+
+function delete_todo(dchNo){
+	$.ajax({
+		url: 'deleteTo',
+		data: { 'dchNo': dchNo },
+		success: function(data){
+			if(data=="success"){
+				location.reload();
+			}else{
+				console.log(data);
+			}
+		}
+	});
+}
+</script>
+// 클릭 연계 이벤트 vendor.js 에 추가   
+
+```
+
+
+# 후기
+- 메신저, 캘린더로 고생했더니 TodoList는 하루만에 클리어!
+- 예전 프로젝트 포트폴리오에 올리다보니, 참 많이 성장한거같지만,
+- 아직도 갈길은 멀고, 팔 땅은 깊은것 같다.
+- 오늘의 코딩개미, 땅위로 올라가는 날까지 파이팅!
+
+![Image name](https://eunbinoh.github.io//images/Final11.png)
+     

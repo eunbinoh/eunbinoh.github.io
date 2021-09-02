@@ -1,0 +1,217 @@
+---
+layout: post
+title:  "다이어트 다이어리"
+categories: [Project]
+tags: [Diet Diary, ajax ]
+---   
+
+### 추천식단 계획 & 기록
+  ![Image name](https://eunbinoh.github.io//images/PT2.png)   
+- Left Tab : 유형별로 업데이트 되는 추천식단 클릭시 textarea에 글로 담기도록 설정.
+- Mid Tab : 날짜 선택(캘린더 첨부), 문자 피드백(글자수 카운트), 저장시 우측탭에 실시간 반영.
+- Right Tab : 게시판형 날짜, 내용 조회, 전체체크/개별체크 삭제기능. 
+   
+  1. javascript (ajax, function)   
+     
+```      
+<script>
+$(function(){
+	$('#diet').addClass('active');
+	$('.menus').not('#diet').removeClass('active');
+});
+$('#selectDiet ul>li>label').on('click', function(){
+	$(this).next().slideToggle();
+	$('#selectDiet ul li ul').not($(this).next()).slideUp();
+});
+$('#selectDiet ul li ul li').on('click', function(){
+	$('#tBox').val($(this).attr('value'));
+});
+     
+$('#tBox').keyup(function(e){
+	var memo = $(this).val();
+	$('#tcount').html(memo.length);
+	if(memo.length>100){
+		alert("200자 이내로 입력해주세요!");
+		$(this).val(memo.substring(0,200));
+		$('#tcount').html('200');
+		$('#tcount').css('color','orangered');            
+	}else{
+	$('#tcount').css('color',' #c1dff0');  
+	}
+});
+    
+$('#saveBtn').on('click',function(){
+var dateNo = $('#date').val();			
+var dtext = $('#tBox').val();			
+var userId = '<%=loginUser.getUserId()%>';
+	$.ajax({
+		url : 'dForm.save',
+		data : {
+			dateNo : dDate,
+			dtext : memo,
+			userId : userId
+		},
+		success : function(data) {
+			$('#tBox').text('');
+			var $tB = $('#dTable');
+			$tB.html('');
+			for ( var i in data) {
+				var d = data[i];
+				var $tr = $('<tr>');
+				var $dateTd = $('<th>').html(d.dDate);
+				var $memoTd = $('<td>').html(d.memo);
+				$tr.append($dateTd);
+				$tr.append($memoTd);
+				$tB.append($tr);
+			}
+		}
+	});
+});
+
+$('#chall').click(function() {
+	if ($("#chall").prop("checked")) {
+		$("input[type=checkbox]").prop("checked", true);
+	} else {
+		$("input[type=checkbox]").prop("checked", false);
+	}
+});
+
+$('#deleteBtn').on('click', function() {
+	var charr = new Array();
+	$("input[name=checkRow]:checked").each(function(i) {
+		charr[i] = $(this).attr("value");
+		console.log("charr[]:" + charr[i]);
+	});
+	if (charr.length == 0) {
+		alert("삭제하려는 글을 체크하세요");
+	} else {
+		$.ajax({
+			url : 'dForm.delete',
+			data : {
+				'charr' : charr
+			},
+			success : function(result) {
+				console.log(result);
+				if (result == 'd.success') {
+					console.log("선택된 식단기록 삭제 성공");
+					location.reload();
+				} else {
+					console.log("선택된 식단기록 삭제 실패");
+				}
+			},
+			error : function(result) {
+				console.lof("res:" + result)
+				console.log("ajax 삭제 실패");
+			}
+		});
+		charr = new Array(); //초기화
+	}
+});
+
+function validate() {
+	var date = $('#date');
+	var memo = $('#tBox');
+	if (date.val().trim().length == 0) {
+		alert("날짜를 선택하세요");
+		date.focus();
+		return false;
+	}
+	if (memo.val().trim().length == 0) {
+		alert("추천 식단을 선택하거나 식단 내용을 작성해주세요");
+		memo.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+
+```   
+
+2. DAO
+   
+```   
+public class dDAO {
+	private Properties prop = new Properties();
+	
+	public dDAO() {
+		String fileName = dDAO.class.getResource("/query/diet-query.properties").getPath();
+		try {
+			prop.load(new FileReader(fileName));
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<Diet> listDiet(Connection conn, String userId) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<Diet> list = new ArrayList<Diet>();
+		String query = prop.getProperty("listD");
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, userId);
+			rset= pstmt.executeQuery();
+			while(rset.next()) {
+				list.add(new Diet(rset.getInt("d_code"),
+							      rset.getDate("d_date"),
+							      rset.getString("memo"),
+							      rset.getString("id"),
+							      rset.getString("status")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
+	}
+	
+	public int insertDiet(Connection conn, Diet d) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = prop.getProperty("saveD");
+		
+		try {
+			pstmt= conn.prepareStatement(query);
+			pstmt.setDate(1, d.getdDate());
+			pstmt.setString(2, d.getMemo());
+			pstmt.setString(3, d.getUserId());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+				
+		return result;
+	}
+	
+	public int deleteD(Connection conn, int ch) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = prop.getProperty("deleteD");
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, ch);
+			result = pstmt.executeUpdate();
+			System.out.println("delete dao result:"+result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+} 
+
+   ```   
+

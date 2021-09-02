@@ -1,0 +1,234 @@
+---
+layout: post
+title:  "Shopping Review"
+categories: [Project]
+tags: [Review, starRate, ajax, javascript]
+---
+
+  
+### 상품 리뷰 및 평점
+  ![Image name](https://eunbinoh.github.io//images/PT4.png)   
+- 실시간으로 Review Size 가져와서 카운트 ( ) 표기
+- 이름, 기록시간, 평점, 작성내용 DB 가져오기
+- 작성자에게만 수정,삭제 버튼 보이도록 작성글 위치 찾아서 조건 달기
+- 작성시 내용글이나 평점(별클릭갯수) 둘다 null 일수 없도록 유효성검사 설정.   
+   
+   
+  1. ProductInfo - Review.jsp   
+     
+```      
+<!-- 리뷰탭 시작-->
+<div class="col-lg-6 col-md-6">
+	<div class="col-12">
+		<div class="classic-tabs border1 rounded pt-3">
+			<ul class="nav tabs-primary nav-justified" id="advancedTab"
+				role="tablist">
+				<li class="nav-item">
+				<a class="nav-link active show"
+					id="description-tab" data-toggle="tab" href="#description"
+					role="tab" aria-controls="description" aria-selected="true">Description</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" id="info-tab"
+					data-toggle="tab" href="#info" role="tab" aria-controls="info"
+					aria-selected="false">Information</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" id="reviews-tab"
+					data-toggle="tab" href="#reviews" role="tab"
+					aria-controls="reviews" aria-selected="false"> (<%=reviews.size()%>) Reviews **
+				</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="advancedTabContent">
+				<div class="tab-pane fade" id="reviews" role="tabpanel"
+					aria-labelledby="reviews-tab">
+					<h5>
+						<strong> Reviews </strong>
+					</h5>
+					<div class="media mt-3 mb-4">
+						<div class="media-body">
+							<% if(reviews.isEmpty()){ %>
+								<div style="color: gray"> 작성된 리뷰가 없습니다.</div>
+							<% } else{ %>
+							<% for(int i=0; i<reviews.size(); i++){ %>
+							<div>
+								<strong id="nblank"><%=reviews.get(i).getName() %></strong>님의 Review (
+								<strong id="dblank" value="<%=reviews.get(i).getCdate()%>"><%=reviews.get(i).getCdate()%></strong>
+								
+								<div class="sblank" value="<%=reviews.get(i).getstar() %>">
+									<i class="fas fa-star fa-2x"></i>
+									<i class="fas fa-star fa-2x"></i>
+									<i class="fas fa-star fa-2x"></i>
+									<i class="fas fa-star fa-2x"></i>
+									<i class="fas fa-star fa-2x"></i>
+								</div>
+								<br>
+								<div class="mb-0" id="cblank">
+									&nbsp;<%=reviews.get(i).getContent() %>
+								</div>
+								<br>
+								<% if((reviews.get(i).getName()).equals(loginUser.getUserName())){ %>
+								<span class="update" id="update_<%=reviews.get(i).getRnum()%>"> 
+									<input type="text" class="cbmod" id="cblankmod_<%=reviews.get(i).getRnum()%>" name="content" value="<%=reviews.get(i).getContent() %>">
+									<button class="reviewUp" id="reviewUp_<%=reviews.get(i).getRnum()%>">Save</button>
+								</span> 
+								<span id="model">
+									<button class="reviewMod" id="reviewMod_<%=reviews.get(i).getRnum()%>">Modify</button>
+									<button class="reviewDel" id="reviewDel_<%=reviews.get(i).getRnum() %>">Delete</button>
+								</span>
+								<% } else { %>
+								<% } %>
+							</div>
+							<hr>
+							<% } %>
+							<% } %>
+						</div>
+					</div>
+					<hr>
+					<p>Please your Review.</p>
+					<div id="ratingBox">
+					<i class="fas fa-star ratings fa-2x"></i>
+					<i class="fas fa-star ratings fa-2x"></i>
+					<i class="fas fa-star ratings fa-2x"></i>
+					<i class="fas fa-star ratings fa-2x"></i>
+					<i class="fas fa-star ratings fa-2x"></i>
+					</div>
+					<div class="md-form md-outline">
+						<textarea id="form76" name="content"
+							class="md-textarea form-control pr-6" rows="4"
+							placeholder="★★★★☆ 상품에 대한 평점 또는 후기를 남겨주세요. ">
+						</textarea>
+						<br>
+						<button type="submit" id="reviewInsert">Write</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	   
+
+```   
+
+2. script
+   
+```   
+<script>
+$(document).on('click', '#reviews-tab', function(){
+	$('.sblank').each(function(i) {
+		var num = Number($(this).attr('value'));
+		for(var n = 0; n <= num; n++) {
+			$(this).children().eq(n).css('color', '#e3c032');
+		}
+		
+	});
+});
+
+$('#reviewInsert').on('click',function(){
+	if($('#form76').val().trim().length== 0){
+			alert("후기를 작성해주세요");
+			$('#form76').focus();
+			return false;
+	}
+			
+	var Icode = '<%=item.getItemCode() %>';
+	var name = '<%=loginUser.getUserName()%>';
+	var content = $('#form76').val();	
+	var star = $('#stars option:selected').val();
+	console.log(star);
+			
+	$.ajax({
+		url: 'review.insert',
+		data: {'Icode':Icode, 'name':name, 'content':content, 'star':rat},
+		success: function(data){
+				$('#contentBox').val('');
+					var $nb = $('#nblank');
+					var $db = $('#dblank');
+					var $cb = $('#cblank');
+					var $sb = $('#sblank');
+					
+				for(var i in data){
+					$nb.text(data[i].name);
+					$db.text(data[i].cdate);
+					$cb.text(data[i].content);
+					$sb.html(data[i].star);
+					var rating = Number(data[i].star);
+				}
+				location.reload();
+		},
+		error: function(data){
+			console.log("reviewInsert ajax error");
+		}
+	}); 
+});
+	      
+var rat = 0;
+$('.ratings').on('click', function(){
+	rat = $(this).index();
+	console.log(rat);
+	$('.ratings').css('color', '#797979');
+	for(var i = 0; i <= rat; i++){
+		$('.ratings').eq(i).css('color', '#e3c032');
+	}
+});
+   
+$('.reviewMod').on('click',function(){
+	var rn = $(this).attr('id');
+	var rnum = rn.substring(rn.indexOf('_')+1);
+	var up = $('.update').attr('id');
+	var upnum = up.substring(up.indexOf('_')+1);
+		console.log("upnum:"+upnum);
+		console.log("rnum:"+rnum);
+	$('#update_'+rnum).show();
+	console.log("++rnum:", $('#update_'+rnum));
+});
+	   
+$('.reviewUp').on('click',function(){
+	var Icode = '<%=item.getItemCode() %>';
+	var rn = $(this).attr('id');
+	var rnum = rn.substring(rn.indexOf('_')+1);
+	var name = '<%=loginUser.getUserName()%>';
+	var content = $('#cblankmod_'+rnum).val();			
+			
+	$.ajax({
+		url: 'review.update',
+		data: {'Icode':Icode, 'rnum':rnum, 'name':name, 'content':content},
+		success: function(data){
+				var $cb = $('#cblank');
+				for(var i in data){
+					$cb.text(data[i].content);
+				}
+				location.reload();
+		},
+		error: function(data){
+			console.log("reviewUpdate ajax error");
+		}
+	}); 
+});
+	   
+$('.reviewDel').on('click',function(){
+	var bool = confirm("해당 리뷰를 삭제하시겠습니까?");
+	if(bool){
+		var Icode = '<%=item.getItemCode() %>';
+		var rn = $(this).attr('id');
+		var rnum = rn.substring(rn.indexOf('_')+1);
+		var name = '<%=loginUser.getUserName()%>';
+		$.ajax({
+			url:'review.delete',
+			data: {'Icode':Icode, 'rnum':rnum, 'name':name},
+			success: function(result){
+				console.log("d result:"+result)
+				location.reload();
+			},
+			error: function(data){
+				console.log("reviewDel ajax error");
+				console.log("result:"+result);
+			}
+		});
+	}
+});
+	   
+</script>   
+
+   ```   
+
