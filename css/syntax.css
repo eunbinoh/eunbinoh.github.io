@@ -9,7 +9,7 @@
   font-style: italic;
 }
 .highlight .cp {
-  color: #07702f;
+  color: #340d66;
   font-weight: bold;
 }
 .highlight .err {
@@ -23,16 +23,16 @@
   font-weight: bold;
 }
 .highlight .o, .highlight .ow {
-  color: #07702f;
+  color: #340d66;
 }
 .highlight .p, .highlight .pi {
-  color: #07702f;
+  color: #340d66;
 }
 .highlight .gd {
   color: #b60d9a;
 }
 .highlight .gi {
-  color: #07702f;
+  color: #340d66;
 }
 .highlight .ge {
   font-style: italic;
