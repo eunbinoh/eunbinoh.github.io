@@ -5,8 +5,13 @@ layout: default
     <div class="container">
         <header class="major">
             <h2>{{ page.title }}</h2>
-                <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-        </header>
+                <p class="post-meta" style="font-size: 10px !important;">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+                {% if page.tags %}
+                    {% for tag in page.tags %}
+                        <span class="tag" style="right: 0; background-color: rgb(61, 27, 75);">{{ tag }}</span>
+                    {% endfor %}
+                {% endif %}
+            </header>
 
         <section class="post-content">
             {{ content }}
