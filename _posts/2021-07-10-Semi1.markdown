@@ -14,9 +14,9 @@ tags: [Login, JOIN, java, 정규표현식, 유효성검사]
 
 ### 회원가입 & 로그인
   ![Image name](https://eunbinoh.github.io//images/PT1.png)   
-  1. JoinInsertServlet   
+- JoinInsertServlet   
      
-```   
+```javascript   
 @WebServlet(urlPatterns="/insert.me", name="JoinInsertServlet")
 public class JoinInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -70,9 +70,9 @@ public class JoinInsertServlet extends HttpServlet {
 
 ```   
 
-2. DAO
+- DAO
    
-   ```   
+```java   
 public class userDAO {
 	private Properties prop = new Properties();
 	
@@ -251,12 +251,12 @@ public class userDAO {
 # 오마이갓! 스프링 쓰기전엔 이렇게.. 병아리 시절.. 삐약.
    
 ### 홈페이지 소개글을 만들면서
--- 학교 다닐 때 이과생이면서도 _글쓰기를 좋아했던 나_ ,
--- 내가 코딩에 매력을 빠지게 된 건 어쩌면 논리적인 글을 쓰면서부터 시작된 것.
--- 인과관계, 규칙에 따른 결과, 수식을 더 효과적으로하는 방법을 찾는 것.
--- 시대적 배경, 필요성, 필요에 따른 장점을 어필하는 재미가 있었다.
--- 글을 쓰기 시작하면 나도 모르게 술술 써지는것처럼 코딩도 술술 써지는 날이 빨리 왔으면 좋겠다 !
--- 코드를 쓰는게 점점 익숙해지고 있다는건, 꽤 기분이 좋은 일이다 ^^.
+-- 학교 다닐 때 이과생이면서도 _글쓰기를 좋아했던 나_ ,   
+-- 내가 코딩에 매력을 빠지게 된 건 어쩌면 논리적인 글을 쓰면서부터 시작된 것.   
+-- 인과관계, 규칙에 따른 결과, 수식을 더 효과적으로하는 방법을 찾는 것.   
+-- 시대적 배경, 필요성, 필요에 따른 장점을 어필하는 재미가 있었다.   
+-- 글을 쓰기 시작하면 나도 모르게 술술 써지는것처럼 코딩도 술술 써지는 날이 빨리 왔으면 좋겠다 !   
+-- 코드를 쓰는게 점점 익숙해지고 있다는건, 꽤 기분이 좋은 일이다 ^^.   
    
 ![Image name](https://eunbinoh.github.io//images/PT5.png)
      

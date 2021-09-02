@@ -13,8 +13,9 @@ tags: [Todo List, checkbox, ajax, Spring]
       
   ![Image name](https://eunbinoh.github.io//images/Final12.png)
      
-  1. Controller   
-```    
+- Controller    
+
+```javascript    
 
 @SessionAttributes("loginUser")
 @Controller
@@ -73,9 +74,9 @@ public class CalendarController {
 	}
 ```      
 
-  2. Mapper (쿼리문)    
+- Mapper (쿼리문)    
 
-```      
+```javascript      
 	<resultMap type="Todo" id="TodoResultMap">
 		<id column="CH_NO" property="chNo"/>
 		<result column="DCH_NO" property="dchNo"/>
@@ -110,9 +111,9 @@ public class CalendarController {
 
 ```
 
-  3. jsp (ajax,function)   
+- jsp (ajax,function)   
 
-```   
+```javascript   
 <script>
 $( document ).ready(function() {	
 	listTodo();

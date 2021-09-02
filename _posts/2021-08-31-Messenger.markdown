@@ -7,9 +7,9 @@ tags: [SocketJS, websocket, Spring, messenger, chatting]
 
 # Project - 그룹웨어 메신저  
 - 웹소켓은 양방향 소통을 위한 프로토콜로, 적은 데이터를 빠르게 통신. ex. 코인, 주식 홈페이지
- + 하지만 호환,표준규격 등의 접근성 단점, 이에 대한 솔루션 : Socket.io & SockJS
-  * Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
-  * SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
+	+ 하지만 호환,표준규격 등의 접근성 단점, 이에 대한 솔루션 : Socket.io & SockJS
+  	- Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
+  	-  SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
     -> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.   
     -> 웹브라우저가 아닌 Android, ios : STOMP-websocket 메세지 프로토콜 호환 가능.
       
@@ -18,8 +18,8 @@ tags: [SocketJS, websocket, Spring, messenger, chatting]
 ### 양방향통신 웹소켓 - SockJS 사용한 메신저 만들기
   ![Image name](https://eunbinoh.github.io//images/Final9.png)
      
-  1. Handler   
-```   
+- Handler   
+```javascript   
 @Component
 public class HandlerChat extends TextWebSocketHandler{
 	@Autowired
@@ -91,9 +91,9 @@ public class HandlerChat extends TextWebSocketHandler{
 	}
 }
 ```    
-  2. Controller     
+- Controller     
 
-```   
+```javascript   
 public class MsController {
 	@Autowired
 	private MsService msService;
@@ -142,8 +142,8 @@ public class MsController {
 #### 대화목록 History(채팅방 형식), 소속부서원만 보이는 그룹톡방 1번으로 정렬
 ##### 그룹방은 삭제버튼 보이지 않음, 새로운 알람시 new label 생성
   ![Image name](https://eunbinoh.github.io//images/Final5.png)   
-  1. Controller   
-```   
+- Controller   
+```javascript   
 @ResponseBody
 	@RequestMapping(value="chatRoomList" , produces="application/json; charset=UTF-8")
 	public List<ChatVo> RoomList(Room r, String userName,HttpSession session,HttpServletResponse response)throws IOException {
@@ -179,9 +179,9 @@ public class MsController {
 
 ```   
    
-  2. Mapper (쿼리문/Oracle)      
+- Mapper (쿼리문/Oracle)      
 
-```   
+```javascript   
 
 	<select id="RoomList" resultMap="RoomResultMap">
 		SELECT *
@@ -203,9 +203,9 @@ public class MsController {
 ##### 기존 대화기록 중에 방이 있는지 체크 후, 없으면 생성, 있으면 연결해서 들어가기   
   ![Image name](https://eunbinoh.github.io//images/Final8.png)    
 
-  2. Controller      
+- Controller      
 
-```   
+```javascript   
 
 @ResponseBody
 	@RequestMapping("createChat")
@@ -239,9 +239,9 @@ public class MsController {
 
 ```   
 
-  2. Mapper (쿼리문/Oracle)   
+-  Mapper (쿼리문/Oracle)   
 
-```   
+```javascript   
 
 	<select id="toList" resultMap="MemberResultMap">
 	   SELECT M_CODE, M_NAME, M_ID, DEPT_NO, DEPT_NAME, J_NAME, J_NO
@@ -271,9 +271,9 @@ public class MsController {
 #### 채팅방(이전 메세지기록 DB + 소켓 실시간 채팅)
   ![Image name](https://eunbinoh.github.io//images/Final6.png)   
 
-  1. Controller   
+- Controller   
 
-```   
+```javascript   
 
 @ResponseBody
 	@RequestMapping(value = "rno_{roomId}", produces="application/json; charset=UTF-8")
@@ -292,9 +292,9 @@ public class MsController {
 
 ```   
    
-  2.  Mapper (쿼리문/Oracle)   
+-  Mapper (쿼리문/Oracle)   
 
-```   
+```javascript   
 
 <select id="selectList" resultMap="MsResultMap">
 	   SELECT *
@@ -325,9 +325,9 @@ public class MsController {
    
 #### MS.jsp (socket connect, ajax,.. 중략)
   ![Image name](https://eunbinoh.github.io//images/Final4.png)
-  1. sockJS   
+- sockJS   
 
-```   
+```javascript   
 
 $(document).ready(function() {
 	var sock; //웹소켓 전역변수 설정
@@ -385,9 +385,9 @@ $(document).ready(function() {
 
 ```   
    
-  2. 채팅방 대화 FORM & AJAX   
+- 채팅방 대화 FORM & AJAX   
      
-```   
+```javascript   
 
 	var roomId;
 	var toId;

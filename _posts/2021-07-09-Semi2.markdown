@@ -14,9 +14,9 @@ tags: [Review, starRate, ajax, javascript]
 - 작성시 내용글이나 평점(별클릭갯수) 둘다 null 일수 없도록 유효성검사 설정.   
    
    
-  1. ProductInfo - Review.jsp   
+- ProductInfo - Review.jsp   
      
-```      
+```java   
 <!-- 리뷰탭 시작-->
 <div class="col-lg-6 col-md-6">
 	<div class="col-12">
@@ -110,9 +110,9 @@ tags: [Review, starRate, ajax, javascript]
 
 ```   
 
-2. script
+-  script
    
-```   
+```javascript   
 <script>
 $(document).on('click', '#reviews-tab', function(){
 	$('.sblank').each(function(i) {
