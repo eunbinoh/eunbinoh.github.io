@@ -3,7 +3,12 @@
 @import url("/fonts/fontawesome-webfont.svg");
 @import url("/fonts/fontawesome-webfont.ttf");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
-
+@font-face{
+	font-family: 'RIDIBatang';
+	src: url('/fonts/RIDIBatang.otf');
+	font-weight: normal;
+	font-style: normal;
+}
 /*
 	Read Only by HTML5 UP
 	html5up.net | @ajlkn
@@ -102,7 +107,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #888;
-		font-family: "Lato", sans-serif;
+		font-family: "RIDIBatang", sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
 		line-height: 1.75em;
@@ -3076,7 +3081,7 @@ input, select, textarea {
 						text-rendering: auto;
 						line-height: 1;
 						text-transform: none !important;
-						font-family: 'Font Awesome 5 Free';
+						font-family: 'RIDIBatang';
 						font-weight: 900;
 					}
 
