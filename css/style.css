@@ -1034,6 +1034,12 @@
 					#header > nav ul li a.active{
 						background: #fff;
 						color: #410777 !important;
+						font-weight: bold;
+					}
+
+					#header > nav ul li a:hover{
+						background: rgb(143, 127, 143);
+						color: #410777 !important;
 					}
 
 				#header > nav ul li:first-child {

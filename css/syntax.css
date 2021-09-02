@@ -9,7 +9,7 @@
   font-style: italic;
 }
 .highlight .cp {
-  color: #41ff5b;
+  color: #168625;
   font-weight: bold;
 }
 .highlight .err {
@@ -25,10 +25,10 @@
   font-weight: bold;
 }
 .highlight .o, .highlight .ow {
-  color: #41ff5b;
+  color: #168625;
 }
 .highlight .p, .highlight .pi {
-  color: #41ff5b;
+  color: #168625;
 }
 .highlight .gd {
   color: #CC0000;
@@ -153,15 +153,15 @@
   color: #BBBBBB;
 }
 .highlight .nf, .highlight .fm {
-  color: #41ff5b;
+  color: #168625;
 }
 .highlight .py {
-  color: #41ff5b;
+  color: #168625;
 }
 .highlight .na {
-  color: #41ff5b;
+  color: #168625;
 }
 .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm {
-  color: #41ff5b;
+  color: #168625;
   font-weight: bold;
 }
