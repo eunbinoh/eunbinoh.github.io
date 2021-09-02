@@ -10,39 +10,62 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
     - 1개의 HTTP 파라미터를 얻기 위해 사용됨
     - required=false 설정 필요 (default true)   
    
+# @ResponseBody   
+    - HTTP요청 Body의 내용을 자바 객체로 전달
+    - Param type이 확인되면 통째로 변환해서 지정 메소드 Param으로 전송
+   
 # @RequestBody
     - Json으로 받은 HTTP Body 데이터를 MessageConverter를 통해 변환
-    - 변환시켜주기 때문에(Reflection), Setter 없이 변수 그대로 저장    
-   
+    - 변환시켜주기 때문에(Reflection), Setter 없이 변수 그대로 저장     
+    
 # @ModelAttribute
     - multipart/form-data 형태의 Body, Param을 Setter를 통해 1:1로 객체에 바인딩
-    - 바인딩은 Setter 필요, setter없으면 변수가 저장되지 않음   
+    - 바인딩은 Setter 필요, setter없으면 변수가 저장되지 않음            
+   
+# @RestController   
+    - 리턴값에 자동으로 @ResponseBody 붙여줌, HttpResponse로 바로 응답 가능
+    - 메소드 결과를 JSON 형태로 리턴
+    - view가 필요없는 API만 지원하는 서비스에서 사용
+    - @Controller + @ResponseBody
+
+# @Component
+    - 개발자가 직접 작성한 Class를 Bean으로 등록하기 위한 어노테이션.
+    - name이 아닌 value로 Bean의 이름을 지정함.
+    
+# @Bean
+    - 개발자가 직접 제어 불가능한 외부 라이브러리를 Bean으로 만들기 위한 어노테이션.
+    - name으로 Bean 이름을 지정함.
+   
+# @SessionAttributes
+    - Model에 key값이 "name"으로 있는 값을 자동 세션에 저장.
+    - ex. @SessionAttributes("loginUser")
+   
+# @Autowired // @Inject
+    - 스프링에서 무조건적인 객체에 대한 의존성을 자동 주입
+    - 주로 Controller 에서 DAO, Service 객체 주입시 많이 사용
+   
+# @RequestMapping
+    - 요청 URL을 어떤 method가 처리할지 mapping 해주는 역할
+    - default : GET  
+
+# @
+       
+          
+# @        
    
       
+
+
          
- ---           
- - - -           
-# @
-   
-
-# @
-   
-
-# @
-    
-
-# @
-   
-
-# @
 
 - - -
 - - -
+   
 
 ## Example
 
  - Model 객체 
-{% highlight Java %}
+~~~Java 
 
 @Getter
 @Setter
@@ -53,11 +76,17 @@ public class Board {
     private String contents;  // 작성 내용
 }
 
-{% endhighlight %}
+~~~
 
 
+
+
+
+
+   
+   
  - Spring 
-{% highlight Java %}
+~~~ Java
 
 @RestController
 @RequestMapping("/board")
@@ -97,9 +126,9 @@ public class BoardController {
         return ResponseEntity.ok(boardList);
     }
 }
-{% endhighlight %}
+~~~
 
-{% highlight Java %}
+```Java
 Request URL: http://localhost:8080/board/modelAttribute?contents=Contents
 Request Body:
     -type: multipart/form-data
@@ -107,7 +136,7 @@ Request Body:
             "index"  : 1,
             "writer" : "MangKyu"
     }
-{% endhighlight %}
+```
  
 - - -
 
