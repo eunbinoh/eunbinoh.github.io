@@ -176,7 +176,7 @@
 	header p {
 		color: #2f145a;
 		position: relative;
-		margin: 0 0 1.6875em 0;
+		margin: 0 0 1em 0;
 	}
 
 	header h2 + p {
@@ -938,13 +938,13 @@
 /* Header */
 
 	#header {
-		background: #410777;
-		color: #d1f1e9;
+		background: #110120;
+		color: #f7e7fc;
 		height: 100%;
 		position: fixed;
 		text-align: center;
 		top: 0;
-		width: 23em;
+		width: 20em;
 		right: 0;
 	}
 
@@ -969,12 +969,12 @@
 			}
 
 		#header > header {
-			padding: 3em;
+			padding: 2em 2em 0.5em 2em;
 		}
 
 			#header > header .avatar {
 				display: block;
-				margin: 0 auto 2.25em auto;
+				margin: 0 auto 1.5em auto;
 				width: 8em;
 			}
 
@@ -992,13 +992,13 @@
 		#header > footer {
 			bottom: 0;
 			left: 0;
-			padding: 2em;
+			padding: 1em 2em;
 			position: relative;
 			width: 100%;
 		}
 
 			#header > footer .icons {
-				margin: 0;
+				margin: -10px 0;
 			}
 
 				#header > footer .icons li a {
@@ -1009,6 +1009,7 @@
 			list-style: none;
 			margin: 0;
 			padding: 0;
+			line-height
 		}
 
 			#header > nav ul li {
