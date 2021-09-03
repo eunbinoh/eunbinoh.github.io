@@ -52,43 +52,31 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
     - Http요청에 대해 매핑되는 Param값이 자동으로 Binding
     - Uri 에서 각 구분자에 들어오는 값을 처리해야 할 때/ REST API 값 호출시 사용
     - @GetMapping(value="/path/{id}") {}을 URL에 변수로 받을수 있음
-       
-          
+                 
 # @        
    
       
-
-
-         
-
+---   
 - - -
 - - -
    
 
 ## Example
 
- - Model 객체 
-~~~Java 
+- Model 객체 
+```Java 
 
-@Getter
-@Setter
-@ToString
-public class Board {
-    private int index; // 게시물 번호
-    private String writer; // 작성자 이름
-    private String contents;  // 작성 내용
+@Getter   
+@Setter   
+@ToString   
+public class Board {   
+    private int index; // 게시물 번호   
+    private String writer; // 작성자 이름   
+    private String contents;  // 작성 내용   
 }
-
-~~~
-
-
-
-
-
-
-   
-   
- - Spring 
+```   
+      
+- Spring 
 ~~~ Java
 
 @RestController
