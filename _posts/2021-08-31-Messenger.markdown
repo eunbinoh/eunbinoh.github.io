@@ -93,7 +93,7 @@ public class HandlerChat extends TextWebSocketHandler{
 ```    
 - Controller     
 
-```javascript   
+~~~javascript   
 public class MsController {
 	@Autowired
 	private MsService msService;
@@ -135,15 +135,18 @@ public class MsController {
 		}
 		return mList;
 	}
-
-```
+~~~
+   
+   
 --- 
 
 #### 대화목록 History(채팅방 형식), 소속부서원만 보이는 그룹톡방 1번으로 정렬
 ##### 그룹방은 삭제버튼 보이지 않음, 새로운 알람시 new label 생성
-  ![Image name](https://eunbinoh.github.io//images/Final5.png)   
+  ![Image name](https://eunbinoh.github.io//images/Final5.png)     
+   
 - Controller   
-```javascript   
+
+``` javascript 
 @ResponseBody
 	@RequestMapping(value="chatRoomList" , produces="application/json; charset=UTF-8")
 	public List<ChatVo> RoomList(Room r, String userName,HttpSession session,HttpServletResponse response)throws IOException {
