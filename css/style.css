@@ -124,14 +124,14 @@
 	}
 
 	code {
-		background: rgba(85, 85, 85, 0.459);
+		background: #311f5e2c;
 		border-radius: 5px;
 		color: #fff;
 		font-family: "Source Code Pro", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
-		tab-size: 2 !important;
+		tab-size: 3 !important;
 	}
 
 	pre {
@@ -144,10 +144,10 @@
 		pre code {
 			-webkit-overflow-scrolling: touch;
 			display: block;
-			line-height: 1.3em;
+			line-height: 1.5em;
 			overflow-x: auto;
-			padding: 2em 1.5em;
-			tab-size: 2 !important;
+			padding: 2em 1.5em 1.5em 2em;
+			tab-size: 3 !important;
 		}
 
 	.align-left {
@@ -1055,6 +1055,7 @@
 		background-color: #22053f2d;
 		padding: 10em 10em 5em 10em;
 		width:80%;
+		color:rgba(160, 160, 158, 0.726)
 	}
 	
 
