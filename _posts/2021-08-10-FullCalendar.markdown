@@ -33,7 +33,7 @@ tags: [FullCallendar, main.js, events.]
   ![Image name](https://eunbinoh.github.io//images/Final2.png)   
 
 - Controller
-```
+```java
 @SessionAttributes("loginUser")
 @Controller
 public class CalendarController {
@@ -83,7 +83,7 @@ public class CalendarController {
    
 - Mapper   
 
-```   
+```SQL   
 
 <mapper namespace="calendarMapper">
 	<resultMap type="calendar" id="CalResultMap">
@@ -130,7 +130,7 @@ public class CalendarController {
 
  + 일정 등록.js   
 
-```   
+```javascript   
 
  var newEvent = function (start, end, eventType) {
     if(eventType=='부서일정'){
@@ -229,7 +229,7 @@ public class CalendarController {
 
  + 일정 조회.js   
 
-```
+```javascript
 events: function (start, end, timezone, callback) {
 	var eventId = $('#e-id');
 	var edept = $("#e-dept");
@@ -276,7 +276,7 @@ events: function (start, end, timezone, callback) {
        
  + 일정 수정.js   
     
-```
+```javascript
 var editEvent = function (event, element, view) {
     $('#updateEvent').data('id', event.description); //클릭한 이벤트ID
     $('.popover.fade.top').remove();
