@@ -124,13 +124,14 @@
 	}
 
 	code {
-		background: rgba(147, 71, 223, 0.486);
+		background: rgba(85, 85, 85, 0.459);
 		border-radius: 5px;
 		color: #fff;
 		font-family: "Source Code Pro", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
+		tab-size: 2 !important;
 	}
 
 	pre {
@@ -143,10 +144,10 @@
 		pre code {
 			-webkit-overflow-scrolling: touch;
 			display: block;
-			line-height: 1.5em;
+			line-height: 1.3em;
 			overflow-x: auto;
 			padding: 2em 1.5em;
-			border-radius: 5px;
+			tab-size: 2 !important;
 		}
 
 	.align-left {

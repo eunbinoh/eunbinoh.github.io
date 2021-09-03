@@ -143,7 +143,7 @@ public class MsController {
 #### 대화목록 History(채팅방 형식), 소속부서원만 보이는 그룹톡방 1번으로 정렬
 ##### 그룹방은 삭제버튼 보이지 않음, 새로운 알람시 new label 생성
   ![Image name](https://eunbinoh.github.io//images/Final5.png)     
-   
+
 - Controller   
 
 ``` javascript 
@@ -205,7 +205,8 @@ public class MsController {
 #### 부서별,직급별로 사원목록 조회해와서 선택한 사람과 대화하기   
 ##### 기존 대화기록 중에 방이 있는지 체크 후, 없으면 생성, 있으면 연결해서 들어가기   
   ![Image name](https://eunbinoh.github.io//images/Final8.png)    
-
+   
+   
 - Controller      
 
 ```javascript   
