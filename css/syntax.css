@@ -41,13 +41,13 @@
   font-weight: bold;
 }
 .highlight .gt {
-  color: #766DAF;
+  color: #371d4d;
 }
 .highlight .gl {
-  color: #766DAF;
+  color: #371d4d;
 }
 .highlight .kc {
-  color: #9f93e6;
+  color: #371d4d;
   font-weight: bold;
 }
 .highlight .kn {
@@ -71,11 +71,11 @@
   font-weight: bold;
 }
 .highlight .kt {
-  color: #9177ab;
+  color: #371d4d;
   font-weight: bold;
 }
 .highlight .no {
-  color: #9177ab;
+  color: #371d4d;
   font-weight: bold;
 }
 .highlight .nc {
@@ -83,39 +83,39 @@
   font-weight: bold;
 }
 .highlight .nd {
-  color: #9177ab;
+  color: #371d4d;
   font-weight: bold;
 }
 .highlight .nn {
-  color: #9177ab;
+  color: #371d4d;
   font-weight: bold;
 }
 .highlight .bp {
-  color: #9177ab;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .ne {
-  color: #9177ab;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .nl {
-  color: #9f93e6;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .nt {
-  color: #9f93e6;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
-  color: #9f93e6;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .ld {
-  color: #9f93e6;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .ss {
-  color: #9f93e6;
+  color: #573b72;
   font-weight: bold;
 }
 .highlight .s, .highlight .sb, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .sr, .highlight .s1 {
