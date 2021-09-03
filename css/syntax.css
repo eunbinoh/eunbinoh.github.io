@@ -5,8 +5,7 @@
   background-color: #251942d8;
 }
 .highlight .err {
-  color: #272822;
-  background-color: #155f31;
+  color: #970c4d;
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
   color: #75715e;
@@ -30,8 +29,7 @@
   color: #ae81ff;
 }
 .highlight .gh {
-  color: #66d9ef;
-  background-color: #272822;
+  color : rgb(212, 176, 247);
   font-weight: bold;
 }
 .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
@@ -77,5 +75,5 @@
   color: #54b626;
 }
 .highlight .ss {
-  color: #54b626;
+  color: rgb(212, 176, 247);
 }
