@@ -193,44 +193,10 @@ public class Pagination {
 	
 ```   
    
-- jsp (ajax,function)   
+- jsp    
+
 ```javascript   
- <body>
-	<h1 align="center" style="margin:1.5em" >Board Drawing</h1>
-	<form action="boardInsert" method="post" enctype="Multipart/form-data">
-		<table id="InsertTable" border="1">
-			<tr>
-				<th>Title</th>
-				<td>
-					<input type="text" class="input" size="80" name="boardTitle">
-				</td>
-			</tr>
-			<tr>
-				<th>Writer</th>
-				<td>
-					<input type="text" class="input" name="boardWriter" id="boardWriter">
-				</td>
-			</tr>
-			<tr>
-				<th>Content</th>
-				<td><textarea rows="10" class="input" cols="60" name="boardContent" style="resize: none;"></textarea></td>
-			</tr>
-			<tr>
-				<th>Canvas</th>
-				<td>
-					<canvas class="canvas" width="750" height="300"></canvas>
-					<input type="hidden" id="srcImg" name="srcImg" value="">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" class="writeBtn" id="saveBtn" value="SAVE">
-					<button class="writeBtn" id="resetBtn" onclick="resetImg()">Reset</button>
-					<button class="writeBtn" onclick="location.href='boardList'">Home</button>
-				</td>
-			</tr>
-		</table>
-	</form>
+
 <script>
 	const canvas = document.querySelector('.canvas');
 	const context = canvas.getContext('2d');
@@ -275,9 +241,8 @@ public class Pagination {
 	}
 
 </script>
-</body>  
-
+ 
 ```
- ---  
+
          
       	             
