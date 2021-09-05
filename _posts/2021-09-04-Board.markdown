@@ -5,14 +5,14 @@ categories: [Project]
 tags: [SpringBoot, Board, canvas, javascript]
 ---
 
-# MyProject - 스프링부트를 선택한 이유(장점)
+# MyProject 설계1 - 스프링부트를 선택한 이유(장점)
 - 스프링 특징인 DI, IOC -> 어노테이션으로 객체 인스턴스화, 단순화(결합도 down)   
 - 객체지향(OOP) -> 관점지향(AOP) : 비즈니스로직 개입없이 관점(Aspect) 추가 및 호출 활용    
 - Setting of Transaction, datasource,.. -> 자동설정(AutoConfiguration), 내부 DI 관리 
 - 버전 호환, 단위테스트 용이, 퀄리티 향상   
 - 앞으로의 스터디 방향 : RESTful, Spring security, JPA,..   
    
-# MyProject - canvas   
+# MyProject 설계2 - Canvas + Board  
 - 서명, 인증을 게시판과 접목 시켜보기
 - 개인 파일 저장, 서버 저장 2가지 방법 선택
 - 조회 권한 - 공유시 그림 수정을 여러명이 같이 할 수 있도록 응용 가능
@@ -21,13 +21,13 @@ tags: [SpringBoot, Board, canvas, javascript]
    
 
 	+ 게시판
-  ![Image name](https://eunbinoh.github.io//images/Final12.png)      
+  ![Image name](https://eunbinoh.github.io//images/My2.png)      
 
 	+ 게시글 등록 (캔버스 서명)   
-  ![Image name](https://eunbinoh.github.io//images/Final12.png)   
+  ![Image name](https://eunbinoh.github.io//images/My3.png)   
      
 	+ 게시글 조회 (상세보기 - 다운로드, 수정 및 공유 업데이트 예정)   
-  ![Image name](https://eunbinoh.github.io//images/Final12.png)   
+  ![Image name](https://eunbinoh.github.io//images/My1.png)   
 
      
 - Controller    
@@ -144,13 +144,10 @@ public class Pagination {
 	}
 }   
 ```   
-
-
-
+      
 
 
 - Mapper (쿼리문)    
-
 ```sql   
 <mapper namespace="com.canvas.demo.BoardDAO">
 	<resultMap id="boardResultSet" type="com.canvas.demo.vo.Board">
@@ -194,11 +191,9 @@ public class Pagination {
 		WHERE BOARD_ID=#{boardId} AND BOARD_STATUS='Y'
   	</select>      
 	
-
-```
-
+```   
+   
 - jsp (ajax,function)   
-
 ```javascript   
  <body>
 	<h1 align="center" style="margin:1.5em" >Board Drawing</h1>
