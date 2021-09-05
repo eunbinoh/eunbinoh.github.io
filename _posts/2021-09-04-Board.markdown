@@ -148,7 +148,9 @@ public class Pagination {
 
 
 - Mapper (쿼리문)    
-```sql   
+   
+```   
+
 <mapper namespace="com.canvas.demo.BoardDAO">
 	<resultMap id="boardResultSet" type="com.canvas.demo.vo.Board">
 		<id column="BOARD_ID" property="boardId"/>
@@ -190,10 +192,10 @@ public class Pagination {
 		 FROM BOARD
 		WHERE BOARD_ID=#{boardId} AND BOARD_STATUS='Y'
   	</select>      
-	
+	   
 ```   
-   
-- jsp    
+         
+- jsp       
 
 ```javascript   
 
