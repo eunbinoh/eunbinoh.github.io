@@ -27,11 +27,11 @@ tags: [스프링 세팅, Spring Legacy Project, pom.xml ]
 
      → [web.xml](https://www.notion.so/web-xml-59c9333ac9eb4cacba6ee4a0affd63a8)   
 
-     → [servlet-context .xml](https://www.notion.so/servlet-context-xml-508046453883402b9416f616c74f23e1)    
+     → [servlet-context.xml](https://www.notion.so/servlet-context-xml-508046453883402b9416f616c74f23e1)    
 
-     → [member-context .xml](https://www.notion.so/member-context-xml-4f95d1193dbc4b61b1641f3e119823c0)    
+     → [member-context.xml](https://www.notion.so/member-context-xml-4f95d1193dbc4b61b1641f3e119823c0)    
 
-     → [security .xml](https://www.notion.so/security-xml-0ecd6514dc74436180900ea001f33c75)       
+     → [security.xml](https://www.notion.so/security-xml-0ecd6514dc74436180900ea001f33c75)       
 
 
 

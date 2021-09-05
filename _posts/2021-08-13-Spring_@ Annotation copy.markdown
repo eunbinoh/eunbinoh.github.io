@@ -8,8 +8,7 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
    
 
 ### My Notion Link   
-https://www.notion.so/SPRING-67299ebd12014c359eb281865017fcf9   
-
+→ [Spring](https://www.notion.so/SPRING-67299ebd12014c359eb281865017fcf9) 
 
 # @RequestParam
     - 1개의 HTTP 파라미터를 얻기 위해 사용됨
@@ -69,7 +68,7 @@ https://www.notion.so/SPRING-67299ebd12014c359eb281865017fcf9
     - @GetMapping(value="/path/{id}") {}을 URL에 변수로 받을수 있음
 
 
-# @        
+     
    
       
 ---   
@@ -78,7 +77,8 @@ https://www.notion.so/SPRING-67299ebd12014c359eb281865017fcf9
    
 
 ## Param 전송
-```JAVA
+```java   
+
 @RequestMapping(value="/login.me", method=RequestMethod.POST) 
 //** servlet 주소 매핑, method=get방식이 기본값이지만 post방식도 생략 가능
 
@@ -126,11 +126,13 @@ public String login(@ModelAttribute Member m, HttpSession session) {
 5. @ModelAttribute 생략
 public void login(Member m) {
 	System.out.println("member:"+m);
-}   
+}     
+
 ```   
    
 ## 요청 후 데이터 전달
-```JAVA 
+```java   
+
 1. model객체 : 맵형식 (key,value),request scope
 public String login(@ModelAttribute Member m, HttpSession session, Model model) {
 
@@ -184,7 +186,8 @@ public String login(Member m, Model model) {
 				model.addAttribute("message","로그인 실패");
 				return "../common/errorPage";
 			}
-}
+}   
+
 ```   
    
 
