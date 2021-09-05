@@ -8,7 +8,7 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
    
 
 ### My Notion Link   
-→ [Spring](https://www.notion.so/SPRING-67299ebd12014c359eb281865017fcf9) 
+→  [Spring](https://www.notion.so/Spring-41db81b95ae24674ae6bc048dfee5458)   
 
 # @RequestParam
     - 1개의 HTTP 파라미터를 얻기 위해 사용됨
