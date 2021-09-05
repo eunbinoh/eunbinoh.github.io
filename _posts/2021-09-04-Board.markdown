@@ -1,0 +1,288 @@
+---
+layout: post
+title:  "Canvas Board "
+categories: [Project]
+tags: [SpringBoot, Board, canvas, javascript]
+---
+
+# MyProject - 스프링부트를 선택한 이유(장점)
+- 스프링 특징인 DI, IOC -> 어노테이션으로 객체 인스턴스화, 단순화(결합도 down)   
+- 객체지향(OOP) -> 관점지향(AOP) : 비즈니스로직 개입없이 관점(Aspect) 추가 및 호출 활용    
+- Setting of Transaction, datasource,.. -> 자동설정(AutoConfiguration), 내부 DI 관리 
+- 버전 호환, 단위테스트 용이, 퀄리티 향상   
+- 앞으로의 스터디 방향 : RESTful, Spring security, JPA,..   
+   
+# MyProject - canvas   
+- 서명, 인증을 게시판과 접목 시켜보기
+- 개인 파일 저장, 서버 저장 2가지 방법 선택
+- 조회 권한 - 공유시 그림 수정을 여러명이 같이 할 수 있도록 응용 가능
+- ex. 스토리보드 공유, 그림으로 단어 맞추기 게임, ..
+- 구체적인 방향은 계획중, 일단 1차 서명 등록, 조회까지 완료
+   
+
+	+ 게시판
+  ![Image name](https://eunbinoh.github.io//images/Final12.png)      
+
+	+ 게시글 등록 (캔버스 서명)   
+  ![Image name](https://eunbinoh.github.io//images/Final12.png)   
+     
+	+ 게시글 조회 (상세보기 - 다운로드, 수정 및 공유 업데이트 예정)   
+  ![Image name](https://eunbinoh.github.io//images/Final12.png)   
+
+     
+- Controller    
+
+```javascript    
+@RestController //***
+public class BoardController {
+	@Autowired
+	private boardService bService;
+	
+	@RequestMapping("boardList")
+	public ModelAndView boardList(@RequestParam(value="page",required=false) Integer page, ModelAndView mv) {
+		//Pagination
+		int currentPage = 1;
+		if(page!=null) {
+			currentPage = page;
+		}
+		int listCount = bService.getPageCount();
+		PageInfo pi = Pagination.getPageInfo(currentPage,listCount);
+		
+		int offset = pi.getboardLimit()*(pi.getCurrentPage()-1);
+		RowBounds rb = new RowBounds(offset, pi.getboardLimit());
+		
+		List<Board> boardList = bService.getBoardList(rb);
+		if(boardList!=null) {
+			mv.addObject("boardList",boardList).addObject("pi",pi);
+			mv.setViewName("boardList");
+		}else {
+			throw new BoardException("Board list loading Fail");
+		}	
+		return mv;
+	}
+	
+	@RequestMapping("boardInsertView")
+	public ModelAndView boardInsertView(ModelAndView mv) {
+		mv.setViewName("boardInsert");
+		return mv;
+	}
+	
+	@RequestMapping("boardInsert")
+	public ModelAndView insertBoard(@ModelAttribute Board b,@RequestParam("srcImg")MultipartFile uploadFile, 
+									HttpServletRequest request, ModelAndView mv) {
+		if(!uploadFile.getOriginalFilename().equals("")) {
+			String renameFileName = saveFile(uploadFile,request);
+			if(renameFileName!=null) {
+				b.setOriginalFileName(uploadFile.getOriginalFilename());
+				b.setRenameFileName(renameFileName);
+			}
+		}
+		int result = bService.insertBoard(b);
+		if(result>0) {
+			mv.addObject("b",b);
+			mv.setViewName("boardDetail");
+			return mv;
+		}else {
+			throw new BoardException("Board insert Fail");
+		}
+	}
+	
+	public String saveFile(MultipartFile file, HttpServletRequest request) {
+		String root = request.getSession().getServletContext().getRealPath("resources");
+		String savePath = root + "\\buploadFiles";
+		
+		File folder = new File(savePath);
+		if(!folder.exists()) {
+			folder.mkdirs();
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+		String originalFileName = file.getOriginalFilename();
+		String renameFileName = sdf.format(new Date(System.currentTimeMillis()))+"."+
+								originalFileName.substring(originalFileName.lastIndexOf(".")+1);
+		String renamePath = folder + "\\" + renameFileName;
+		try {
+			file.transferTo(new File(renamePath));
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return renameFileName;
+	}
+	
+	@RequestMapping("boardDetail")
+	public ModelAndView bdetail(@RequestParam("boardId") int boardId, @RequestParam("page") Integer page, ModelAndView mv) {
+		Board b = bService.selectBoard(boardId,true);
+		System.out.println("board:::::"+b);
+		if(b!=null) {
+			mv.addObject("b",b);
+			mv.addObject("page",page);
+			mv.setViewName("boardDetailView");
+		}else {
+			throw new BoardException("게시글 상세보기 실패");
+		}
+		return mv;
+	}
+	
+```      
+   
+- Pagination
+```java
+public class Pagination {
+	public static PageInfo getPageInfo(int currentPage, int listCount) {
+		int pageLimit=10;
+		int boardLimit=7;
+		int maxPage= (int)Math.ceil((double)listCount/boardLimit);
+		int startPage= (currentPage-1)/pageLimit*pageLimit+1;
+		int endPage= startPage + pageLimit -1;
+		
+		if(endPage>maxPage) {
+			endPage=maxPage;
+		}
+		PageInfo pi = new PageInfo(currentPage, listCount, pageLimit, maxPage, startPage, endPage, boardLimit);
+		return pi;
+	}
+}   
+```   
+
+
+
+
+
+- Mapper (쿼리문)    
+
+```sql   
+<mapper namespace="com.canvas.demo.BoardDAO">
+	<resultMap id="boardResultSet" type="com.canvas.demo.vo.Board">
+		<id column="BOARD_ID" property="boardId"/>
+		<result column="BOARD_TITLE" property="boardTitle"/>
+		<result column="BOARD_WRITER" property="boardWriter"/>
+		<result column="BOARD_CONTENT" property="boardContent"/>
+		<result column="ORIGINAL_FILENAME" property="originalFileName"/>
+		<result column="RENAME_FILENAME" property="renameFileName"/>
+		<result column="BOARD_COUNT" property="boardCount"/>
+		<result column="BOARD_CREATE_DATE" property="boardCreateDate"/>
+		<result column="BOARD_MODIFY_DATE" property="boardModifyDate"/>
+		<result column="BOARD_STATUS" property="boardStatus"/>
+	</resultMap>
+
+	<select id="getPageCount" resultType="_int">
+		SELECT COUNT(*) FROM BOARD WHERE BOARD_STATUS='Y'
+	</select>
+	
+	<select id="getBoardList" resultMap="boardResultSet">
+	   SELECT BOARD_ID, BOARD_TITLE, BOARD_WRITER, BOARD_CONTENT, BOARD_CREATE_DATE, BOARD_COUNT
+		 FROM BOARD
+		WHERE BOARD_STATUS='Y'
+		ORDER BY BOARD_ID DESC
+	</select>
+	
+	<insert id="insertBoard">
+		INSERT INTO BOARD
+		VALUES (SEQ_BID.NEXTVAL, #{boardTitle}, #{boardWriter}, #{boardContent},
+			   #{originalFileName}, #{renameFileName}, DEFAULT, SYSDATE, SYSDATE, DEFAULT)
+	</insert>
+ 
+	<update id="upCount">
+		UPDATE BOARD SET BOARD_COUNT=BOARD_COUNT+1 WHERE BOARD_ID=#{boardId}
+	</update>
+  	
+  	<select id="selectBoard" resultMap="boardResultSet">
+  	   SELECT BOARD_ID, BOARD_TITLE, BOARD_WRITER, BOARD_CONTENT, ORIGINAL_FILENAME,RENAME_FILENAME
+			  BOARD_COUNT, BOARD_CREATE_DATE, BOARD_MODIFY_DATE, BOARD_STATUS
+		 FROM BOARD
+		WHERE BOARD_ID=#{boardId} AND BOARD_STATUS='Y'
+  	</select>      
+	
+
+```
+
+- jsp (ajax,function)   
+
+```javascript   
+ <body>
+	<h1 align="center" style="margin:1.5em" >Board Drawing</h1>
+	<form action="boardInsert" method="post" enctype="Multipart/form-data">
+		<table id="InsertTable" border="1">
+			<tr>
+				<th>Title</th>
+				<td>
+					<input type="text" class="input" size="80" name="boardTitle">
+				</td>
+			</tr>
+			<tr>
+				<th>Writer</th>
+				<td>
+					<input type="text" class="input" name="boardWriter" id="boardWriter">
+				</td>
+			</tr>
+			<tr>
+				<th>Content</th>
+				<td><textarea rows="10" class="input" cols="60" name="boardContent" style="resize: none;"></textarea></td>
+			</tr>
+			<tr>
+				<th>Canvas</th>
+				<td>
+					<canvas class="canvas" width="750" height="300"></canvas>
+					<input type="hidden" id="srcImg" name="srcImg" value="">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" class="writeBtn" id="saveBtn" value="SAVE">
+					<button class="writeBtn" id="resetBtn" onclick="resetImg()">Reset</button>
+					<button class="writeBtn" onclick="location.href='boardList'">Home</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+<script>
+	const canvas = document.querySelector('.canvas');
+	const context = canvas.getContext('2d');
+	const saveBtn = document.querySelector('#saveBtn');
+	var srcImg = document.querySelector('#srcImg');
+	
+	//이벤트 리스너 등록
+	canvas.addEventListener('mousedown', downHandler);
+	canvas.addEventListener('mousemove', moveHandler);
+	canvas.addEventListener('mouseup', upHandler);
+	saveBtn.addEventListener('click', createImage);
+	
+	let drawing; // 그려지는동안 상태 :true,false
+	let colorVal = 'black'; //브러시 색깔
+	//true일때만 그려지게 하기
+	function downHandler() {
+	  drawing = true;
+	}
+	//마우스클릭이 끊어지면 false
+	function upHandler() {
+	  drawing = false;
+	}
+	//마우스가 움직이는 동안에 계속되도록하기
+	function moveHandler(e) {
+	  if (!drawing) return;
+	  context.fillStyle = colorVal;
+	  context.beginPath();
+	  //그려지는 위치 x,y좌표, 브러시 반지름
+	  context.arc(e.layerX, e.layerY, 6, 0, Math.PI*2, false);
+	  context.fill();
+	}
+	//이미지 저장
+	function createImage() {
+	  const url = canvas.toDataURL('image/png', 'image/octet-stream');
+	  srcImg.attr('value',url);
+	  console.log("imgsrc:",url);
+	  debugger;
+	}
+	//캔버스 영역 지우기
+	function resetImg(){
+	  context.clearRect(0,0,canvas.width,canvas.height);
+	}
+
+</script>
+</body>  
+
+```
+ ---  
+         
+      	             
