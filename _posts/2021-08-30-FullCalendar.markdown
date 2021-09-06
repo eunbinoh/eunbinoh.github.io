@@ -82,9 +82,9 @@ public class CalendarController {
 ```
    
 - Mapper   
-
-```SQL   
-
+   
+```java     
+   
 <mapper namespace="calendarMapper">
 	<resultMap type="calendar" id="CalResultMap">
 		<id column="SC_CODE" property="code"/>
@@ -123,7 +123,7 @@ public class CalendarController {
 		  SET SC_CODE=#{code}, SC_TITLE=#{title}, SC_SDATE=TO_DATE(#{sDate}), SC_EDATE=TO_DATE(#{eDate})
 		WHERE DSC_NO=#{no} AND M_CODE= #{mCode} 
 	</update>   
-       
+          
 ```
    
    

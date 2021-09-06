@@ -10,11 +10,8 @@ tags: [Spring, BoardController, Pagination]
 
 ## #Spring   
 
-# controller-service-serviceImpl-dao-mapper   
-
 # Board_Controller.java    
-
-{% highlight Java %}
+```java
 
 package com.kh.sharethevision.board.controller;
 @Controller
@@ -241,14 +238,15 @@ public class BoardController {
 			}
 	}
 			
-}
+}   
+```   
 
-{% endhighlight %}
 
 
 # Board_Pagination.java       
 
-{% highlight Java %}
+```java   
+
 package com.kh.sharethevision.common;
 public class Pagination {
 	public static PageInfo getPageInfo(int currentPage, int listCount) {
@@ -267,12 +265,14 @@ public class Pagination {
 	}
 }
 
-{% endhighlight %}
+```   
+
 
 
 # Board_Mapper.xml      
 
-{% highlight Java %}
+```java
+
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
@@ -371,4 +371,5 @@ public class Pagination {
   	</select>
   	
 </mapper>
-{% endhighlight %}
+   
+```   

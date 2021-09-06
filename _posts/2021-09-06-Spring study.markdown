@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "토비의 스프링 3.1 study"
-categories: [Study&more]
+title:  "토비의 스프링 3.1 - (1)"
+categories: [Spring & JAVA]
 tags: [Spring, Toby ]
 ---
 

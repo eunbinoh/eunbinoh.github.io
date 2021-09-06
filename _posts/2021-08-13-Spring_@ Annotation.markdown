@@ -68,7 +68,21 @@ tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
     - @GetMapping(value="/path/{id}") {}을 URL에 변수로 받을수 있음
 
 
-     
+# @DirtiesContext
+	- JUnit
+	- 스프링테스트에서 Application context는 1개만 만들고 공유해서 사용하는데,   
+	- 이 때 구성이나 상태를 테스트내에서 변경하지 않는 것이 원칙   
+	- 변경하고자하면 나머지 모든테스트를 수행하는동안 변경된채 계속 사용될 것이므로,   
+	- @DirtiesContext를 써서 해당 테스트 중에 변경한 context가 뒤 순서의 테스트에 영향 X
+   
+# @RunWith(SpringJUnit4ClassRunner.class)   
+	- JUnit 테스트 실행방법을 확장할 때 사용하는 어노테이션
+	- Runner클래스를 설정해서 JUnit에 내장된 Runner 대신 설정 클래스를 실행   
+   
+# @ContextConfiguration(location="/applicationContext.xml")      
+	- 자동으로 만들어줄 application context의 설장 파일위치를 지정   
+        
+
    
       
 ---   
