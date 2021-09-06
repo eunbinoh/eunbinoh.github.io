@@ -203,7 +203,6 @@ public class Pagination {
 	const canvas = document.querySelector('.canvas');
 	const context = canvas.getContext('2d');
 	const saveBtn = document.querySelector('#saveBtn');
-	var srcImg = document.querySelector('#srcImg');
 	
 	//이벤트 리스너 등록
 	canvas.addEventListener('mousedown', downHandler);
