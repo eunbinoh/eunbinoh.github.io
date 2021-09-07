@@ -1,0 +1,89 @@
+---
+layout: post
+title: "MySQL"
+date: 2021-09-02 00:00:00
+categories: [Study&more]
+tags: [Lombok, getter, setter ]
+---
+
+# Oracle만 쓰지말고 MySQL도 공부해보자!
+
+### Oracle   
+    - OS : Windows, Linux, Solaris, AIX, ..   
+    - 구현언어: C, C++   
+    - 개발사 : Oracle   
+    - 비용 : 유료   
+    - 장점 : 안정성   
+    - ApI : JDBC, ODBC, Oracle call, OCI, ADO.NET   
+
+## MySql   
+    - OS : Windows, Linux, Solaris, freeBSD, ..   
+    - 구현언어: C, C++    
+    - 개발사 : Oracle   
+    - 비용 : 무료 / 상업용 유료  
+    - 장점 : 가격, 편리성   
+    - ApI : JDBC, ODBC, ADO.NET 
+
+### 문법 차이 비교 (Oracle vs MySql)   
+
+1. 공백치환 함수 ( NVL -> IFNULL )
+- Oracle : SELECT NVL('컬럼명', '') FROM DUAL;
+- MySql : SELECT IFNULL('컬럼명', '') FROM DUAL;
+
+2. 현재 날짜시간
+- Oracle : SYSDATE
+- Mysql  : NOW() 
+
+3. 날짜포멧 
+- Oracle : TO_CHAR(sysdate,'MMDDYYYYHH24MISS')
+- Mysql  : DATE_FORMAT(now(),'%Y%m%d%H%i%s')  (Y:년도 4자리/y:년도 2자리)
+
+4. 날짜 포멧 : 요일
+- Oracle : 요일 1~7로 인식  -> TO_CHAR(SYSDATE-1, 'D') 
+- Mysql : 요일 0~6으로 인식   -> DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY), '%w')
+
+5. Like '%' 
+- Oracle : Like '%'||'문자'||'%' 
+- Mysql : LIKE CONCAT('문자','%') 
+
+6. 형변환
+- Oracle : To_char, To_number, ..
+- Mysql : CAST  _ex. SELECT CAST(1234 AS CHAR) FROM DUAL_
+
+7. 대소문자 구분
+- Oracle : 구분없음
+- Mysql : 기본적으로 구분하나, 설정으로 변경
+
+8. ROWNUM
+- Oracle : where 절에 rownum > 5 and rownum =< 10 
+- Mysql : where절 없이 limit 5,10
+
+9. Sequence
+- Oracle : MEM_SEQ.nextval
+- Mysql : MEM_SEQ.currval
+
+10. 문자열 자르기
+- Oracle: SUBSTR(문자열, 1, 10)
+- Mysql: SUBSTRING(문자열, 1,10), LEFT(문자열, 3), RIGHT(문자열, 3)
+
+11. 문자열 합치기 
+- Oracle: 문자열(또는 컬럼) || 문자열
+- Mysql: CONCAT(문자열, 문자열)
+
+12. 예약어가 컬럼명일 때
+- Oracle: 컬럼명을 따옴표(")로 감싸기 (예: select "column" from tab)
+- Mysql: 컬럼명을  _`_ ex _`_로 감싸기 (_'_ _'_)
+
+13. 프로시저 생성
+- Oracle: CREATE OR REPLACE PROCEDURE 프로시저명
+- Mysql: DROP PROCEDURE IF EXISTS 프로시저명; CREATE PROCEDURE 프로시저명
+   
+      
+         
+## 적용
+```sql
+
+
+
+
+```

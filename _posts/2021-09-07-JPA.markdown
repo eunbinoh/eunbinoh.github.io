@@ -1,0 +1,22 @@
+---
+layout: post
+title: "JPA"
+date: 2021-09-02 00:00:00
+categories: [Study&more]
+tags: [JPA]
+---
+
+# ORM
+ - Object-Relational Mapping 
+ - 객체가 테이블이 되도록 매핑 시켜주는 프레임워크
+ - 프로그램의 복잡도를 줄이고 자바 객체와 쿼리를 분리
+ - 트랜잭션 처리나 DB 작업들을 편리하게 처리
+
+
+# JPA
+ - Java Persistence API (자바 ORM 기술에 대한 API 표준 명세)
+ - ORM을 사용하기 위해 모아둔 인터페이스
+ - 자바 어플리케이션에서 관계형 DB를 사용하는 방식을 정의
+ - Hibernate 이외에도 EcipseLink, DataNucleus, OpenJPA, TopLink 등
+
+ # Hibernate
