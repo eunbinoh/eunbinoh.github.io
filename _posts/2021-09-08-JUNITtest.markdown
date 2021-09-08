@@ -20,7 +20,7 @@ tags: [JUnit, Test, SpringTest, TDD]
   - pom.xml에 set! (@test cannot resolved Error : spring-test scope 제거 ok, version check!)
 
 ### path
-  ![Image name](https://eunbinoh.github.io//images/junit4.png){: width="300" height="500"}    
+  ![Image name](https://eunbinoh.github.io//images/junit4.png){: width="300px" height="500px"}    
   - src/main/java/com.pakage.*/TestClass.java
   - src/test/java/com.pakage.*/ApplicationContext.xml   
      -> or src/main/resources (test패키지 권장)     
@@ -119,7 +119,7 @@ tags: [JUnit, Test, SpringTest, TDD]
 #### 아주 간단한 예제 실습해본거지만, 해본거랑 안해본거랑은 다르니까!
 #### 초록 박스가 뜨면 기분이 좋고 빨간 박스가 뜨면 기분이 안좋은건,
 피자 박스 이후로 처음이였다...   
-![wowS](/images\wowS.png){: width="100" height="100"}
+![wowS](/images\wowS.png){: width="100px" height="100px"}
       
    
 
