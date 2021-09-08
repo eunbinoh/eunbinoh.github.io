@@ -3,6 +3,7 @@
 .highlight, .highlight .w {
   color: #f8f8f2;
   background-color: #110120;
+  border-radius: 5px;
   width: inherit;
 }
 .highlight .err {
