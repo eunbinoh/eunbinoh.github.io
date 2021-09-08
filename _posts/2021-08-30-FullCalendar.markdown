@@ -106,16 +106,16 @@ public class CalendarController {
   		SELECT SC.SC_CODE, SC.DSC_NO, SC.SC_TITLE, SC.SC_SDATE, SC.SC_EDATE, SC.SC_STATUS, M.M_CODE, M.M_NAME
 		  FROM SCHEDULE SC, MEMBER M 
 		 WHERE SC.M_CODE= M.M_CODE
-           AND SC.SC_STATUS='N'
-  		   AND M.DEPT_NO= TO_NUMBER(#{deptNo})
-		   AND SC.SC_CODE='1'
-      	 UNION ALL        
+         AND SC.SC_STATUS='N'
+  		 AND M.DEPT_NO= TO_NUMBER(#{deptNo})
+		 AND SC.SC_CODE='1'
+      	UNION ALL        
         SELECT SC.SC_CODE, SC.DSC_NO, SC.SC_TITLE, SC.SC_SDATE, SC.SC_EDATE, SC.SC_STATUS, M.M_CODE, M.M_NAME
-    	  FROM SCHEDULE SC, MEMBER M 
-		 WHERE SC.M_CODE= M.M_CODE
+    	    FROM SCHEDULE SC, MEMBER M 
+		   WHERE SC.M_CODE= M.M_CODE
            AND SC.SC_STATUS='N'
-       	   AND SC.M_CODE=#{mcode}  
-           AND SC.SC_CODE='2' 
+       	  AND SC.M_CODE=#{mcode}  
+          AND SC.SC_CODE='2' 
 	</select>
 	
 	<update id="updateCal">
@@ -342,7 +342,7 @@ var editEvent = function (event, element, view) {
 
 
 
-
+---   
 
 # CSS, min.js, bootstrap 때문에 너무 힘들었던 나는 ..  
 ![Image name](https://eunbinoh.github.io//images/sadS.png){: width="20%" height="20%"}   
