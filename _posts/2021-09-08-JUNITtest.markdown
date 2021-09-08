@@ -119,7 +119,7 @@ tags: [JUnit, Test, SpringTest, TDD]
 #### 아주 간단한 예제 실습해본거지만, 해본거랑 안해본거랑은 다르니까!
 #### 초록 박스가 뜨면 기분이 좋고 빨간 박스가 뜨면 기분이 안좋은건,
 피자 박스 이후로 처음이였다...   
-![wowS](/images\wowS.png){: width="100px" height="100px"}
+![wowS](https://media4.giphy.com/media/M90mJvfWfd5mbUuULX/giphy.gif?cid=ecf05e474cefe3c64026944a65d3a11d81b5480f35f2f24a&rid=giphy.gif&ct=g){: width="20%" height="20%"}
       
    
 
