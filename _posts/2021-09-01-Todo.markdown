@@ -11,7 +11,7 @@ tags: [Todo List, checkbox, ajax, Spring]
 - 맨 밑칸은 input box, 라인 오른쪽에 저장버튼 생성
 - 체크시 가운데줄 그어지고 수정사항 바로 저장(update)
       
-  ![Image name](https://eunbinoh.github.io//images/Final12.png)
+  ![Image name](https://eunbinoh.github.io//images/Final12.png){: width="100%" height="100%"}
      
 - Controller    
 
@@ -217,7 +217,9 @@ function delete_todo(dchNo){
 - 메신저, 캘린더로 고생했더니 TodoList는 하루만에 클리어!
 - 예전 프로젝트 포트폴리오에 올리다보니, 참 많이 성장한거같지만,
 - 아직도 갈길은 멀고, 팔 땅은 깊은것 같다.
-- 오늘의 코딩개미, 땅위로 올라가는 날까지 파이팅!
+- 오늘의 코딩개미, 땅위로 올라가는 날까지 파이팅!   
 
-![Image name](https://eunbinoh.github.io//images/Final11.png)
+*완성화면*   
+
+![Image name](https://eunbinoh.github.io//images/Final11.png){: width="100%" height="100%"}
      

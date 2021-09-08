@@ -30,7 +30,7 @@ tags: [FullCallendar, main.js, events.]
    
       
 ### 부서일정과 개인일정 전체 조회 
-  ![Image name](https://eunbinoh.github.io//images/Final2.png)   
+  ![Image name](https://eunbinoh.github.io//images/Final2.png){: width="100%" height="100%"}   
 
 - Controller
 ```java
@@ -341,7 +341,7 @@ var editEvent = function (event, element, view) {
 ``` 
    
 # CSS, min.js, bootstrap 이 너무 힘들었던 나는   
-![Image name](https://eunbinoh.github.io//images/sadS.png)   
+![Image name](https://eunbinoh.github.io//images/sadS.png){: width="20%" height="20%"}   
 
 .      
 .   
@@ -360,5 +360,5 @@ var editEvent = function (event, element, view) {
 .      
 
 # 이번 풀캘린더 정면돌파를 통해 재야의 고수가 되었다고 한다   
-![Image name](https://eunbinoh.github.io//images/punchS.png)   
+![Image name](https://eunbinoh.github.io//images/punchS.png){: width="20%" height="20%"}   
 

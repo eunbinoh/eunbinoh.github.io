@@ -72,7 +72,7 @@ tags: [Lombok, getter, setter ]
 
 12. 예약어가 컬럼명일 때
 - Oracle: 컬럼명을 따옴표(")로 감싸기 (예: select "column" from tab)
-- Mysql: 컬럼명을  _`_ ex _`_로 감싸기 (_'_ _'_)
+- Mysql: 컬럼명을  _`_로 감싸기 (_'_ _'_)
 
 13. 프로시저 생성
 - Oracle: CREATE OR REPLACE PROCEDURE 프로시저명

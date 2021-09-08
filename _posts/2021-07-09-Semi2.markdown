@@ -7,7 +7,7 @@ tags: [Review, starRate, ajax, javascript]
 
   
 ### 상품 리뷰 및 평점
-  ![Image name](https://eunbinoh.github.io//images/PT4.png)   
+  ![Image name](https://eunbinoh.github.io//images/PT4.png){: width="100%" height="100%"}   
 - 실시간으로 Review Size 가져와서 카운트 ( ) 표기
 - 이름, 기록시간, 평점, 작성내용 DB 가져오기
 - 작성자에게만 수정,삭제 버튼 보이도록 작성글 위치 찾아서 조건 달기

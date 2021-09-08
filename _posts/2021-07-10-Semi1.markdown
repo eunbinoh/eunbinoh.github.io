@@ -13,7 +13,7 @@ tags: [Login, JOIN, java, 정규표현식, 유효성검사]
          
 
 ### 회원가입 & 로그인
-  ![Image name](https://eunbinoh.github.io//images/PT1.png)   
+  ![Image name](https://eunbinoh.github.io//images/PT1.png){: width="100%" height="100%"}   
 - JoinInsertServlet   
      
 ```javascript   
@@ -258,5 +258,5 @@ public class userDAO {
 -- 글을 쓰기 시작하면 나도 모르게 술술 써지는것처럼 코딩도 술술 써지는 날이 빨리 왔으면 좋겠다 !   
 -- 코드를 쓰는게 점점 익숙해지고 있다는건, 꽤 기분이 좋은 일이다 ^^.   
    
-![Image name](https://eunbinoh.github.io//images/PT5.png)
+![Image name](https://eunbinoh.github.io//images/PT5.png){: width="100%" height="100%"}
      

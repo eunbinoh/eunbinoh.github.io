@@ -38,26 +38,21 @@ tags: [JUnit, Test, SpringTest, TDD]
 ### 테스트 어노테이션
   ![Image name](https://eunbinoh.github.io//images/junit2.png){: width="100%" height="100%"}        
   - @DisplayName(" ") : 테스트 메소드의 이름 지정,_ 띄어쓰기 공백
-
   - @Order() : 테스트 순서 지정
-
   - @BeforeEach : 각 테스트 메소드가 실행되기전 먼저 실행
-
   - @AfterEach : 각 테스트 메소드가 실행되고 난 후 실행
-
   - @BeforeAll : 테스트가 시작하기 전 딱 한 번만 실행
-
   - @AfterAll : 테스트가 완전히 끝난 후 마지막 한 번만 실행
-
   - @Tag : 테스트 필터링
-
   - @Disabled : 테스트 클래스, 테스트 메소드를 비활성화. JUnit4의 @Ignore와 같은 역할
-
   - @Nested : test 클래스안에 Nested(,inner) 테스트 클래스를 작성할 때 사용 (static X)
    
  ### Assertions
-   - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드
-  ```java
+   - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드   
+      
+
+  ```java   
+
   class AssertionsTest {
     private final Calculator calculator = new Calculator();
     private final Person person = new Person("eunbi", "noh");
@@ -109,8 +104,6 @@ tags: [JUnit, Test, SpringTest, TDD]
 ```   
    
 
- ### Assumptions
-  - org.junit.jupiter.api.Assumptions 클래스 안에 있는 메소드
 
 
          

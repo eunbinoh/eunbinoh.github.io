@@ -6,7 +6,7 @@ tags: [Diet Diary, ajax ]
 ---   
 
 ### 추천식단 계획 & 기록
-  ![Image name](https://eunbinoh.github.io//images/PT2.png)   
+  ![Image name](https://eunbinoh.github.io//images/PT2.png){: width="100%" height="100%"}   
 - Left Tab : 유형별로 업데이트 되는 추천식단 클릭시 textarea에 글로 담기도록 설정.
 - Mid Tab : 날짜 선택(캘린더 첨부), 문자 피드백(글자수 카운트), 저장시 우측탭에 실시간 반영.
 - Right Tab : 게시판형 날짜, 내용 조회, 전체체크/개별체크 삭제기능. 
