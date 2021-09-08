@@ -12,7 +12,7 @@ tags: [JUnit, Test, SpringTest, TDD]
 →  [Spring](https://eunbinoh.github.io/spring%20&%20java/2021/09/07/Spring-study2.html)   
    
 ### JUNIT5 SETTING
-  - JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage (모듈집합)
+  - JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage(engine) (모듈집합)
   - Trendy : junit4 -> junit5 (호환 위해 junit-engine 필요)
   ![Image name](https://eunbinoh.github.io//images/junit3.png)        
 
@@ -56,7 +56,7 @@ tags: [JUnit, Test, SpringTest, TDD]
   - @Nested : test 클래스안에 Nested(,inner) 테스트 클래스를 작성할 때 사용 (static X)
    
  ### Assertions
-  - org.junit.jupiter.api.Assertions 클래스안에 있는 정적 메소드
+  - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드
   ```java
   class AssertionsTest {
     private final Calculator calculator = new Calculator();
@@ -107,11 +107,22 @@ tags: [JUnit, Test, SpringTest, TDD]
     }
 }   
 ```   
+   
+
+ ### Assumptions
+  - org.junit.jupiter.api.Assumptions 클래스 안에 있는 메소드
 
 
          
    
    
 #### 아주 간단한 예제 실습해본거지만, 해본거랑 안해본거랑은 다르니까!
-#### 초록 박스가 뜨면 기분이 좋다는건 정말이였다.!
-  ![Image name](https://eunbinoh.github.io//images/wowS.png)   
+#### 초록 박스가 뜨면 기분이 좋고 빨간 박스가 뜨면 기분이 안좋은건,
+피자 박스 이후로 처음이였다...   
+<img src="images/wowS.png" width="200" height="400"/>
+
+   
+      
+   
+
+Annotation Reference ::https://donghyeon.dev/archive/
