@@ -210,7 +210,6 @@ input, select, textarea {
 	}
 
 	code {
-		background: rgba(85, 85, 85, 0.459);
 		border-radius: 5px;
 		color: #fff;
 		font-family: "Source Code Pro", monospace;

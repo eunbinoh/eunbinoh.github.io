@@ -27,7 +27,7 @@ tags: [JUnit, Test, SpringTest, TDD]
    
 
 ### JUnitTest.java   
- #### 1) DB 테스트 셋팅
+ #### 1) DB 연결 셋팅
   ![Image name](https://eunbinoh.github.io//images/junit7.png){: width="100%" height="100%"}        
     
   - @Test : 테스트 메소드 객체 생성
@@ -44,12 +44,12 @@ tags: [JUnit, Test, SpringTest, TDD]
    - if(conn!=null){ }else{ } :커넥션 성공/실패 
    - try-catch-finally close()     
 
- #### 2) DB select 테스트  
+ #### 3) DB select 테스트  
    ![Image name](https://eunbinoh.github.io//images/junit6.png){: width="100%" height="100%"}     
    - conn = DriverManager.getConnection(URL,UID,PWD);
    - String id = "user02"; String phone = selectName(conn,id);
    - System.out.println("id:"+id+", phone:"+phone);
-   - selct 테스트 위해 insert 테스트 잠시 @Disabled (사용하지 않음)   
+   - selct테스트 위해 insert테스트에 @Disabled 추가 (사용하지 않음)   
 
 
 ### 테스트 어노테이션
@@ -126,8 +126,8 @@ tags: [JUnit, Test, SpringTest, TDD]
 #### 아주 간단한 예제 실습해본거지만, 해본거랑 안해본거랑 천 지 차 이!
 #### JUnit Test 유용하게 쓰일것 같아 재밌었다 !
 # MySql 예제로 연습하게되서 너무 옛날식 문법을 오랜만에 사용해봤지만..
-#### 초록 박스가 뜨면 기분이 상콤하고 , 
-#### 빨간 박스가 뜨면 못견디는것 !
+#### 초록 막대가 뜨면 기분이 상콤하고 , 
+#### 빨간 막대가 뜨면 못견디겠는것 !
 # TDD 노이로제의 첫걸음 인걸까 :)  
    
 
