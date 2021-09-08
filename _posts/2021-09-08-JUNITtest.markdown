@@ -47,10 +47,8 @@ tags: [JUnit, Test, SpringTest, TDD]
   - @Disabled : 테스트 클래스, 테스트 메소드를 비활성화. JUnit4의 @Ignore와 같은 역할
   - @Nested : test 클래스안에 Nested(,inner) 테스트 클래스를 작성할 때 사용 (static X)
    
- ### Assertions
-   - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드   
-      
-
+### Assertions
+ - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드   
   ```java   
 
   class AssertionsTest {
@@ -103,17 +101,23 @@ tags: [JUnit, Test, SpringTest, TDD]
 }   
 ```   
    
-
-
-
+---
+      
+   
+      
          
+                
    
    
 #### 아주 간단한 예제 실습해본거지만, 해본거랑 안해본거랑은 다르니까!
 #### 초록 박스가 뜨면 기분이 좋고 빨간 박스가 뜨면 기분이 안좋은건,
-피자 박스 이후로 처음이였다...   
-![wowS](https://media4.giphy.com/media/M90mJvfWfd5mbUuULX/giphy.gif?cid=ecf05e474cefe3c64026944a65d3a11d81b5480f35f2f24a&rid=giphy.gif&ct=g){: width="20%" height="20%"}
-      
+피자 박스 이후로 처음이였다...      
    
+
+![wowS](https://media4.giphy.com/media/M90mJvfWfd5mbUuULX/giphy.gif?cid=ecf05e474cefe3c64026944a65d3a11d81b5480f35f2f24a&rid=giphy.gif&ct=g){: width="20%" height="20%"}
+         
+
+   
+
 
 Annotation Reference ::https://donghyeon.dev/archive/
