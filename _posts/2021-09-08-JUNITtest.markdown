@@ -9,18 +9,18 @@ tags: [JUnit, Test, SpringTest, TDD]
 # 최근 알게된 단위 테스트의 중요성! JUnit을 공부해봅시다!
 
 ### 토비의 스프링에서 배우는 JUnit (배경지식 참고)   
-→  [Spring](https://eunbinoh.github.io/spring%20&%20java/2021/09/07/Spring-study2.html)   
+→  [Spring](https://eunbinoh.github.io/spring%20&%20java/2021/09/07/Spring-study2.html){: width="100%" height="100%"}   
    
 ### JUNIT5 SETTING
   - JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage(engine) (모듈집합)
   - Trendy : junit4 -> junit5 (호환 위해 junit-engine 필요)
-  ![Image name](https://eunbinoh.github.io//images/junit3.png)        
+  ![Image name](https://eunbinoh.github.io//images/junit3.png){: width="100%" height="100%"}           
 
   - MVN Repository 에서 1) spring-test, 2) junit5 api, 3) junit-engine get!
   - pom.xml에 set! (@test cannot resolved Error : spring-test scope 제거 ok, version check!)
 
 ### path
-  ![Image name](https://eunbinoh.github.io//images/junit4.png){: width="300px" height="500px"}    
+  ![Image name](https://eunbinoh.github.io//images/junit4.png){: width="290px" height="500px"}    
   - src/main/java/com.pakage.*/TestClass.java
   - src/test/java/com.pakage.*/ApplicationContext.xml   
      -> or src/main/resources (test패키지 권장)     
@@ -28,7 +28,7 @@ tags: [JUnit, Test, SpringTest, TDD]
    
 
 ### JUnitTest.java
-  ![Image name](https://eunbinoh.github.io//images/junit1.png)     
+  ![Image name](https://eunbinoh.github.io//images/junit1.png){: width="100%" height="100%"}        
   - @Test
   - DataSource
   - ApplicationContext
@@ -36,7 +36,7 @@ tags: [JUnit, Test, SpringTest, TDD]
      
 
 ### 테스트 어노테이션
-  ![Image name](https://eunbinoh.github.io//images/junit2.png)     
+  ![Image name](https://eunbinoh.github.io//images/junit2.png){: width="100%" height="100%"}        
   - @DisplayName(" ") : 테스트 메소드의 이름 지정,_ 띄어쓰기 공백
 
   - @Order() : 테스트 순서 지정
