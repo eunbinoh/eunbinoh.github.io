@@ -339,26 +339,24 @@ var editEvent = function (event, element, view) {
 };   
 
 ``` 
-   
-# CSS, min.js, bootstrap 이 너무 힘들었던 나는   
+
+
+
+
+
+# CSS, min.js, bootstrap 때문에 너무 힘들었던 나는 ..  
 ![Image name](https://eunbinoh.github.io//images/sadS.png){: width="20%" height="20%"}   
 
 .      
 .   
-. col-sm,.. col-md,.. col-lg, ..   
+. col-sm,.. col-md,.. col-lg, ..        
 .      
-.      
-.      
-. modal,....   
-.         
-.      
-. event
-.      
+. modal,...  
+.             
+. event     
 .    
 . beautifier min.js...
 .   
-.      
-
-# 이번 풀캘린더 정면돌파를 통해 재야의 고수가 되었다고 한다   
+# 이번 풀캘린더 정면 돌파를 통해 도장 격파 Success!!  
 ![Image name](https://eunbinoh.github.io//images/punchS.png){: width="20%" height="20%"}   
 

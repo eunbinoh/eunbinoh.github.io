@@ -49,6 +49,7 @@ tags: [JUnit, Test, SpringTest, TDD]
    
 ### Assertions
  - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드   
+    
   ```java   
 
   class AssertionsTest {
