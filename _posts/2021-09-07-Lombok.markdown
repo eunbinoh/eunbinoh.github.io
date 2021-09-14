@@ -23,8 +23,7 @@ tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
 -  @Delegate : 한 객체의 메소드를 다른 객체로 위임    
       
    
-```java   
-   
+```java    
 @Getter 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -46,8 +45,14 @@ public class Store extends Common {
     private boolean isMobilePossible; 
     private String Addr;  
 }
-      
-```   
+
+
+```    
+
+
+
+            
+              
       
          
             

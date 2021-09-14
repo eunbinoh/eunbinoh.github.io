@@ -42,12 +42,11 @@ tags: [Lombok, getter, setter ]
 - Oracle : 요일 1~7로 인식  -> TO_CHAR(SYSDATE-1, 'D') 
 - Mysql : 요일 0~6으로 인식   -> DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY), '%w')
 
-5. Like '%'    
-   
-```sql   
-- Oracle : Like '%'||'문자'||'%' 
-- Mysql : LIKE CONCAT('문자','%')   
-```   
+5. Like '%'       
+    ```sql   
+    - Oracle : Like '%'||'문자'||'%' 
+    - Mysql : LIKE CONCAT('문자','%')   
+    ```   
 
 6. 형변환
 - Oracle : To_char, To_number, ..
@@ -69,12 +68,11 @@ tags: [Lombok, getter, setter ]
 - Oracle: SUBSTR(문자열, 1, 10)
 - Mysql: SUBSTRING(문자열, 1,10), LEFT(문자열, 3), RIGHT(문자열, 3)
 
-11. 문자열 합치기 
-      
-```sql     
-- Oracle: 문자열(또는 컬럼)||문자열
-- Mysql: CONCAT(문자열, 문자열)   
-```   
+11. 문자열 합치기       
+    ```sql     
+    - Oracle: 문자열(또는 컬럼)||문자열
+    - Mysql: CONCAT(문자열, 문자열)   
+    ```   
 
 12. 예약어가 컬럼명일 때
 - Oracle: 컬럼명을 따옴표(")로 감싸기 (예: select "column" from tab)
@@ -89,4 +87,7 @@ tags: [Lombok, getter, setter ]
 # 프로젝트 적용 예제 
 ```sql
 ( 작업중 )
-```
+```   
+   
+      
+         
