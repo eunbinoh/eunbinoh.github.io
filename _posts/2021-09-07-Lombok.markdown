@@ -7,13 +7,10 @@ tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
 ---
 
 ### Lombok : 어노테이션 기반, 코드 자동완성 Library
-# - VO Class 단순화
-# - Getter, Setter, Equals, toString 
-      
-         
-      
-      
-# #어노테이션  
+# # VO Class 단순화
+# # Getter, Setter, Equals, toString 
+             
+# # 어노테이션  
 
 -  @Getter, @Setter : 클래스 위(전체적용)/ 변수 위(해당변수만적용) 
 -  @NoArgsConstructor: 변수 사용하지 않는 기본 생성자 자동완성

@@ -45,10 +45,8 @@ tags: [Lombok, getter, setter ]
 5. Like '%'    
    
 ```sql   
-
 - Oracle : Like '%'||'문자'||'%' 
-- Mysql : LIKE CONCAT('문자','%') 
-   
+- Mysql : LIKE CONCAT('문자','%')   
 ```   
 
 6. 형변환
@@ -76,7 +74,6 @@ tags: [Lombok, getter, setter ]
 ```sql     
 - Oracle: 문자열(또는 컬럼)||문자열
 - Mysql: CONCAT(문자열, 문자열)   
-
 ```   
 
 12. 예약어가 컬럼명일 때
@@ -89,9 +86,7 @@ tags: [Lombok, getter, setter ]
    
       
          
-## 적용 프로젝트 
+# 프로젝트 적용 예제 
 ```sql
-   
-(작업중)
-
+( 작업중 )
 ```
