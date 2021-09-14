@@ -3,7 +3,70 @@ layout: post
 title: "Lombok"
 date: 2021-09-02 00:00:00
 categories: [Study&more]
-tags: [Lombok, getter, setter ]
+tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
 ---
 
-# 어노테이션 기반으로 코드를 자동완성 해주는 라이브러리
+# Lombok : 어노테이션 기반으로 코드를 자동완성 해주는 라이브러리
+# - Getter, Setter, Equals, toString 자동완성
+# - VO 클래스 단순화
+   
+      
+# 예제   
+
+-  @Getter, @Setter : 클래스 위(전체적용)/ 변수 위(해당변수만적용) 
+-  @NoArgsConstructor: 변수 사용하지 않는 기본 생성자 자동완성
+-  @RequiredArgsConstructor : 특정변수만 사용하는 생성자 자동완성(@NonNull인자)
+-  @AllArgsConstructor : 모든 변수를 사용하는 생성자 자동완성 
+-  @EqualsAndHashCode : equals, hashCode 자동 생성(같은이름=같은객체 판단시 추가)
+-  @ToString : 클래스 변수를 기반으로 toString 자동완성(제외시 .Exclude)  
+-  @Data : @ToString, @EqualsAndHashCode, @Getter, @Setter 자동완성(안정성 저하, 지양)
+-  @Builder : 객체 생성에 Builder 패턴 적용 ( 클래스 위/ 변수 위)
+-  @Delegate : 한 객체의 메소드를 다른 객체로 위임 
+```java   
+
+@Getter 
+@AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor 
+@EqualsAndHashCode( of= {"companyName", "industryTypeCode"}, callSuper=false )
+@ToString
+public class Store extends Common { 
+    
+    @Setter 
+    private String companyName; 
+    private String industryTypeCode; 
+    private String businessCodeName; 
+    private String industryName; 
+    @NonNull // telephone{}
+    private String telephone; 
+    @ToString.Exclude //ToString에서 regionMoneyName 제외
+    private String regionMoneyName; 
+    private boolean isBmoneyPossible; 
+    private boolean isCardPossible; 
+    private boolean isMobilePossible; 
+    private String lotnoAddr; 
+}
+
+```   
+   
+
+-  @Getter, @Setter : 클래스 위(전체적용)/ 변수 위(해당변수만적용) 
+
+
+```java
+@Getter public class Store extends Common { 
+    
+    @Setter 
+    private String companyName; 
+    private String industryTypeCode; 
+    private String businessCodeName; 
+    private String industryName; 
+    private String telephone; 
+    private String regionMoneyName; 
+    private boolean isBmoneyPossible; 
+    private boolean isCardPossible; 
+    private boolean isMobilePossible; 
+    private String lotnoAddr; 
+}
+
+```   

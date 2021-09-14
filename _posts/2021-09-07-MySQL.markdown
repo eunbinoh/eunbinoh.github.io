@@ -43,7 +43,7 @@ tags: [Lombok, getter, setter ]
 - Mysql : 요일 0~6으로 인식   -> DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY), '%w')
 
 5. Like '%' 
-- Oracle : Like '%'||'문자'||'%' 
+- Oracle : Like '%'|+|'문자'|+|'%' 
 - Mysql : LIKE CONCAT('문자','%') 
 
 6. 형변환
@@ -67,7 +67,7 @@ tags: [Lombok, getter, setter ]
 - Mysql: SUBSTRING(문자열, 1,10), LEFT(문자열, 3), RIGHT(문자열, 3)
 
 11. 문자열 합치기 
-- Oracle: 문자열(또는 컬럼) || 문자열
+- Oracle: 문자열(또는 컬럼)|+|문자열
 - Mysql: CONCAT(문자열, 문자열)
 
 12. 예약어가 컬럼명일 때
@@ -80,10 +80,9 @@ tags: [Lombok, getter, setter ]
    
       
          
-## 적용
+## 적용 프로젝트 
 ```sql
-
-
-
+   
+(작업중)
 
 ```
