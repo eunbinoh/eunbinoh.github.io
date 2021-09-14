@@ -6,12 +6,14 @@ categories: [Study&more]
 tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
 ---
 
-# Lombok : 어노테이션 기반으로 코드를 자동완성 해주는 라이브러리
+### Lombok : 어노테이션 기반으로 코드를 자동완성 해주는 라이브러리
 # - Getter, Setter, Equals, toString 자동완성
 # - VO 클래스 단순화
-   
       
-# 예제   
+   
+
+      
+# 어노테이션  
 
 -  @Getter, @Setter : 클래스 위(전체적용)/ 변수 위(해당변수만적용) 
 -  @NoArgsConstructor: 변수 사용하지 않는 기본 생성자 자동완성
@@ -21,8 +23,11 @@ tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
 -  @ToString : 클래스 변수를 기반으로 toString 자동완성(제외시 .Exclude)  
 -  @Data : @ToString, @EqualsAndHashCode, @Getter, @Setter 자동완성(안정성 저하, 지양)
 -  @Builder : 객체 생성에 Builder 패턴 적용 ( 클래스 위/ 변수 위)
--  @Delegate : 한 객체의 메소드를 다른 객체로 위임 
-```java   
+-  @Delegate : 한 객체의 메소드를 다른 객체로 위임    
+   
+   
+```JAVA   
+
 
 @Getter 
 @AllArgsConstructor
@@ -46,27 +51,10 @@ public class Store extends Common {
     private boolean isMobilePossible; 
     private String lotnoAddr; 
 }
-
-```   
    
-
--  @Getter, @Setter : 클래스 위(전체적용)/ 변수 위(해당변수만적용) 
-
-
-```java
-@Getter public class Store extends Common { 
-    
-    @Setter 
-    private String companyName; 
-    private String industryTypeCode; 
-    private String businessCodeName; 
-    private String industryName; 
-    private String telephone; 
-    private String regionMoneyName; 
-    private boolean isBmoneyPossible; 
-    private boolean isCardPossible; 
-    private boolean isMobilePossible; 
-    private String lotnoAddr; 
-}
-
 ```   
+      
+         
+            
+               
+               
