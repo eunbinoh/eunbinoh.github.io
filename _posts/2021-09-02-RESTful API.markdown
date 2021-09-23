@@ -14,7 +14,7 @@ tags: [REST, RESTful API, client-server]
 - 조직이 보안,제어 유지관리하면서 리소스와 정보 공유
 
    
-#### REST   
+#### REST (Representational State Transfer)
 - 프로토콜이나 표준이 아닌 아키텍처 원칙 세트
 - 개발자는 REST를 다양한 방식으로 구현
 - 리소스에 대한 정보를 요청자에게 전송(Http:JSON,HTML,..)
@@ -38,9 +38,11 @@ tags: [REST, RESTful API, client-server]
 2. 접근할 HTTP 메소드 방식 결정 (GET,POST,HEAD,PUST,..)
 3. 결과 포맷, 컨텐츠 상호작용의 허용 여부 파악
    
-```JAVA   
+``` 
+
 // URL 경로 예시, {}는 파라미터
- http://service.mycompany.com/users/{userid} 
+
+http://service.mycompany.com/users/{userid} 
 
 // RestTemplate Object 생성
 RestTemplate template = new RestTemplate();
