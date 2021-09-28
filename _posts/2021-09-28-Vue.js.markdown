@@ -8,42 +8,68 @@ tags: [Vue.js, npm, webpack, TodoList, 앱만들기]
    
       
 
-### Do it - Vue.js 입문 (장기효) ToDoList 만들기
+### Do it - Vue.js 입문 ToDoList 적용!
 
 →  [Git-Hub](https://github.com/eunbinoh/Vue_todo)   
    
-  ![Image name](https://eunbinoh.github.io/images/todo4.png){: width="50%" height="100%"}
-  ![Image name](https://eunbinoh.github.io/images/todo5.png){: width="50%" height="100%"}
+  ![Image name](https://eunbinoh.github.io/images/todo4.png){: width="100%" height="100%"}
+  ![Image name](https://eunbinoh.github.io/images/todo5.png){: width="100%" height="100%"}
 
 
 #### Vue.js
-- 
+- 웹 화면 개발을 위한 frontend Framework
+- 점진적 프레임워크 : 렌더링, 컴포넌트 기반, 라우팅, 상태 관리
+- MVVM pattern model
+    + ViewModel - View(DOMListener/DataBinding) - Model
    
       
-#### Angular
-- 
+#### Angular1,2
+- MVC
+- 양방향 데이터 바인딩(Two-way Data Binding) 장점
+- TypeScript, ES6(ECMAScript) 지식 필요
    
       
 #### React
-- 
+- 단방향 데이터 흐름(One-way Data Flow) 장점
+- Virtual DOM 렌더링 (빠른 화면 전환)
+- ES6(ECMAScript), JSX 지식 필요
    
       
 #### webpack
-- 
+- 웹모듈 번들러, 최신 프런트엔드 필수의 웹성능 개선 도구
    
       
-#### el
-- 
+#### Axios
+- 뷰 커뮤니티에서 가장 많이 사용되는 HTTp 통신 라이브러리
+- Promise API
    
       
-#### instance
-- 
-   
-      
-#### components
-- 
+#### View Instance
+- 뷰 화면 개발시 필수 생성 기본 단위
+- data, el, template, methods,..
+- life cycle(생성 -> 소멸): beforeCreate, createed, beforeMount, mounted,   
+    beforeUpdate, updated, beforeDestroy, destroyed
+
+        
+#### View Components
+- 화면을 구성하는 특정 영역 (구조화, 패턴 조합)
+- 재활용성, 직관성
+- Header / Content(navi,list,input,..) / Footer
    
       
 #### Vue CLI
-- npm run dev
-- npm run build (package.json - scripts : build/serve)
+- npm install vue-cli -global
+- vue init webpack : 웹팩 고급 기능 활용, 테스팅 문법 검사 지원
+- vue init webpack-simple : 웹팩 최소 기능, 빠른 화면 프로토타이핑용
+- vue init browserify : 테스팅, 문법 검사 지원
+- npm run dev : 개발자용 run
+- npm run build (package.json - scripts : build/serve) : 서버 동작(distinct생성)
+   
+      
+#### Directive
+- v-if
+- v-for
+- v-show
+- v-bind
+- v-on
+- v-model
