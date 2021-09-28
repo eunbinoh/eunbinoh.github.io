@@ -8,11 +8,13 @@ tags: [Vue.js, npm, webpack, TodoList, 앱만들기]
    
       
 
-### Do it - Vue.js 입문 (장기효) 실전
+### Do it - Vue.js 입문 (장기효) ToDoList 만들기
 
 →  [Git-Hub](https://github.com/eunbinoh/Vue_todo)   
    
-      
+  ![Image name](https://eunbinoh.github.io/images/todo4.png){: width="50%" height="100%"}
+  ![Image name](https://eunbinoh.github.io/images/todo5.png){: width="50%" height="100%"}
+
 
 #### Vue.js
 - 
