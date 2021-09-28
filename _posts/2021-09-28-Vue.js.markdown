@@ -1,0 +1,47 @@
+---
+layout: post
+title: "Vue.js"
+date: 2021-09-28 00:00:00
+categories: [Study&more]
+tags: [Vue.js, npm, webpack, TodoList, 앱만들기]
+---
+   
+      
+
+### Do it - Vue.js 입문 (장기효) 실전
+
+→  [Git-Hub](https://github.com/eunbinoh/Vue_todo)   
+   
+      
+
+#### Vue.js
+- 
+   
+      
+#### Angular
+- 
+   
+      
+#### React
+- 
+   
+      
+#### webpack
+- 
+   
+      
+#### el
+- 
+   
+      
+#### instance
+- 
+   
+      
+#### components
+- 
+   
+      
+#### Vue CLI
+- npm run dev
+- npm run build (package.json - scripts : build/serve)
