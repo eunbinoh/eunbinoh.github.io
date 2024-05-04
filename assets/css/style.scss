@@ -74,19 +74,25 @@ a.navbar-item.is-active {
         margin: auto;
 
         img {
-            border: 0.25rem dotted black;
+            border: 0.25rem ridge black;
         }
     }
 
     a {
-        min-width: 25vmax;
+        min-width: 20vmax;
         margin: 0.5rem;
+    }
+    .introduce{
+        span{
+            display: block;
+            font-family : "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
     }
 }
 
 #contact {
     #contact-button {
-        margin: 0.5rem auto;
+        margin: 0.2rem auto;
         display: flex;
         justify-content: center;
     }
@@ -241,6 +247,9 @@ a.navbar-item.is-active {
                 &:hover{
                     transform: scale(1.15);
                 }
+            }
+            span{
+                display: block;
             }
         }
     }

@@ -7,9 +7,9 @@ url: 'http://eunbinoh.github.io'
 baseurl: 
 
 # Title of the Site
-title: FE_DEVELOPER  EUNBI N.
+title: EUNBI N'S PORTFOLIO
 # Description of the Site
-description: build on 2.9 years web-developer carrear 
+description: FE_DEVELOPER BUILDING ON 2.9 YEARS 
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
@@ -43,9 +43,11 @@ disqus-shortname: /
 # Name of the Author
 author-name: Eunbi.N
 # URL for the Image of the Author
-author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
+author-image: /assets/images/avatar_me.jpg
+author-sub-image:  /assets/images/avatar_hello.jpg
 # 60 Words About the Author
-author-about: A 2.9 year FrontEnd Developer. 
+author-about: _
+
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
 author-url: https://github.com/eunbinoh
 
