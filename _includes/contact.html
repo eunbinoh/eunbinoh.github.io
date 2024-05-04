@@ -1,17 +1,29 @@
 <section class="hero is-fullheight has-text-centered" id="contact">
     <div class="hero-body">
         <div class="container">
+            <a href="{{site.url}}{{site.baseurl}}/project"
+                class="contact-button button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
+            > 
+                <img src="/assets/images/project-com.svg" style="margin-right: 5px;"/> PROJECTS
+            </a>
+            <a href="{{site.url}}{{site.baseurl}}/blog"
+                class="contact-button button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
+            > 
+                <img src="/assets/images/study-com.svg" style="margin-right: 5px;"/> knowledge 
+            </a>
             {% unless site.email == %}
-            <a id="contact-button" href="mailto:{{site.email}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
-                target="_blank">
+            <a  href="mailto:{{site.email}}"
+                class="contact-button button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
+                target="_blank"
+            >
                 <i class="fas fa-envelope"></i>SEND ME EMAIL
             </a>
             {% endunless %}
             {% unless site.github_username == %}
-            <a id="contact-button" href="http://www.github.com/{{site.github_username}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
-                target="_blank">
+            <a  href="http://www.github.com/{{site.github_username}}"
+                class="contact-button button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
+                target="_blank"
+            >
                 <i class="fab fa-github"></i>GO TO GITHUB
             </a>
             {% endunless %}

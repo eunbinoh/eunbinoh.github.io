@@ -87,11 +87,34 @@ a.navbar-item.is-active {
             display: block;
             font-family : "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
+        .tag-line{
+            margin-top: 10px;
+            .tags{
+                align-items: center;
+                background-color: #000201d7;
+                border-radius: 4px;
+                color: #ffffff;
+                display: inline-flex;
+                font-size: .75rem;
+                height: 2em;
+                justify-content: center;
+                line-height: 1.5;
+                padding-left: .75em;
+                padding-right: .75em;
+                white-space: nowrap;
+            }
+        }
+        .skill-line1{
+            margin-top: 20px;
+        }
+        .icons{
+            display: inline-flex;
+        }
     }
 }
 
 #contact {
-    #contact-button {
+    .contact-button {
         margin: 0.2rem auto;
         display: flex;
         justify-content: center;
