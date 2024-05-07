@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "토비의 스프링 3.1 - (3) "
-categories: [Spring & JAVA]
+post-image: "https://cdn.inflearn.com/public/courses/329974/cover/fe5d2e63-04c3-472e-9bd5-9b26857629a8/329974-eng.png"
 tags: [Spring, Toby ]
 ---
 

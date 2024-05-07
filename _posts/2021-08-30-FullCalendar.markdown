@@ -2,7 +2,7 @@
 layout: post
 title: "Full_Calendar"
 date: 2021-08-30 00:00:00
-categories: [Project]
+post-image: "https://images.squarespace-cdn.com/content/v1/62460a56418af8236d4f3fee/1678916323032-F7IXUXCT6KWP8HJ3U0RO/google+calendar.jpg"
 tags: [FullCallendar, main.js, events.]
 ---
    

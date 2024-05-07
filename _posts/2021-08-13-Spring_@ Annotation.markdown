@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring_@Annotaion"
 date:   2021-08-13 00:00:00
-categories: [Spring & JAVA]
+post-image: "https://miro.medium.com/v2/resize:fit:1400/1*eGMN_Ab7Y2XzXwlegZGXCA.png"
 tags: [Annotation, RequestParam, RequestBody, ModelAttribute]
 ---
    

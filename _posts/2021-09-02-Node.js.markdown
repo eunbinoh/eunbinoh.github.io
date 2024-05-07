@@ -2,7 +2,7 @@
 layout: post
 title: "Node.js"
 date: 2021-09-02 00:00:00
-categories: [Study&more]
+post-image: "https://static.blex.me/images/title/2022/12/9/Laeti-Park/15_6RIY13KT.jpg"
 tags: [Node.js, npm, 서버구현]
 ---
 

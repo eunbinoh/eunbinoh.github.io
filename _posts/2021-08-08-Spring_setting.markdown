@@ -2,7 +2,7 @@
 layout: post
 title: "Spring_setting"
 date: 2021-08-08 00:00:00
-categories: [Spring & JAVA]
+post-image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCOGJsxz9iINmjXWOsA6qRfA7Hc8GASDYYM181fsSevg&s"
 tags: [스프링 세팅, Spring Legacy Project, pom.xml ]
 ---
 

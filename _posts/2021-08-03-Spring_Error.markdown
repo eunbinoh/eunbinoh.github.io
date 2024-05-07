@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Spring_Error"
-category: 
 date: 2021-08-03 00:00:00
-categories: [ErrorNote]
+post-image: "https://velog.velcdn.com/images/wonizizi99/post/48038826-ac5b-4664-848b-407850e2bc2e/image.png"
 tags: [Errornote, Spring-Error, Tomcat-Error, Mapping-Error]
 ---
 

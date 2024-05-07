@@ -2,7 +2,7 @@
 layout: post
 title: "RESTful API"
 date: 2021-09-02 00:00:00
-categories: [Study&more]
+post-image: "https://images.velog.io/images/ellyheetov/post/6b392c42-ee7d-4ab6-9869-dd119fdb18e1/Screen%20Shot%202021-05-15%20at%206.16.18%20PM.png"
 tags: [REST, RESTful API, client-server]
 ---
 

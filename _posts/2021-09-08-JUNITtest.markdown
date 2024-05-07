@@ -2,7 +2,7 @@
 layout: post
 title: "JUnit_Test"
 date: 2021-09-08 00:00:00
-categories: [Study&more]
+post-image: "https://img-c.udemycdn.com/course/750x422/4693842_0f19.jpg"
 tags: [JUnit, Test, SpringTest, TDD]
 ---
 

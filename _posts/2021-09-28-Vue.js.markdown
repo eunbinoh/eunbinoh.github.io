@@ -2,7 +2,7 @@
 layout: post
 title: "Vue.js"
 date: 2021-09-28 00:00:00
-categories: [Study&more]
+post-image: "https://global.discourse-cdn.com/ionicframework/original/3X/5/d/5dda6d56cd5aff5932a478629cb48a07388a4d46.jpeg"
 tags: [Vue.js, npm, webpack, TodoList, 앱만들기]
 ---
    

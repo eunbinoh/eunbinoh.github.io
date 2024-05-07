@@ -1,24 +1,28 @@
-- name: React Project
-  image: https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg
+- name: GoParts ERP
   link: https://my-sweet-react.netlify.app/
-  description: 리액트 토이 프로젝트 입니다. Link `:` https://github.com/eunbinoh/myReact
+  image: https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg
+  description1: SI 자동차부품수출 프로그램 
+  description2: Vue, Pinia, Java, Apache, PSql
+  description3: 2022.09 - 2023.02 (6m)
 
-- name: Vue Project
+- name: MetaM Program
   link: https://my-sweet-react.netlify.app/
   image: https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg
-  description: 뷰 토이 프로젝트 입니다. Link `:` https://github.com/eunbinoh/myReact
+  description1: SI 콜센터 실시간대응 프로그램
+  description2: Vue, Vuex, Node, Nginx, Swagger
+  description3: 2023.09 - 2024.02 (6m)
 
-- name: Angular Project
+
+- name: Bizbee ERP
+  link: https://my-sweet-react.netlify.app/
+  image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
+  description1: SI/SM 인사급여 파트  
+  description2: Angular, grunt/gulp, Java, Oracle
+  description3: 2021.09 - (ing)
+
+- name: Water Water Ex
   link: https://my-sweet-react.netlify.app/
   image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
-  description: 앵귤러 프로젝트 히스토리입니다. Link `:` https://github.com/eunbinoh/myReact
-
-- name: Fourth Project
-  link:
-  image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
-  description: 뷰 프로젝트 히스토리입니다. Link `:` https://github.com/eunbinoh/myReact
-
-- name: Fifth Project
-  link:
-  image: https://cdn.pixabay.com/photo/2016/12/02/02/10/idea-1876659_960_720.jpg
-  description: 리액트 대형 프로젝트 (ing). Link `:` https://github.com/eunbinoh/myReact
+  description1: 개인 프로젝트
+  description2: React, migration to Next.js 
+  description3: 2024.02 - (ing)

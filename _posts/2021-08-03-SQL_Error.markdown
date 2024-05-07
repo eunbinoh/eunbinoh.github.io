@@ -3,7 +3,7 @@ layout: post
 title: "SQL_Error"
 category: 
 date: 2021-08-02 00:00:00
-categories: [ErrorNote]
+post-image: "https://velog.velcdn.com/images/wonizizi99/post/48038826-ac5b-4664-848b-407850e2bc2e/image.png"
 tags: [Errornote, Sql-Error, Oracle-Error]
 ---
    

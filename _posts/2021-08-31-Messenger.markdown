@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SockJS 메신저 그룹웨어"
-categories: [Project]
+post-image: "https://miro.medium.com/v2/resize:fit:1400/1*9aXEAgBXLhQAZBD6DgcALw.jpeg"
 tags: [SocketJS, websocket, Spring, messenger, chatting]
 ---
 

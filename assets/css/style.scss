@@ -98,14 +98,10 @@ a.navbar-item.is-active {
                 font-size: .75rem;
                 height: 2em;
                 justify-content: center;
-                line-height: 1.5;
                 padding-left: .75em;
                 padding-right: .75em;
                 white-space: nowrap;
             }
-        }
-        .skill-line1{
-            margin-top: 20px;
         }
         .icons{
             display: inline-flex;
@@ -309,6 +305,15 @@ a.navbar-item.is-active {
         transition: all 0.5s ease;
         margin-bottom: 0.5rem !important;
         display: inline-table;
+
+        .card-content {
+            padding: 1.5rem 0rem !important;
+
+            .title{
+                margin-bottom: 20px;
+            }
+        }
+
         &:hover {
             transform: scale(0.975);
         }

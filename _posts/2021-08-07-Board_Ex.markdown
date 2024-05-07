@@ -2,7 +2,7 @@
 layout: post
 title: "Board"
 date: 2021-08-07 00:00:00
-categories: [Spring & JAVA]
+post-image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCOGJsxz9iINmjXWOsA6qRfA7Hc8GASDYYM181fsSevg&s"
 tags: [Spring, BoardController, Pagination]
 ---
 

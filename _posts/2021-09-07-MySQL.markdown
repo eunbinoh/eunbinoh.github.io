@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "MySQL"
+title: "Oracle vs MySQL"
 date: 2021-09-02 00:00:00
-categories: [Study&more]
+post-image: "https://velog.velcdn.com/images/ongong999/post/f7cac017-c2f3-4a56-bcf7-2b830fa839f4/image.jpg"
 tags: [Lombok, getter, setter ]
 ---
 

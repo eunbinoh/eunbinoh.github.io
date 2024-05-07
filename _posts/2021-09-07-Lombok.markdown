@@ -2,7 +2,7 @@
 layout: post
 title: "Lombok"
 date: 2021-09-02 00:00:00
-categories: [Study&more]
+post-image: "https://media.licdn.com/dms/image/D5612AQEjHZjaWDtWJg/article-cover_image-shrink_720_1280/0/1699851968725?e=2147483647&v=beta&t=uT1puOTNZBU67sXtDndiVFSmPas7cXzyczrR8wPdsZg"
 tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
 ---
 
