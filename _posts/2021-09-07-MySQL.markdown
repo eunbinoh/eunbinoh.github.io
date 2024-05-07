@@ -83,11 +83,6 @@ tags: [Lombok, getter, setter ]
 - Mysql: DROP PROCEDURE IF EXISTS 프로시저명; CREATE PROCEDURE 프로시저명
    
       
-         
-# 프로젝트 적용 예제 
-```sql
-( 작업중 )
-```   
-   
+
       
          

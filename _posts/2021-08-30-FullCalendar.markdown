@@ -344,19 +344,5 @@ var editEvent = function (event, element, view) {
 
 ---   
 
-# CSS, min.js, bootstrap 때문에 너무 힘들었던 나는 ..  
-![Image name](https://eunbinoh.github.io//images/sadS.png){: width="20%" height="20%"}   
 
-.      
-.   
-. col-sm,.. col-md,.. col-lg, ..        
-.      
-. modal,...  
-.             
-. event     
-.    
-. beautifier min.js...
-.   
-# 이번 풀캘린더 정면 돌파를 통해 도장 격파 Success!!  
-![Image name](https://eunbinoh.github.io//images/punchS.png){: width="20%" height="20%"}   
 

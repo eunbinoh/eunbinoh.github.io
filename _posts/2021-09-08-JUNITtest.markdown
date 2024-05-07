@@ -121,20 +121,3 @@ tags: [JUnit, Test, SpringTest, TDD]
    
 ---
                       
-   
-   
-#### 아주 간단한 예제 실습해본거지만, 해본거랑 안해본거랑 천 지 차 이!
-#### JUnit Test 유용하게 쓰일것 같아 재밌었다 !
-# MySql 예제로 연습하게되서 너무 옛날식 문법을 오랜만에 사용해봤지만..
-#### 초록 막대가 뜨면 기분이 상콤하고 , 
-#### 빨간 막대가 뜨면 못견디겠는 개발자의 성미..
-# TDD 첫 걸음마를 시작합니다~!  
-   
-
-![wowS](https://media4.giphy.com/media/M90mJvfWfd5mbUuULX/giphy.gif?cid=ecf05e474cefe3c64026944a65d3a11d81b5480f35f2f24a&rid=giphy.gif&ct=g){: width="20%" height="20%"}
-         
-
-   
-
-
-Annotation Reference ::https://donghyeon.dev/archive/

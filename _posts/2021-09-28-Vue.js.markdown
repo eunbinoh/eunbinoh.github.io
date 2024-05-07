@@ -23,18 +23,6 @@ tags: [Vue.js, npm, webpack, TodoList, 앱만들기]
     + ViewModel - View(DOMListener/DataBinding) - Model
    
       
-#### Angular1,2
-- MVC
-- 양방향 데이터 바인딩(Two-way Data Binding) 장점
-- TypeScript, ES6(ECMAScript) 지식 필요
-   
-      
-#### React
-- 단방향 데이터 흐름(One-way Data Flow) 장점
-- Virtual DOM 렌더링 (빠른 화면 전환)
-- ES6(ECMAScript), JSX 지식 필요
-   
-      
 #### webpack
 - 웹모듈 번들러, 최신 프런트엔드 필수의 웹성능 개선 도구
    
