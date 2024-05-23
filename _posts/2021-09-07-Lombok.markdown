@@ -3,15 +3,12 @@ layout: post
 title: "Lombok"
 date: 2021-09-02 00:00:00
 post-image: "https://media.licdn.com/dms/image/D5612AQEjHZjaWDtWJg/article-cover_image-shrink_720_1280/0/1699851968725?e=2147483647&v=beta&t=uT1puOTNZBU67sXtDndiVFSmPas7cXzyczrR8wPdsZg"
-tags: [Lombok, getter, setter, Library, IntelliJ_plugIn ]
+tags: [Lombok, getter, setter ]
 ---
 
-### Lombok : 어노테이션 기반, 코드 자동완성 Library
-# # VO Class 단순화
-# # Getter, Setter, Equals, toString 
-             
-# # 어노테이션  
+### Lombok : 어노테이션 기반, 코드 자동완성 Library     
 
+#### @Annotaions
 -  @Getter, @Setter : 클래스 위(전체적용)/ 변수 위(해당변수만적용) 
 -  @NoArgsConstructor: 변수 사용하지 않는 기본 생성자 자동완성
 -  @RequiredArgsConstructor : 특정변수만 사용하는 생성자 자동완성(@NonNull인자)

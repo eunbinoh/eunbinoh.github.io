@@ -5,13 +5,13 @@ post-image: "https://miro.medium.com/v2/resize:fit:1400/1*9aXEAgBXLhQAZBD6DgcALw
 tags: [SocketJS, websocket, Spring, messenger, chatting]
 ---
 
-# Project - SockJS 선정 이유 (웹소켓 배경)
+# Websocket - SockJS 선택 이유 
 - 웹소켓은 양방향 소통을 위한 프로토콜로, 적은 데이터를 빠르게 통신. ex. 코인, 주식 홈페이지
-	+ 하지만 호환,표준규격 등의 접근성 단점, 이에 대한 솔루션 : Socket.io & SockJS
-  	- Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
-  	-  SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
-    -> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.   
-    -> 웹브라우저가 아닌 Android, ios : STOMP-websocket 메세지 프로토콜 호환 가능.
++ 하지만 호환,표준규격 등의 접근성 단점, 이에 대한 솔루션 : Socket.io & SockJS
+- Socket.io : node.js기반 자체서버를 만들어 실시간 통신이 브라우저 제약x. javascript 개발.
+-  SockJS : Spring framework에서 자체스펙으로 웹소켓 미지원 브라우저를 관리,   
+-> 서버 개발시 websocket,sockJS 호환 선택 / 클라이언트쪽은 SockJS  client를 통해 통신.   
+-> 웹브라우저가 아닌 Android, ios : STOMP-websocket 메세지 프로토콜 호환 가능.
       
          
 

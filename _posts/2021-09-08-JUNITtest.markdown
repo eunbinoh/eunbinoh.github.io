@@ -13,7 +13,8 @@ tags: [JUnit, Test, SpringTest, TDD]
    
 ### JUNIT5 SETTING
   - JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage(engine) (모듈집합)
-  - Trendy : junit4 -> junit5 (호환 위해 junit-engine 필요)
+  - Trendy : junit4 -> junit5 (호환 위해 junit-engine 필요)   
+
   ![Image name](https://eunbinoh.github.io//images/junit3.png){: width="100%" height="100%"}           
 
   - MVN Repository 에서 1) spring-test, 2) junit5 api, 3) junit-engine get!
@@ -26,8 +27,11 @@ tags: [JUnit, Test, SpringTest, TDD]
   - JUnit5 DI 자동 빌드(4->5)
    
 
-### JUnitTest.java   
- #### 1) DB 연결 셋팅
+- - -
+
+### TEST PROCEDURE
+    
+#### 1. DB 연결 셋팅
   ![Image name](https://eunbinoh.github.io//images/junit7.png){: width="100%" height="100%"}        
     
   - @Test : 테스트 메소드 객체 생성
@@ -38,13 +42,13 @@ tags: [JUnit, Test, SpringTest, TDD]
   - getBean : 컨테이너에 담겨진 Bean 객체 호출 
   - Driver, url, id, pwd 입력
      
- #### 2) DB insert 테스트  
+#### 2. DB insert 테스트  
    ![Image name](https://eunbinoh.github.io//images/junit5.png){: width="100%" height="100%"}     
    - conn = DriverManager.getConnection(URL,UID,PWD);
    - if(conn!=null){ }else{ } :커넥션 성공/실패 
    - try-catch-finally close()     
 
- #### 3) DB select 테스트  
+#### 3. DB select 테스트  
    ![Image name](https://eunbinoh.github.io//images/junit6.png){: width="100%" height="100%"}     
    - conn = DriverManager.getConnection(URL,UID,PWD);
    - String id = "user02"; String phone = selectName(conn,id);
@@ -65,9 +69,9 @@ tags: [JUnit, Test, SpringTest, TDD]
   - @Nested : test 클래스안에 Nested(,inner) 테스트 클래스를 작성할 때 사용 (static X)
    
 ### Assertions
- - org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드   
+- org.junit.jupiter.api.Assertions 클래스 안에 있는 정적 메소드   
     
-  ```java   
+```java   
 
   class AssertionsTest {
     private final Calculator calculator = new Calculator();
