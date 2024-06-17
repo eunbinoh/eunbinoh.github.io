@@ -1,10 +1,3 @@
-- name: Water Water Ex
-  link: https://my-sweet-portfolio.netlify.app/
-  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
-  description1: 개인 프로젝트
-  description2: React, migration to Next.js 
-  description3: 2024.02 - (ing)
-
 - name: MetaM Program
   link: https://my-career-proj.netlify.app/
   image: https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg
@@ -25,3 +18,10 @@
   description1: SI/SM 인사급여 파트  
   description2: Angular, grunt/gulp, Java, Oracle
   description3: 2021.09 - (ing)
+
+- name: Water Water Ex
+  link: https://my-sweet-portfolio.netlify.app/
+  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
+  description1: 개인 프로젝트
+  description2: React, migration to Next.js 
+  description3: 2024.02 - (ing)
