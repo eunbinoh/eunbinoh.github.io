@@ -1,3 +1,38 @@
+- name: AI_Stylist
+  link: https://myaistylist.lovable.app/auth
+  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
+  description1: 개인 프로젝트 3
+  description2: "#AI #React #Supabase @pixiv/three-vrm"
+  description3: 2025.06 - (ing)
+
+- name: React_Pet
+  link: https://mypet-react.netlify.app/
+  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
+  description1: 개인 프로젝트 2
+  description2: "#React #Vite #Zustand #Tailwind"
+  description3: 2025.03 - 2024.05 (3m)
+
+- name: React_Ex
+  link: https://my-sweet-portfolio.netlify.app/
+  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
+  description1: 개인 프로젝트 1
+  description2: "#React #ReactQuery #SASS"
+  description3: 2024.05 - 2024.07 (3m)
+
+- name: DPOST_APP
+  link: https://dpost.co.kr/
+  image: https://eunbinoh.github.io/images/images/dpost_app.png
+  description1: "모바일 서비스 (App)"
+  description2: React Native, Expo, WebApp
+  description3: 2025.01 - (ing)
+
+- name: DPOST
+  link: https://dpost.co.kr/
+  image: https://eunbinoh.github.io/images/images/dpost.png
+  description1: "퀵/택배/등기/국제우편 서비스 (Web)"
+  description2: Vue, Pinia, Storybook, Cypress
+  description3: 2024.07 - (ing)
+
 - name: MetaM Program
   link: https://my-career-proj.netlify.app/
   image: https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg
@@ -8,20 +43,13 @@
 - name: GoParts ERP
   link: https://my-career-proj.netlify.app/
   image: https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg
-  description1: SI 자동차부품수출 프로그램 
-  description2: Vue, Pinia, Java, Apache, PSql
+  description1: SI 자동차부품수출 프로그램
+  description2: Vue, Tailwind, Java, Apache, PSql
   description3: 2022.09 - 2023.02 (6m)
 
 - name: Bizbee ERP
   link: https://my-career-proj.netlify.app/
   image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
-  description1: SI/SM 인사급여 파트  
+  description1: SI/SM 인사급여 파트
   description2: Angular, grunt/gulp, Java, Oracle
-  description3: 2021.09 - (ing)
-
-- name: Water Water Ex
-  link: https://my-sweet-portfolio.netlify.app/
-  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
-  description1: 개인 프로젝트
-  description2: React, migration to Next.js 
-  description3: 2024.02 - (ing)
+  description3: 2021.09 - 2024.07 (2.9y)
