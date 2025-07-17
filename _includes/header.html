@@ -1,31 +1,39 @@
 <!-- Header -->
-    <section id="header" class="skel-layers-fixed">
-        <header>
-            <span class="image avatar"><img src="{{ site.baseurl }}/images/mainA.png" alt="{{ site.baseurl }}/images/avatar.jpg" /></span>
-            <h1 id="logo"><a href="https://eunbinoh.github.io/">Eunbi's Portfolio</a></h1>
-            <p style="font-size: 14px;">
-               I am a FrontEnd Developer
-            </p>
-        </header>
-        <nav id="nav" class="site-category">
-            <ul>
-                <li><a href="https://eunbinoh.github.io">Home</a></li>
-                <li><a href="{{ site.url }}/Content/content.html">Content</a></li>
-                {% assign pages_list = site.pages %}
-                {% for node in pages_list %}
-                  {% if node.title != null %}
-                    {% if node.layout == "category" %}
-                      <li><a class="category-link {% if page.url == node.url %} active{% endif %}"
-                      href="{{ site.url }}{{ node.url }}">{{ node.title }}</a></li>
-                    {% endif %}
-                  {% endif %}
-                {% endfor %}               
-            </ul>
-        </nav>
-        <footer class="toTop">
-            <ul style="list-style:none;margin-top:-15px;">
-                <li><a href="https://github.com/eunbinoh" class=""><span class="label"> Go My Github :)</span></a></li>
-            </ul>
-        </footer>
-    </section>
-
+<section id="header" class="skel-layers-fixed">
+  <header>
+    <span class="image avatar"
+      ><img
+        src="{{ site.baseurl }}/images/mainA.png"
+        alt="{{ site.baseurl }}/images/avatar_me.png"
+    /></span>
+    <h1 id="logo">
+      <a href="https://eunbinoh.github.io/">Eunbi's Portfolio</a>
+    </h1>
+    <p style="font-size: 14px">I am a FrontEnd Developer</p>
+  </header>
+  <nav id="nav" class="site-category">
+    <ul>
+      <li><a href="https://eunbinoh.github.io">Home</a></li>
+      <li><a href="{{ site.url }}/Content/content.html">Content</a></li>
+      {% assign pages_list = site.pages %} {% for node in pages_list %} {% if
+      node.title != null %} {% if node.layout == "category" %}
+      <li>
+        <a
+          class="category-link {% if page.url == node.url %} active{% endif %}"
+          href="{{ site.url }}{{ node.url }}"
+          >{{ node.title }}</a
+        >
+      </li>
+      {% endif %} {% endif %} {% endfor %}
+    </ul>
+  </nav>
+  <footer class="toTop">
+    <ul style="list-style: none; margin-top: -15px">
+      <li>
+        <a href="https://github.com/eunbinoh" class=""
+          ><span class="label"> Go My Github :)</span></a
+        >
+      </li>
+    </ul>
+  </footer>
+</section>

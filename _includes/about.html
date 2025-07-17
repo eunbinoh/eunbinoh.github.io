@@ -1,54 +1,255 @@
-<section class="hero is-fullheight has-text-centered has-background-white-ter" id="about">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-one-fifth-desktop is-one-fifth-tablet is-one-fifth-fullhd">
-                    <figure class="image">
-                        <img class="is-rounded" src="{{site.author-image}}" alt="{{site.author-name}}">
-                    </figure>
-                </div>
-                <div class="column has-text-left-desktop has-text-left-tablet has-text-left-fullhd has-text-left-widescreen">
-                    <div class="introduce">
-                        <span style="margin-bottom: 10px;"> <b style="color:black;">웹개발자 EUNBI N. </b></span>
-                        <span> <b>F/E_</b> Vue, React, Angular / <b>based JS, TS </b>   </span>
-                        <span> <b>B/E_</b> 서비스 유틸, 아키텍쳐 구축 / <b>based OOP, RESTful API </b> </span>
-                        <span class="tag-line">
-                            <span class="tags">정보처리기사</span>
-                            <span class="tags">방탄코드설계사</span>
-                            <span class="tags">리팩토링애호가</span>
-                            <span class="tags">이슈해결사</span>
-                        </span>
-                        <br/>
-                        <span>
-                            <span class="icons"><img src="/assets/images/html5.svg"/></span>
-                            <span class="icons"><img src="/assets/images/css.svg"/></span>
-                            <span class="icons"><img src="/assets/images/sass.svg"/></span>
-                            <span class="icons"><img src="/assets/images/javascript.svg"/></span>
-                            <span class="icons"><img src="/assets/images/typescript.svg"/></span>
-                            <span class="icons"><img src="/assets/images/vue.svg"/></span>
-                            <span class="icons"><img src="/assets/images/react.svg"/></span>
-                            <span class="icons"><img src="/assets/images/angular.svg"/></span>
-                            <span class="icons"><img src="/assets/images/nextjs.svg"/></span>
-                        </span>
-                        <span>
-                            <span class="icons"><img src="/assets/images/java.svg"/></span>
-                            <span class="icons"><img src="/assets/images/spring.svg"/></span>
-                            <span class="icons"><img src="/assets/images/node.svg"/></span>
-                            <span class="icons"><img src="/assets/images/oracle.svg"/></span>
-                            <span class="icons"><img src="/assets/images/postgresql.svg"/></span>
-                            <span class="icons"><img src="/assets/images/jenkins.svg"/></span>
-                        </span>
-                    </div> 
-                    <br>
-                    <div class="container columns">
-                        <div>
-                            <a href="{{site.url}}{{site.baseurl}}/#contact"
-                                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined">CONTACT
-                                ME</a>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<section
+  class="hero is-fullheight has-text-centered has-background-white-ter"
+  id="about"
+>
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div
+          class="column has-text-left-desktop has-text-left-tablet has-text-left-fullhd has-text-left-widescreen"
+        >
+          <div class="container">
+            <!-- Header -->
+            <div class="header">
+              <h1>
+                프론트엔드개발자 <span class="name-highlight">EUNBI N.</span>
+              </h1>
+              <figure class="image">
+                <img
+                  class="is-rounded"
+                  src="{{site.author-image}}"
+                  alt="{{site.author-name}}"
+                />
+              </figure>
             </div>
+
+            <!-- Tech Specs -->
+            <div class="card">
+              <div class="card-content">
+                <div class="section-title">
+                  <span class="section-icon">
+                    <img src="/assets/images/tech.svg" />
+                  </span>
+                  <span>TECH SPECS</span>
+                </div>
+
+                <div class="tech-grid">
+                  <!-- Frontend -->
+                  <div>
+                    <div class="tech-category">
+                      <div class="category-title">
+                        <span class="category-icon">🌐</span>
+                        <span>Frontend</span>
+                      </div>
+                      <div class="badge-container">
+                        <span class="badge badge-frontend">Vue</span>
+                        <span class="badge badge-frontend">React</span>
+                        <span class="badge badge-frontend">React Native</span>
+                        <span class="badge badge-frontend">Next.js</span>
+                      </div>
+                    </div>
+
+                    <div class="tech-category">
+                      <div class="category-title">
+                        <span class="category-icon">📝</span>
+                        <span>Languages</span>
+                      </div>
+                      <div class="badge-container">
+                        <span class="badge badge-language">TypeScript</span>
+                        <span class="badge badge-language">JavaScript</span>
+                      </div>
+                    </div>
+
+                    <div class="tech-category">
+                      <div class="category-title">
+                        <span class="category-icon">🎨</span>
+                        <span>Styling</span>
+                      </div>
+                      <div class="badge-container">
+                        <span class="badge badge-styling">HTML</span>
+                        <span class="badge badge-styling">CSS</span>
+                        <span class="badge badge-styling">SCSS</span>
+                        <span class="badge badge-styling">Tailwind</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Backend & Tools -->
+                  <div>
+                    <div class="tech-category">
+                      <div class="category-title">
+                        <span class="category-icon">⚙️</span>
+                        <span>Backend</span>
+                      </div>
+                      <div class="badge-container">
+                        <span class="badge badge-backend">Java</span>
+                        <span class="badge badge-backend">Spring</span>
+                        <span class="badge badge-backend">Node.js</span>
+                      </div>
+                    </div>
+
+                    <div class="tech-category">
+                      <div class="category-title">
+                        <span class="category-icon">🔧</span>
+                        <span>Test & Tools</span>
+                      </div>
+                      <div class="badge-container">
+                        <span class="badge badge-tools">Storybook</span>
+                        <span class="badge badge-tools">Cypress</span>
+                        <span class="badge badge-tools">Git</span>
+                        <span class="badge badge-tools">Jenkins</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interests & Certifications -->
+            <div class="card">
+              <div class="card-content">
+                <div class="section-title">
+                  <span class="section-icon">
+                    <img src="/assets/images/direction.svg" />
+                  </span>
+                  <span>Attributes</span>
+                </div>
+                <div class="interests-container">
+                  <div class="interest-tag interest-certification">
+                    <span>🏆</span>
+                    <span>정보처리기사</span>
+                  </div>
+                  <div class="interest-tag interest-code">
+                    <span>🛡️</span>
+                    <span>방탄코드</span>
+                  </div>
+                  <div class="interest-tag interest-refactor">
+                    <span>🔄</span>
+                    <span>리팩토링</span>
+                  </div>
+                  <div class="interest-tag interest-ai">
+                    <span>🤖</span>
+                    <span>AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Icons -->
+            <div class="card">
+              <div class="card-content">
+                <div class="section-title">
+                  <span class="section-icon">
+                    <img src="/assets/images/skill.svg" />
+                  </span>
+                  <span>Skills</span>
+                </div>
+
+                <div class="tech-icons-grid">
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/html5.svg"
+                    /></span>
+                    <span class="tech-icon-name">HTML5</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/css.svg"
+                    /></span>
+                    <span class="tech-icon-name">CSS3</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/sass.svg"
+                    /></span>
+                    <span class="tech-icon-name">Sass</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/javascript.svg"
+                    /></span>
+                    <span class="tech-icon-name">JavaScript</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/typescript.svg"
+                    /></span>
+                    <span class="tech-icon-name">TypeScript</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/vue.svg"
+                    /></span>
+                    <span class="tech-icon-name">Vue</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/react.svg"
+                    /></span>
+                    <span class="tech-icon-name">React</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/angular.svg"
+                    /></span>
+                    <span class="tech-icon-name">Angular</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/nextjs.svg"
+                    /></span>
+                    <span class="tech-icon-name">Next.js</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/java.svg"
+                    /></span>
+                    <span class="tech-icon-name">Java</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/spring.svg"
+                    /></span>
+                    <span class="tech-icon-name">Spring</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/node.svg"
+                    /></span>
+                    <span class="tech-icon-name">Node.js</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/git.svg"
+                    /></span>
+                    <span class="tech-icon-name">Git</span>
+                  </div>
+                  <div class="tech-icon-item">
+                    <span class="icons"
+                      ><img src="/assets/images/jenkins.svg"
+                    /></span>
+                    <span class="tech-icon-name">Jenkins</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="container columns">
+            <div>
+              <a
+                href="{{site.url}}{{site.baseurl}}/#contact"
+                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined"
+                >CONTACT ME
+              </a>
+            </div>
+          </div>
         </div>
+        <!-- "column">-->
+      </div>
+      <!-- "columns">-->
+    </div>
+    <!-- "columns">-->
+  </div>
+  <!-- "hero-body">-->
 </section>

@@ -2,20 +2,20 @@
 markdown: kramdown
 
 # URL of the Site
-url: 'http://eunbinoh.github.io'
+url: "http://eunbinoh.github.io"
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
-baseurl: 
+baseurl:
 
 # Title of the Site
-title: EUNBI N'S PORTFOLIO
+title: EUNBI'S PORTFOLIO
 # Description of the Site
-description: FE_DEVELOPER BUILDING ON 2.9 YEARS 
+description: FE_DEVELOPER BUILDING ON 4 YEARS
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
 site-keywords: Site, Template, Theme
 # URL for the Image of custom Favicon
-favicon-url: 
+favicon-url:
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
 heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
@@ -27,7 +27,7 @@ facebook_username: /
 twitter_username: /
 instagram_username: /
 linkedin_username: /
-github_username:  eunbinoh
+github_username: eunbinoh
 youtube_channel_id: /
 reddit_username: /
 behance_username: /
@@ -43,8 +43,8 @@ disqus-shortname: /
 # Name of the Author
 author-name: Eunbi.N
 # URL for the Image of the Author
-author-image: /assets/images/avatar_me.jpg
-author-sub-image:  /assets/images/avatar_hello.jpg
+author-image: /assets/images/avatar_me.png
+author-sub-image: /assets/images/avatar_me.png
 # 60 Words About the Author
 author-about: _
 
@@ -70,18 +70,16 @@ compress_html:
 
 # Defaults
 defaults:
-  -
-    scope:
-      type: 'posts'
+  - scope:
+      type: "posts"
     values:
       layout: post
       post-image: ""
       description: ""
       tags:
         - ""
-  -
-    scope:
-      type: 'pages'
+  - scope:
+      type: "pages"
     values:
       layout: page
 
