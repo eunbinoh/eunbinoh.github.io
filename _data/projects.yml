@@ -20,35 +20,35 @@
   description3: 2024.05 - 2024.07 (3m)
 
 - name: DPOST_APP
-  link: https://dpost.co.kr/
+  link: https://my-career-proj.netlify.app/posts/proj4-dpostapp
   image: "/assets/images/dpost_app.png"
   description1: "모바일 서비스 (App)"
   description2: React Native, Expo, WebApp
   description3: 2025.01 - (ing)
 
 - name: DPOST
-  link: https://dpost.co.kr/
+  link: https://my-career-proj.netlify.app/posts/proj5-dpost
   image: "/assets/images/dpost.png"
   description1: "퀵/택배/등기/국제우편 서비스 (Web)"
   description2: Vue, Pinia, Storybook, Cypress
   description3: 2024.07 - (ing)
 
 - name: MetaM Program
-  link: https://my-career-proj.netlify.app/
+  link: https://my-career-proj.netlify.app/posts/proj1-metahub
   image: "/assets/images/metam.png"
   description1: SI 콜센터 실시간대응 프로그램
   description2: Vue, Vuex, Node, Nginx, Swagger
   description3: 2023.09 - 2024.02 (6m)
 
 - name: GoParts ERP
-  link: https://my-career-proj.netlify.app/
+  link: https://my-career-proj.netlify.app/posts/proj2-goparts
   image: "/assets/images/goparts.png"
   description1: SI 자동차부품수출 프로그램
   description2: Vue, Tailwind, Java, Apache, PSql
   description3: 2022.09 - 2023.02 (6m)
 
 - name: Bizbee ERP
-  link: https://my-career-proj.netlify.app/
+  link: https://my-career-proj.netlify.app/posts/proj3-bizbee
   image: "/assets/images/bizbee.png"
   description1: SI/SM 인사급여 파트
   description2: Angular, grunt/gulp, Java, Oracle

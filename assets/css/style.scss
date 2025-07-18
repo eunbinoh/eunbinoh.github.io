@@ -611,6 +611,9 @@ a.navbar-item.is-active {
       transform: scale(0.975);
     }
   }
+  #project-card .image.is-3by1 {
+    min-width: 330px;
+  }
   .card {
     transition: all 0.25s ease;
     &:hover {
@@ -687,5 +690,15 @@ a.navbar-item.is-active {
     blockquote {
       display: inline-block;
     }
+  }
+}
+
+@media (max-width: 540px) {
+  .column.is-one-third-desktop.is-half-tablet {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    min-width: 330px;
+    display: block;
   }
 }
