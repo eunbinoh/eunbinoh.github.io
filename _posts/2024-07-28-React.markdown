@@ -6,7 +6,7 @@ post-image: "/assets/images/post_react.png"
 tags: ["React", "JavaScript", "Frontend", "Framework"]
 ---
 
----
+## ![React 포스트 이미지](/assets/images/post_react.png)
 
 # React
 
