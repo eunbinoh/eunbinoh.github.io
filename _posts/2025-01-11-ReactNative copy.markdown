@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ReactNative"
-date: 2024-12-11 00:00:00
+date: 2025-01-11 00:00:00
 post-image: "/assets/images/post_rn_expo.png"
 tags: ["React Native", "Expo", "WebApp", "Cross-platform"]
 ---

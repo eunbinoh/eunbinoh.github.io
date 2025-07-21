@@ -3,7 +3,7 @@ layout: post
 title: "React"
 date: 2024-07-28 00:00:00
 post-image: "/assets/images/post_react.png"
-tags: ["React", "JavaScript", "Frontend", "Framework"]
+tags: ["React", "Frontend", "Framework", "SPA"]
 ---
 
 # React
