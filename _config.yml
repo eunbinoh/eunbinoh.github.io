@@ -1,6 +1,7 @@
 # WhatATheme
 markdown: kramdown
-
+kramdown:
+  hard_wrap: false
 # URL of the Site
 url: "http://eunbinoh.github.io"
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)

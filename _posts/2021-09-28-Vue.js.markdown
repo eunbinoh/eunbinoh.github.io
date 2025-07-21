@@ -5,59 +5,59 @@ date: 2021-09-28 00:00:00
 post-image: "https://global.discourse-cdn.com/ionicframework/original/3X/5/d/5dda6d56cd5aff5932a478629cb48a07388a4d46.jpeg"
 tags: [Vue.js, npm, webpack, TodoList, 앱만들기]
 ---
-   
-      
 
 ### Do it - Vue.js 입문 ToDoList 적용!
 
-→  [Git-Hub](https://github.com/eunbinoh/Vue_todo)   
-   
-  ![Image name](https://eunbinoh.github.io/images/todo4.png){: width="100%" height="100%"}
-  ![Image name](https://eunbinoh.github.io/images/todo5.png){: width="100%" height="100%"}
+→ [Git-Hub](https://github.com/eunbinoh/Vue_todo)
 
+---
 
-#### Vue.js
-- 웹 화면 개발을 위한 frontend Framework
-- 점진적 프레임워크 : 렌더링, 컴포넌트 기반, 라우팅, 상태 관리
-- MVVM pattern model
-    + ViewModel - View(DOMListener/DataBinding) - Model
-   
-      
-#### webpack
-- 웹모듈 번들러, 최신 프런트엔드 필수의 웹성능 개선 도구
-   
-      
-#### Axios
-- 뷰 커뮤니티에서 가장 많이 사용되는 HTTp 통신 라이브러리
-- Promise API
-   
-      
-#### View Instance
-- 뷰 화면 개발시 필수 생성 기본 단위
-- data, el, template, methods,..
-- life cycle(생성 -> 소멸): beforeCreate, createed, beforeMount, mounted,   
-    beforeUpdate, updated, beforeDestroy, destroyed
+## Vue.js
 
-        
-#### View Components
-- 화면을 구성하는 특정 영역 (구조화, 패턴 조합)
-- 재활용성, 직관성
-- Header / Content(navi,list,input,..) / Footer
-   
-      
-#### Vue CLI
-- npm install vue-cli -global
-- vue init webpack : 웹팩 고급 기능 활용, 테스팅 문법 검사 지원
-- vue init webpack-simple : 웹팩 최소 기능, 빠른 화면 프로토타이핑용
-- vue init browserify : 테스팅, 문법 검사 지원
-- npm run dev : 개발자용 run
-- npm run build (package.json - scripts : build/serve) : 서버 동작(distinct생성)
-   
-      
-#### Directive
-- v-if
-- v-for
-- v-show
-- v-bind
-- v-on
-- v-model
+- 웹화면개발에 최적화된 쉽고 유연한 **SPA 프레임워크**
+- **점진적 채택**: 필요에 따라 라우팅, 상태 관리 등을 추가하며 확장 가능
+- **선언적 렌더링**: 데이터를 기반으로 DOM을 선언적으로 렌더링
+- **컴포넌트 기반**: 재사용 가능한 컴포넌트 단위 개발로 모듈성과 유지보수성 향상
+- **반응형 시스템**: 데이터 변경 시 뷰 자동 업데이트
+- **가상 DOM**: 효율적인 UI 업데이트로 성능 최적화
+
+---
+
+## Life Cycle - Hook
+
+컴포넌트의 생성부터 소멸까지의 생명 주기 각 단계에서 특정 로직 실행 가능
+
+- `beforeCreate()` / `created()`: 인스턴스 생성 및 데이터/이벤트 설정 전/후 (데이터 초기화 및 API 호출에 적합)
+- `beforeMount()` / `mounted()`: 컴포넌트가 DOM에 마운트되기 전/후 (DOM 접근 및 서드파티 라이브러리 연동에 적합)
+- `beforeUpdate()` / `updated()`: 데이터 변경으로 DOM 업데이트 전/후
+- `beforeUnmount()` / `unmounted()` (Vue 3): 컴포넌트 언마운트 전/후 (이벤트 리스너 제거 등 클린업에 적합)
+
+---
+
+## 상태 관리 - Pinia vs Vuex
+
+- **Pinia**: Vue 3를 위한 **새로운 공식 상태 관리 라이브러리**
+
+  - **장점**: Vuex보다 **간결한 API**, **향상된 TypeScript 지원**, **쉬운 학습 곡선**, 모듈 대신 독립적인 Store 방식
+  - **권장**: 새로운 Vue 3 프로젝트에 강력히 추천
+
+- **Vuex**: 기존 Vue.js 프로젝트의 공식 상태 관리 라이브러리 (State, Getters, Mutations, Actions, Modules) Pinia 등장으로 점차 사용 감소
+
+---
+
+## 빌드 번들러 - Vite vs Webpack
+
+- **Vite**: Vue.js 창시자가 개발한 **차세대 빌드 도구**
+
+  - **장점**: **초고속 개발 서버 (네이티브 ES Module)**, 즉각적인 HMR(Hot Module Replacement), 간단한 설정
+  - **권장**: 새로운 Vue 3 프로젝트에 강력히 추천
+
+- **Webpack**: 널리 사용되는 강력한 모듈 번들러
+  - **특징**: 모든 자산을 모듈로 취급, 로더(Loader)와 플러그인(Plugin)으로 다양한 기능 제공
+  - **단점**: 초기 설정이 복잡하고 학습 곡선이 높음
+
+---
+
+![Image name](https://eunbinoh.github.io/images/todo4.png){: width="100%" height="100%"}
+
+---
