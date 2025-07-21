@@ -1,0 +1,106 @@
+---
+layout: post
+title: "Zustand & React Query"
+date: 2025-05-02 00:00:00
+post-image: "/assets/images/post_zustand.png"
+tags: ["Zustand", "React Query", "State Management", "Server State", "React"]
+---
+
+# Zustand & React Query
+
+- **서로 다른 목적의 상태 관리**: 클라이언트 상태 vs 서버 상태 관리
+- **보완적 관계**: 함께 사용하여 완전한 상태 관리 솔루션 구축
+- **개발자 경험**: 간단한 API와 직관적인 사용법
+- **성능 최적화**: 각각의 영역에서 최적화된 렌더링과 캐싱
+- **TypeScript 지원**: 강력한 타입 안전성과 자동 완성
+- **번들 사이즈**: 가벼운 라이브러리로 성능 부담 최소화
+
+---
+
+## 상태 관리 영역 - Client State vs Server State
+
+- **Zustand (Client State)**: **애플리케이션 로컬 상태**
+
+  - UI 상태, 사용자 설정, 폼 데이터 등 클라이언트 전용 상태
+  - 간단한 API로 전역 상태 생성과 업데이트
+  - 컴포넌트 간 상태 공유와 로컬 상태 관리에 적합
+
+- **React Query (Server State)**: **서버 데이터 상태**
+  - API 응답 데이터, 캐싱, 동기화, 백그라운드 업데이트
+  - 자동 리페칭, 낙관적 업데이트, 오류 처리
+  - 서버 데이터 동기화와 네트워크 상태 관리에 적합
+
+---
+
+## API 설계 - Simple Store vs Query Hooks
+
+- **Zustand**: **간단한 스토어 패턴**
+
+  - `create()` 함수로 스토어 생성, `set()`, `get()` 메서드 사용
+  - 불변성 자동 처리와 직관적인 상태 업데이트
+  - 빠른 학습 곡선과 간단한 상태 로직에 적합
+
+- **React Query**: **선언적 쿼리 훅**
+  - `useQuery()`, `useMutation()` 훅 기반 데이터 페칭
+  - 로딩, 에러, 성공 상태를 자동으로 관리
+  - 복잡한 서버 상태와 비동기 로직 관리에 적합
+
+---
+
+## 캐싱 전략 - Manual Caching vs Automatic Caching
+
+- **Zustand**: **수동 캐싱 관리**
+
+  - 개발자가 직접 캐싱 로직 구현
+  - `persist` 미들웨어로 로컬 스토리지 연동
+  - 단순한 캐싱 요구사항과 커스텀 로직에 적합
+
+- **React Query**: **자동 캐싱 시스템**
+  - 쿼리 키 기반 자동 캐싱과 무효화
+  - staleTime, cacheTime 설정으로 세밀한 캐시 제어
+  - 복잡한 데이터 동기화와 성능 최적화에 적합
+
+---
+
+## 데이터 동기화 - Manual Sync vs Background Sync
+
+- **Zustand**: **수동 동기화**
+
+  - 개발자가 직접 데이터 업데이트 시점 제어
+  - 이벤트 기반 상태 업데이트와 명시적 동기화
+  - 예측 가능한 상태 변경과 세밀한 제어가 필요한 경우에 적합
+
+- **React Query**: **자동 백그라운드 동기화**
+  - 윈도우 포커스, 네트워크 재연결 시 자동 리페칭
+  - 실시간 데이터 동기화와 사용자 경험 향상
+  - 데이터 일관성과 실시간성이 중요한 애플리케이션에 적합
+
+---
+
+## 복합 사용 - Complementary Usage
+
+- **Zustand + React Query**: **완전한 상태 관리 솔루션**
+
+  - Zustand: UI 상태, 사용자 설정, 애플리케이션 플로우
+  - React Query: API 데이터, 서버 상태, 캐싱
+  - 각 라이브러리의 강점을 살린 역할 분담으로 최적의 개발 경험
+
+- **사용 예시**:
+
+  ```typescript
+  // Zustand - 클라이언트 상태
+  const useAppStore = create((set) => ({
+    theme: "light",
+    sidebarOpen: false,
+    toggleTheme: () =>
+      set((state) => ({
+        theme: state.theme === "light" ? "dark" : "light",
+      })),
+  }));
+
+  // React Query - 서버 상태
+  const { data: users, isLoading } = useQuery({
+    queryKey: ["users"],
+    queryFn: fetchUsers,
+  });
+  ```
