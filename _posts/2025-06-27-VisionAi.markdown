@@ -39,11 +39,13 @@ tags: ["Skeleton UI", "Loading", "UX", "Performance", "UI Design"]
 4. emsInfo 객체의 key 값에 맞는 value 값 찾아서 자동 적용
 
 - Text Scan Image
-  ![Image name](https://eunbinoh.github.io/images/post_ems_scan.png){: width="300px"}
+- ![Image name](https://eunbinoh.github.io/assets/images/post_ems_scan.png){: width="600px"}
+
 - BEFORE
-  ![Image name](https://eunbinoh.github.io/images/post_ocr_before.png){: width="500px"}
+- ![Image name](https://eunbinoh.github.io/assets/images/post_ocr_before.png){: width="800px"}
+
 - AFTER
-  ![Image name](https://eunbinoh.github.io/images/post_ocr_after.png){: width="500px"}
+- ![Image name](https://eunbinoh.github.io/assets/images/post_ocr_after.png){: width="800px"}
 
 ````JavaScript
 const onFileChange = async ($event: Event) => {
