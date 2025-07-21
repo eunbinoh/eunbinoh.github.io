@@ -6,8 +6,6 @@ post-image: "/assets/images/post_react.png"
 tags: ["React", "JavaScript", "Frontend", "Framework"]
 ---
 
-## ![React 포스트 이미지](/assets/images/post_react.png)
-
 # React
 
 - 사용자 인터페이스 구축을 위한 **컴포넌트 기반 JavaScript 라이브러리**
