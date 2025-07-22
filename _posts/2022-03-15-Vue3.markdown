@@ -1,0 +1,177 @@
+---
+layout: post
+title: "Vue2 to Vue3"
+date: 2022-03-15 00:00:00
+post-image: "/assets/images/post_vue3.png"
+tags: ["Vue", "Vue3", "Migration", "Composition API"]
+---
+
+---
+
+# Vue 2 -> Vue 3 마이그레이션
+
+## Vue 3의 주요 변화점
+
+### 성능 개선
+
+- **더 작은 번들 크기**: 트리 쉐이킹으로 약 41% 크기 감소
+- **더 빠른 렌더링**: Proxy 기반 반응성 시스템으로 성능 향상
+- **메모리 사용량 감소**: 효율적인 메모리 관리
+
+### 새로운 기능
+
+- **Composition API**: 로직 재사용성과 타입 추론 개선
+- **Multiple Root Elements**: 템플릿에서 여러 루트 엘리먼트 지원
+- **Teleport**: 컴포넌트를 DOM의 다른 위치로 렌더링
+- **Suspense**: 비동기 컴포넌트 로딩 상태 관리
+
+## 마이그레이션 프로세스
+
+### 1. 현재 프로젝트 상태 확인
+
+```bash
+# Vue 2 버전 확인
+npm list vue
+
+# 사용 중인 Vue 관련 패키지 확인
+npm list | grep vue
+```
+
+### 2. Vue3 패키지 설치
+
+```bash
+# Vue 3 및 관련 패키지 설치
+npm install vue@next
+npm install vue-router@4
+npm install vuex@4
+# 또는 Pinia 사용 (권장)
+npm install pinia
+
+# 개발 의존성 업데이트
+npm install --save-dev @vue/compiler-sfc
+```
+
+### 3. 메인 애플리케이션 인스턴스 변경
+
+```javascript
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+
+const app = createApp(App);
+
+app.use(router);
+app.use(store);
+
+app.mount("#app");
+```
+
+```javascript
+const app = createApp(App);
+app.component("MyComponent", MyComponent);
+```
+
+### 4. 라우터 마이그레이션 (Vue Router 4)
+
+```javascript
+// router/index.js (Vue 2)
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "@/views/Home.vue";
+
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+];
+
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes,
+});
+
+export default router;
+```
+
+### 5. 상태 관리 마이그레이션 (Pinia)
+
+```javascript
+// stores/counter.js
+import { defineStore } from "pinia";
+
+export const useCounterStore = defineStore("counter", {
+  state: () => ({
+    count: 0,
+  }),
+  getters: {
+    doubleCount: (state) => state.count * 2,
+  },
+  actions: {
+    increment() {
+      this.count++;
+    },
+  },
+});
+```
+
+### 6. 컴포넌트 마이그레이션 (Options API -> Composition API)
+
+```javascript
+<template>
+  <div>
+    <h1>{{ title }}</h1>
+    <p>Count: {{ count }}</p>
+    <p>Double: {{ doubleCount }}</p>
+    <button @click="increment">+</button>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+
+const title = ref('Counter App')
+const count = ref(0)
+
+const doubleCount = computed(() => count.value * 2)
+
+const increment = () => {
+  count.value++
+}
+
+onMounted(() => {
+  console.log('Component mounted')
+})
+</script>
+```
+
+## 마이그레이션 도구 활용
+
+### 1. Vue 3 Migration Helper 사용
+
+```bash
+# 마이그레이션 도우미 설치
+npm install -g @vue/cli-service
+
+# 마이그레이션 체크
+vue-cli-service migrate
+```
+
+### 2. ESLint 플러그인 활용
+
+```javascript
+# Vue 3 ESLint 플러그인 설치
+npm install --save-dev eslint-plugin-vue@next
+
+# .eslintrc.js 설정
+module.exports = {
+  extends: [
+    'plugin:vue/vue3-essential'
+  ]
+}
+```

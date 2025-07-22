@@ -1,0 +1,185 @@
+---
+layout: post
+title: "Vite"
+date: 2024-06-09 00:00:00
+post-image: "/assets/images/post_vite.png"
+tags: ["Vite", "Plugins", "Build Tools", "Performance", "Development"]
+---
+
+# Vite plugIn
+
+- **Rollup 플러그인 호환**: 기존 Rollup 플러그인을 그대로 사용 가능
+- **개발/빌드 분리**: 개발 서버와 프로덕션 빌드에서 다른 동작 가능
+- **Hook 시스템**: Rollup hooks + Vite 전용 hooks로 세밀한 제어
+- **HMR 통합**: 플러그인에서 직접 HMR 업데이트 제어 가능
+- **간단한 API**: 함수형 플러그인으로 쉬운 개발과 테스트
+- **TypeScript 지원**: 타입 안전한 플러그인 개발 환경
+
+---
+
+# Webpack -> Vite 마이그레이션
+
+## 왜 Vite로 마이그레이션해야 할까?
+
+### 개발 서버 성능
+
+- **즉시 시작**: Vite는 번들링 없이 ES 모듈을 직접 서빙
+- **빠른 HMR**: 파일 변경 시 즉시 반영되는 Hot Module Replacement
+- **선택적 번들링**: 필요한 모듈만 변환하여 속도 향상
+
+### 빌드 최적화
+
+- **Rollup 기반**: 프로덕션 빌드에서 트리 쉐이킹 (사용하지 않는 코드 제거)
+- **코드 스플리팅**: 자동화된 청크 분할로 로딩 성능 개선
+- **최신 브라우저 지원**: ES2015+ 문법을 기본으로 지원
+
+## 마이그레이션 단계별 가이드
+
+### 1. 프로젝트 구조 분석
+
+```javascript
+// webpack.config.js 예시
+module.exports = {
+  entry: "./src/main.js",
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
+};
+```
+
+### 2. 의존성 패키지 설치 및 제거
+
+```bash
+# Webpack 관련 패키지 제거
+npm uninstall webpack webpack-cli webpack-dev-server
+npm uninstall vue-loader vue-template-compiler
+npm uninstall html-webpack-plugin mini-css-extract-plugin
+npm uninstall css-loader style-loader sass-loader
+npm uninstall @babel/core @babel/preset-env babel-loader
+
+# Vite 관련 패키지 설치
+npm install --save-dev vite @vitejs/plugin-vue
+npm install --save-dev sass
+
+```
+
+### 3. Vite 설정 파일 생성
+
+- vite.config.js
+
+```javascript
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
+
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      "~": resolve(__dirname, "src"),
+      components: resolve(__dirname, "src/components"),
+      views: resolve(__dirname, "src/views"),
+      assets: resolve(__dirname, "src/assets"),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/assets/styles/variables.scss";
+          @import "@/assets/styles/mixins.scss";
+        `,
+      },
+    },
+  },
+  server: {
+    port: 8080,
+    open: true,
+    cors: true,
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+    strictPort: true, // 포트가 사용 중이면 실패
+    hmr: {
+      overlay: false, // 에러 오버레이 비활성화
+    },
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: true, // 디버깅
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vue-vendor": ["vue", "vue-router"],
+          "ui-vendor": ["element-plus", "ant-design-vue"],
+          "utils-vendor": ["axios", "lodash", "moment"],
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ["vue", "vue-router", "pinia", "axios", "lodash-es"],
+    exclude: ["@vueuse/core"], // 사전 번들링에서 제외
+  },
+});
+```
+
+### 4. package.json
+
+```javascript
+{
+  "scripts": {
+    "dev": "vite",
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:analyze": "vite build --mode analyze"
+  }
+}
+```
+
+### 4. 환경변수 설정
+
+- .env.development
+
+```javascript
+VITE_APP_TITLE=My Vue App (Development)
+VITE_API_BASE_URL=http://localhost:3000/api
+VITE_APP_VERSION=1.0.0
+```
+
+- .env.production
+
+```javascript
+VITE_APP_TITLE=My Vue App
+VITE_API_BASE_URL=https://api.myapp.com
+VITE_APP_VERSION=1.0.0
+```
+
+- 사용예시
+
+```javascript
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+const appTitle = import.meta.env.VITE_APP_TITLE;
+```
