@@ -1,0 +1,156 @@
+---
+layout: post
+title: "Google Analytics"
+date: 2023-04-02 00:00:00
+post-image: "/assets/images/post_ga.png"
+tags: ["Google Analytics", "GA4", "Frontend", "Web Analytics", "Performance"]
+---
+
+## 왜 프론트엔드 개발자가 GA를 알아야 할까?
+
+- **데이터 기반 의사결정**: 사용자 행동 패턴 분석으로 UX 개선
+- **성능 최적화**: 페이지 로딩 속도, 이탈률 등 핵심 지표 모니터링
+- **비즈니스 임팩트**: 개발 기능의 실제 사용률과 효과 측정
+
+---
+
+### **Google Tag Manager 설치 (권장)**
+
+```html
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+</script>
+```
+
+### 클릭 이벤트 추적
+
+```javascript
+document.getElementById("cta-button").addEventListener("click", function () {
+  gtag("event", "click", {
+    event_category: "engagement",
+    event_label: "header_cta",
+    value: 1,
+  });
+});
+```
+
+### 페이지 성능 체크
+
+```javascript
+window.addEventListener("load", function () {
+  const perfData = performance.getEntriesByType("navigation")[0];
+
+  gtag("event", "timing_complete", {
+    name: "page_load_time",
+    value: Math.round(perfData.loadEventEnd - perfData.fetchStart),
+  });
+});
+```
+
+### E-commerce 추적
+
+```javascript
+// 구매 완료
+gtag("event", "purchase", {
+  transaction_id: "T12345",
+  value: 25.42,
+  currency: "KRW",
+  items: [
+    {
+      item_id: "SKU123",
+      item_name: "프리미엄 티셔츠",
+      category: "Apparel",
+      quantity: 1,
+      price: 25.42,
+    },
+  ],
+});
+
+// 장바구니 추가
+gtag("event", "add_to_cart", {
+  currency: "KRW",
+  value: 15.25,
+  items: [{ item_id: "SKU456", item_name: "스니커즈" }],
+});
+```
+
+### 디버깅 및 테스트
+
+```javascript
+// 개발 환경 디버깅
+if (process.env.NODE_ENV === "development") {
+  window.gtag = function () {
+    console.log("GA Event:", arguments);
+  };
+}
+
+// 이벤트 검증
+function validateEvent(eventName, parameters) {
+  const requiredParams = {
+    purchase: ["transaction_id", "value"],
+    add_to_cart: ["currency", "value"],
+  };
+
+  const required = requiredParams[eventName] || [];
+  const missing = required.filter((param) => !parameters[param]);
+
+  if (missing.length > 0) {
+    console.warn(`Missing parameters for ${eventName}:`, missing);
+  }
+}
+```
+
+### 스크롤 깊이 분석
+
+```javascript
+let maxScroll = 0;
+const scrollMilestones = [25, 50, 75, 100];
+
+window.addEventListener(
+  "scroll",
+  throttle(function () {
+    const scrollPercent = Math.round(
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+    );
+
+    scrollMilestones.forEach((milestone) => {
+      if (scrollPercent >= milestone && !window[`scroll_${milestone}_sent`]) {
+        gtag("event", "scroll", {
+          event_category: "engagement",
+          event_label: `${milestone}%`,
+          value: milestone,
+        });
+        window[`scroll_${milestone}_sent`] = true;
+      }
+    });
+  }, 250)
+);
+```
+
+### Vue 적용 예시
+
+```javascript
+// plugins/analytics.js
+export default {
+  install(app) {
+    app.provide("analytics", {
+      trackEvent: (action, category, label, value) => {
+        gtag("event", action, {
+          event_category: category,
+          event_label: label,
+          value: value,
+        });
+      },
+    });
+  },
+};
+```

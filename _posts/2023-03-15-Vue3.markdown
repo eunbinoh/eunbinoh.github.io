@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Vue2 to Vue3"
-date: 2022-03-15 00:00:00
+title: "Vue3 Migration"
+date: 2023-03-15 00:00:00
 post-image: "/assets/images/post_vue3.png"
 tags: ["Vue", "Vue3", "Migration", "Composition API"]
 ---
@@ -14,7 +14,7 @@ tags: ["Vue", "Vue3", "Migration", "Composition API"]
 
 ### 성능 개선
 
-- **더 작은 번들 크기**: 트리 쉐이킹으로 약 41% 크기 감소
+- **더 작은 번들 크기**: 트리 쉐이킹(사용하지 않는 코드 제거)으로 약 41% 크기 감소
 - **더 빠른 렌더링**: Proxy 기반 반응성 시스템으로 성능 향상
 - **메모리 사용량 감소**: 효율적인 메모리 관리
 
@@ -152,7 +152,28 @@ onMounted(() => {
 
 ## 마이그레이션 도구 활용
 
-### 1. Vue 3 Migration Helper 사용
+### 1. @vue/compat
+
+- Vue2 코드를 점진적으로 Vue3 마이그레이션할 수 있게 해주는 도구
+- Vue2 API를 Vue3 환경에서 사용할 수 있게 해줌
+- 호환되지 않는 기능들에 대해 런타임 경고 제공
+
+```javascript
+// vite.config.js
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      vue: "@vue/compat",
+    },
+  },
+});
+```
+
+### 2. Migration Helper
 
 ```bash
 # 마이그레이션 도우미 설치
@@ -162,7 +183,7 @@ npm install -g @vue/cli-service
 vue-cli-service migrate
 ```
 
-### 2. ESLint 플러그인 활용
+### 3. ESLint 플러그인
 
 ```javascript
 # Vue 3 ESLint 플러그인 설치

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Storybook"
-date: 2024-12-08 00:00:00
+date: 2024-08-08 00:00:00
 post-image: "/assets/images/post_storybook.png"
 tags: ["Storybook", "UI", "Component", "Testing", "Documentation"]
 ---
