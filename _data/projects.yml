@@ -1,9 +1,23 @@
+- name: AICC_connect
+  link: https://my-career-proj.netlify.app/posts/proj7-aicc
+  image: "/assets/images/aicc-main.png"
+  description1: "AICC 주선사 프로젝트"
+  description2: "#React #Zustand #ReactQuery"
+  description3: 2026.01 - (ing)
+
+- name: App in TOSS
+  link: https://my-career-proj.netlify.app/posts/proj6-ait
+  image: "/assets/images/ait-main.png"
+  description1: "개인 프로젝트 4"
+  description2: "#TOSS #TDS #React #APP"
+  description3: 2025.10 - 2025.12 (3m)
+
 - name: AI_Stylist
   link: https://myaistylist.lovable.app/auth
   image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
   description1: 개인 프로젝트 3
-  description2: "#AI #React #Supabase @pixiv/three-vrm"
-  description3: 2025.06 - (ing)
+  description2: "#AI #React #Supabase #Three.js"
+  description3: 2025.06 - 2025.08 (3m)
 
 - name: React_Pet
   link: https://mypet-react.netlify.app/
